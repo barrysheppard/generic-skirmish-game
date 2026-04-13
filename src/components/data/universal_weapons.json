@@ -1,0 +1,3 @@
+[
+  { "id": "knife", "name": "Knife", "range": "0-1", "att": "3", "dmg": "1/3", "traits": ["Silent"], "cost": "Free" }
+]

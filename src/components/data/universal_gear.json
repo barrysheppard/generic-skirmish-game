@@ -1,0 +1,11 @@
+[
+  {
+    "id": "shield",
+    "name": "Shield",
+    "type": "gear",
+    "ability_cost": "[passive]",
+    "cost": "5",
+    "effect": "This fighter gains +1 Defence against Melee attacks.",
+    "m": 0, "ws": 0, "bs": 0, "def": 0, "w": 0
+  }
+]

@@ -1,0 +1,22 @@
+[
+  { "name": "Dagger", "range": "0-1", "att": 4, "dmg": "1/2", "cost": 25, "traits": ["WS-1"] },
+  { "name": "Short Sword", "range": "0-1", "att": 3, "dmg": "2/3", "cost": 40, "traits": ["Piercing"] },
+  { "name": "Rapier", "range": "0-1", "att": 4, "dmg": "1/3", "cost": 40, "traits": ["Precise"] },
+  { "name": "Club", "range": "0-1", "att": 2, "dmg": "2/5", "cost": 35, "traits": ["Brutal"] },
+  { "name": "Morning Star", "range": "0-1", "att": 2, "dmg": "2/5", "cost": 35, "traits": ["Spiked"] },
+  { "name": "Scimitar", "range": "0-1", "att": 3, "dmg": "2/4", "cost": 50, "traits": ["Riposte"] },
+  { "name": "Warhammer", "range": "0-1", "att": 3, "dmg": "2/4", "cost": 50, "traits": ["Crushing"] },
+  { "name": "Sword", "range": "0-1", "att": 3, "dmg": "2/4", "cost": 50, "traits": ["Parry"] },
+  { "name": "Hand Axe", "range": "0-1", "att": 3, "dmg": "2/5", "cost": 55, "traits": ["Cleaving"] },
+  { "name": "Mace", "range": "0-1", "att": 3, "dmg": "2/5", "cost": 55, "traits": ["Crushing"] },
+  { "name": "Greatsword", "range": "0-1", "att": 2, "dmg": "3/5", "cost": 50, "traits": ["Overwhelming", "Two-Handed", "WS+1"] },
+  { "name": "Great Axe", "range": "0-1", "att": 2, "dmg": "3/5", "cost": 50, "traits": ["Cleaving", "Two-Handed", "WS+1"] },
+  { "name": "Spear", "range": "0-2", "att": 3, "dmg": "2/4", "cost": 50, "traits": ["Piercing"] },
+  { "name": "Battle Staff", "range": "0-2", "att": 3, "dmg": "2/3", "cost": 45, "traits": ["Parry", "Two-Handed"] },
+  { "name": "Poleaxe", "range": "0-2", "att": 2, "dmg": "2/5", "cost": 45, "traits": ["Crushing", "Two-Handed", "WS+1"] },
+  { "name": "Throwing Knife", "range": "0-6", "att": 2, "dmg": "1/3", "cost": 30, "traits": ["Thrown"] },
+  { "name": "Pistol", "range": "0-8", "att": 2, "dmg": "2/3", "cost": 40, "traits": ["Quick", "BS:3"] },
+  { "name": "Shortbow", "range": "3-10", "att": 3, "dmg": "2/4", "cost": 70, "traits": ["Precise", "Two-Handed"] },
+  { "name": "Crossbow", "range": "3-10", "att": 2, "dmg": "2/5", "cost": 50, "traits": ["Piercing", "Two-Handed", "BS:4"] },
+  { "name": "Longbow", "range": "3-15", "att": 3, "dmg": "2/4", "cost": 75, "traits": ["Precise", "Two-Handed", "BS+1"] }
+]

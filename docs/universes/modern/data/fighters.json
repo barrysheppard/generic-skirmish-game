@@ -1,0 +1,6 @@
+[
+  { "faction": "Humans", "name": "Human Captain", "m": 4, "def": 3, "ws": 3, "bs": 4, "w": 20, "traits": ["Leader"], "cost": 75, "allowed_items": ["Dagger","Mace","Hammer","Axe","Sword","Morning star","Double-handed weapon","Spear","Halberd","Crossbow","Pistol","Duelling pistol","Bow","Light Armour","Heavy Armour","Shield","Buckler","Helmet"] },
+  { "faction": "Humans", "name": "Human Champion", "m": 4, "def": 3, "ws": 3, "bs": 4, "w": 16, "traits": ["Elite"], "cost": 55, "allowed_items": ["Dagger","Mace","Hammer","Axe","Sword","Morning star","Double-handed weapon","Spear","Halberd","Crossbow","Pistol","Duelling pistol","Bow","Light Armour","Heavy Armour","Shield","Buckler","Helmet"] },
+  { "faction": "Humans", "name": "Human Warrior", "m": 4, "def": 3, "ws": 3, "bs": 3, "w": 14, "traits": ["-"], "cost": 35, "allowed_items": [] },
+  { "faction": "Humans", "name": "Human Recruit", "m": 4, "def": 3, "ws": 3, "bs": 3, "w": 12, "traits": ["-"], "cost": 30, "allowed_items": [] }
+]

@@ -1,0 +1,20 @@
+[
+  { "name": "Boost WS +1", "type": "Advancement", "ability_cost": "[passive]", "cost": "10", "effect": "▲ Boost WS by +1", "m": 0, "ws": 1, "bs": 0, "def": 0, "w": 0 },
+  { "name": "Boost WS +2", "type": "Advancement", "ability_cost": "[passive]", "cost": "30", "effect": "▲ Boost WS by +2", "m": 0, "ws": 2, "bs": 0, "def": 0, "w": 0 },
+  { "name": "Boost BS +1", "type": "Advancement", "ability_cost": "[passive]", "cost": "10", "effect": "▲ Boost BS by +1", "m": 0, "ws": 0, "bs": 1, "def": 0, "w": 0 },
+  { "name": "Boost BS +2", "type": "Advancement", "ability_cost": "[passive]", "cost": "30", "effect": "▲ Boost BS by +2", "m": 0, "ws": 0, "bs": 2, "def": 0, "w": 0 },
+  { "name": "Boost Def +1", "type": "Advancement", "ability_cost": "[passive]", "cost": "10", "effect": "▲ Boost Def by +1", "m": 0, "ws": 0, "bs": 0, "def": 1, "w": 0 },
+  { "name": "Boost Def +2", "type": "Advancement", "ability_cost": "[passive]", "cost": "30", "effect": "▲ Boost Def by +2", "m": 0, "ws": 0, "bs": 0, "def": 2, "w": 0 },
+  { "name": "Boost W +2", "type": "Advancement", "ability_cost": "[passive]", "cost": "10", "effect": "▲ Boost Wounds by +2", "m": 0, "ws": 0, "bs": 0, "def": 0, "w": 2 },
+  { "name": "Boost W +4", "type": "Advancement", "ability_cost": "[passive]", "cost": "20", "effect": "▲ Boost Wounds by +4", "m": 0, "ws": 0, "bs": 0, "def": 0, "w": 4 },
+  { "name": "Sprint", "type": "universal", "ability_cost": "[double]", "cost": "-", "effect": "For the rest of this Fighter's activation, increase the move trait by 1.", "m": 0, "ws": 0, "bs": 0, "def": 0, "w": 0 },
+  { "name": "Charge!", "type": "universal", "ability_cost": "[double]", "cost": "-", "effect": "Use this ability only after this Fighter has taken a move action which ended in melee range of an enemy fighter. This Fighter's next melee attack gains +1 attack dice.", "m": 0, "ws": 0, "bs": 0, "def": 0, "w": 0 },
+  { "name": "Overwatch", "type": "universal", "ability_cost": "[triple]", "cost": "-", "effect": "Reaction. After an enemy Fighter finishes a move action. This Fighter can make an Attack action with a weapon that can target the moving Fighter (they will need to spend an action as normal to make that Attack).", "m": 0, "ws": 0, "bs": 0, "def": 0, "w": 0 },
+  { "name": "Surge", "type": "universal", "ability_cost": "[quad]", "cost": "-", "effect": "This fighter can make a bonus move action up to X or the Fighters move (whichever is shorter). Then the fighter can make a free attack action (they do not spend an action for this attack).", "m": 0, "ws": 0, "bs": 0, "def": 0, "w": 0 },
+  { "name": "Gut Wound", "type": "Injury", "ability_cost": "[passive]", "cost": "-5", "effect": "▼ Fighter's wound characteristic is reduced by 2.", "m": 0, "ws": 0, "bs": 0, "def": 0, "w": -2 },
+  { "name": "Cracked Rib", "type": "Injury", "ability_cost": "[passive]", "cost": "-5", "effect": "▼ Fighter can only take one move action per turn.", "m": 0, "ws": 0, "bs": 0, "def": 0, "w": 0 },
+  { "name": "Eye Injury", "type": "Injury", "ability_cost": "[passive]", "cost": "-5", "effect": "▼ Fighter's BS is reduced by 1 (min 2).", "m": 0, "ws": 0, "bs": -1, "def": 0, "w": 0 },
+  { "name": "Broken Arm", "type": "Injury", "ability_cost": "[passive]", "cost": "-5", "effect": "▼ Fighter's WS is reduced by 1 (min 2).", "m": 0, "ws": -1, "bs": 0, "def": 0, "w": 0 },
+  { "name": "Leg Fracture", "type": "Injury", "ability_cost": "[passive]", "cost": "-5", "effect": "▼ Subtract 1 from Move characteristic (min 2).", "m": -1, "ws": 0, "bs": 0, "def": 0, "w": 0 },
+  { "name": "Head Trauma", "type": "Injury", "ability_cost": "[passive]", "cost": "-5", "effect": "▼ No abilities in round 1; only one ability per round thereafter.", "m": 0, "ws": 0, "bs": 0, "def": 0, "w": 0 }
+]

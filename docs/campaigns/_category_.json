@@ -1,0 +1,8 @@
+{
+  "label": "Campaigns",
+  "position": 2,
+  "link": {
+    "type": "generated-index",
+    "description": "Campaign rules for GSG."
+  }
+}

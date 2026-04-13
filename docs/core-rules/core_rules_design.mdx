@@ -1,0 +1,98 @@
+---
+sidebar_label: '9. Design Guide'
+sidebar_position: 9
+---
+
+import { PointCalculator, WeaponCalculator } from '@site/src/components/DesignCalc';
+
+# Design Philosophy
+
+Throughout this document there are a number of 'Philosophy' boxes that describe the reasoning around specific rules. The goal of this design is to keep a fast paced game that avoids complications whereever possible. As such, below are a few guiding principles for when you come to make your own rules variants.
+
+## No Rerolls
+
+Dice are rolled once and then the effects calculated. Rolling dice again might seem like a small thing, but if both players rerolled every dice roll in the game it would significantly increase the amount of time. As such, we avoid any ability that would reroll dice. If we want a similar effect, we can have abilities that modify dice (add +1 to any dice roll) or change the target of dice (count 5s as crits).
+
+## Points are balanced, Ability Dice are balanced
+
+When we work with the raw stats of a Fighter or a Weapon we give those changes a points cost. Then when two players face off and have similar points they should have a roughly balanced game.
+When it comes to abilities, as players are limited by the Ability Dice system in the number of abilities they can use. As such, a player with a [double] and 1 ability to use, is roughly balanced with a player who has a [double] and 5 abilities to use. The player with more abilities will have more options but both players will still end up using a single [double]. As such, rewarding players who win games with extra Abilities is a good way to reward but still retain some amount of balance.
+
+
+
+## Fighter Points Reference
+
+The values below represent the total point contribution for each stat level. Sum these with your Wound calculations (W*4) to determine the point cost of the Fighter. This is how we calculate the original Fighter profile and does not necessarily represent costing for Gear or Advances however it should serve as a guide.
+
+| Stat | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 |
+| :--- | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| **Movement** | -15 | -10 | **0** | +10 | +25 | +35 | +45 | +50 |
+| **Defense** | -5 | **0** | +5 | +10 | +20 | +30 | +40 | +50 |
+| **Ballistic Skill** | -5 | **0** | +5 | +10 | +20 | +30 | +40 | +50 |
+| **Weapon Skill** | -5 | **0** | +5 | +10 | +20 | +30 | +40 | +50 |
+
+**Calculation Formula**
+- **Wounds:** 4 points per wound.
+- **Stats:** Find your values in the table above. M4, Def3, BS3, and WS3 are the "0" baseline.
+- **Baseline Adjustment** Apply a -10 to the total with a minimum of 20.
+
+<PointCalculator />
+
+
+:::warning
+This is an attempt to simplify the system. No doubt you can get some weird combinations out of it but hopefully it does the job.
+:::
+
+
+## Weapon Point Reference
+
+Below are costs of weapon profiles with an Attack value of 1 to use as a guideline. You can scale up the weapon by deciding on a new Att value and multiplying that by the cost to get a new cost value. That profile can then be updated with Traits to give some new abilities. Consider whether the Trait should have a cost and then round off (up or down) to a factor of 5 to make list building a little easier.
+
+:::tip Weapon point Calculation
+The **Dmnage Score** is calculated as: Attacks * (2*Hit + Crit). This is the baseline where BS/WS = Def and serves as our reference point for damage (divide by 6 for average damage).
+The range multipliers are by 2 for Melee, by 2.1 for Reach, by 2.5 for Pistol, and 2.9 for Ranged. 
+The advantage of having higher skill is costed into the value of the Fighter stats.
+:::
+
+| Dmg | Avg Dmg | Melee (0-1) | Reach (0-2) | Pistol (0-8) | Ranged (3-15) |
+| :---: | :---: | :---: | :---: | :---: | :---: |
+| **1/2** | 0.67 | 7 | 8 | 10 | 12 |
+| **1/3** | 0.83 | 9 | 10 | 13 | 15 |
+| **1/4** | 1.00 | 12 | 13 | 15 | 17 |
+| **2/2** | 1.00 | 12 | 13 | 15 | 17 |
+| **2/3** | 1.17 | 14 | 15 | 18 | 20 |
+| **2/4** | 1.33 | 16 | 17 | 20 | 23 |
+| **3/3** | 1.50 | 18 | 19 | 23 | 26 |
+| **3/4** | 1.67 | 20 | 21 | 25 | 29 |
+| **3/5** | 1.83 | 22 | 23 | 28 | 32 |
+| **4/5** | 2.17 | 26 | 27 | 33 | 38 |
+
+<WeaponCalculator />
+
+This is just a guide, if you want range a 20 weapon just up the final price a bit. If you want a reach 3 weapon do similar. Tweak away.
+
+In many settings purchasing a second weapon of the same profile will let a fighter dual-wield them, in which case use the normal profile but increase the Att value by 1. This can only be done with Weapons that are one-handed. A fighter can also wield two one-handed melee weapons of different types, but if they do so they can only use one at a time.
+
+Some weapons will be designated as two-handed can be the only weapon wielded. Weapons scale directly with the number of Attack dice rolled. To adjust any of the above, divide the points by the Att characteristic and multiple by the new Attack dice to work out the new points.
+
+Traits can be used to expand out the variety of the Weapons available.
+
+These tables are a reference when creating the actual weapons that will feature in the setting documents. It's not intended that a player look at this reference and work out a weapon profile. Instead, they should be deciding whether to give their Fighter a Crossbow or a Short Bow, where each weapon has a full profile, traits with connected abilities, and a pre-calculated points cost.
+
+
+
+## Ability Design
+
+When creating abilities we should consider how they compare to other abilities to make sure they don't overshadow and aren't overshadowed.
+
+As a general rule of thumb:
+- A [passive] should be a minor bonus.
+- An [action] should be close in power to a full action.
+- A [double] should be a bonus worth less than a full action.
+- A [triple] should be worth a full action.
+- A [quad] should be worth 2 or 3 actions.
+
+:::info Philosophy
+Philosophy: These are intended to be minor effects outside of normal ability dice system. As an example, a fighter may have a passive ability that allows them to change a missed dice into a hit if they have no hits. This ability is always active and does not require dice or actions to activate.
+:::
+

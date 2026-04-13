@@ -1,0 +1,91 @@
+/**
+ * Any CSS included here will be global. The classic template
+ * bundles Infima by default. Infima is a CSS framework designed to
+ * work well for content-centric websites.
+ */
+
+/* You can override the default Infima variables here. */
+:root {
+  --ifm-color-primary: #2e8555;
+  --ifm-color-primary-dark: #29784c;
+  --ifm-color-primary-darker: #277148;
+  --ifm-color-primary-darkest: #205d3b;
+  --ifm-color-primary-light: #33925d;
+  --ifm-color-primary-lighter: #359962;
+  --ifm-color-primary-lightest: #3cad6e;
+  --ifm-code-font-size: 95%;
+  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
+}
+
+/* For readability concerns, you should choose a lighter palette in dark mode. */
+[data-theme='dark'] {
+  --ifm-color-primary: #f5b832;
+  --ifm-color-primary-dark: #f4ae16;
+  --ifm-color-primary-darker: #efa80c;
+  --ifm-color-primary-darkest: #c58a0a;
+  --ifm-color-primary-light: #f6c24e;
+  --ifm-color-primary-lighter: #f7c75c;
+  --ifm-color-primary-lightest: #f9d586;
+  --ifm-background-color: #21222b;
+  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
+}
+
+/* Ensure anchors don't get hidden behind the sticky header */
+html {
+  /* Adjust 80px to match the actual height of your top navbar */
+  scroll-padding-top: 80px; 
+}
+
+/* Optional: If you want specific targeting for the IDs you created */
+[id] {
+  scroll-margin-top: 80px;
+}
+
+/* Ensure the container can be seen */
+.custom-tooltip-container {
+  position: relative;
+  display: inline-block;
+  cursor: help;
+}
+
+.trait-link {
+  text-decoration: underline dotted;
+  color: var(--ifm-color-primary);
+}
+
+/* The box - let's make it simpler to ensure it shows */
+.custom-tooltip-text {
+  display: none; /* Switch from visibility:hidden to display:none */
+  position: absolute;
+  z-index: 9999; /* Force it to the very front */
+  bottom: 125%; 
+  left: 50%;
+  transform: translateX(-50%);
+  
+  width: max-content;
+  max-width: 250px;
+  padding: 8px 12px;
+  background-color: #1a1a1a;
+  color: #ffffff;
+  font-size: 0.9rem;
+  line-height: 1.4;
+  border-radius: 4px;
+  border: 1px solid #444;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+  white-space: normal;
+}
+
+/* THE TRIGGER */
+.custom-tooltip-container:hover .custom-tooltip-text {
+  display: block; /* Show it on hover */
+}
+
+/* Fix for Docusaurus Tables cutting off tooltips */
+.markdown table {
+  overflow: visible !important;
+}
+
+.markdown table td {
+  overflow: visible !important;
+  position: relative;
+}

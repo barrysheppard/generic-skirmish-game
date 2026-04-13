@@ -1,0 +1,48 @@
+[
+  {
+    "name": "Shield",
+    "ability_cost": "[passive]",
+    "effect": "+1 Defense",
+    "cost": 10,
+    "type": "gear",
+    "def": 1,
+    "traits": ["Block"]
+  },
+  {
+    "name": "Light Armour",
+    "ability_cost": "[passive]",
+    "effect": "Standard protection.",
+    "cost": 10,
+    "type": "gear",
+    "traits": ["Sprint"]
+  },
+  {
+    "name": "Medium Armour",
+    "ability_cost": "[passive]",
+    "effect": "+1 Defense",
+    "cost": 20,
+    "type": "gear",
+    "def": 1,
+    "traits": ["-"]
+  },
+  {
+    "name": "Heavy Armour",
+    "ability_cost": "[passive]",
+    "effect": "+2 Defense, -1 Movement",
+    "cost": 30,
+    "type": "gear",
+    "def": 2,
+    "m": -1,
+    "traits": ["-"]
+  },
+  {
+    "name": "Mount",
+    "ability_cost": "[passive]",
+    "effect": "10 Movement, +4 Wounds",
+    "cost": 50,
+    "type": "gear",
+    "m": 10, 
+    "w": 4,
+    "traits": ["Mount"]
+  }
+]

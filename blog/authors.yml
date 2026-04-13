@@ -1,0 +1,9 @@
+baz:
+  name: Baz
+  title: Big Hat
+  url: https://www.optimalgamestate.com/
+  image_url: https://i0.wp.com/optimalgamestate.com/wp-content/uploads/2023/02/Bazleebub_Logo_small.png
+  page: true
+  socials:
+    instagram: https://www.instagram.com/optimalgamestate/
+    youtube: https://www.youtube.com/@optimalgamestate

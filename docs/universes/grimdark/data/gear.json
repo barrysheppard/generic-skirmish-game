@@ -1,0 +1,425 @@
+[
+  {
+    "id": "armoured-undersuit",
+    "name": "Armoured Undersuit",
+    "type": "gear",
+    "ability_cost": "[passive]",
+    "cost": "10",
+    "effect": "This fighter can reroll an injury roll during the end phase.",
+    "m": 0, "ws": 0, "bs": 0, "def": 0, "w": 0
+  },
+  {
+    "id": "auspex",
+    "name": "Auspex",
+    "type": "gear",
+    "ability_cost": "[action]",
+    "cost": "15",
+    "effect": "Target an enemy within 12\"; they lose the benefit of Cover until the end of the round.",
+    "m": 0, "ws": 0, "bs": 0, "def": 0, "w": 0
+  },
+  {
+    "id": "bionic-arm",
+    "name": "Bionic Arm",
+    "type": "gear",
+    "ability_cost": "[passive]",
+    "cost": "15",
+    "effect": "Restore WS to original value. Gain +1 Weapon Skill to Melee attacks with this arm.",
+    "m": 0, "ws": 0, "bs": 0, "def": 0, "w": 0
+  },
+  {
+    "id": "bionic-eye",
+    "name": "Bionic Eye",
+    "type": "gear",
+    "ability_cost": "[passive]",
+    "cost": "15",
+    "effect": "Restore BS to original value. Fighter ignores negative modifiers from Cover.",
+    "m": 0, "ws": 0, "bs": 0, "def": 0, "w": 0
+  },
+  {
+    "id": "bionic-leg",
+    "name": "Bionic Leg",
+    "type": "gear",
+    "ability_cost": "[passive]",
+    "cost": "10",
+    "effect": "Restore Move to original value. Ignore the first 3\" of vertical climbing distance.",
+    "m": 0, "ws": 0, "bs": 0, "def": 0, "w": 0
+  },
+  {
+    "id": "camo-cloak",
+    "name": "Camo Cloak",
+    "type": "gear",
+    "ability_cost": "[double]",
+    "cost": "10",
+    "effect": "This fighter gains a Stealth token.",
+    "m": 0, "ws": 0, "bs": 0, "def": 0, "w": 0
+  },
+  {
+    "id": "carapace-armour",
+    "name": "Carapace Armour",
+    "type": "gear",
+    "ability_cost": "[passive]",
+    "cost": "15",
+    "effect": "This fighter gains +2 Defence.",
+    "m": 0, "ws": 0, "bs": 0, "def": 0, "w": 0
+  },
+  {
+    "id": "combat-drugs",
+    "name": "Combat Drugs",
+    "type": "gear",
+    "ability_cost": "[double]",
+    "cost": "15",
+    "effect": "Once per battle, this fighter gains +1 Weapon Skill and +1 Attack to Melee weapons for the rest of their activation. At the end of their activation this fighter takes 1d6 damage.",
+    "m": 0, "ws": 0, "bs": 0, "def": 0, "w": 0
+  },
+  {
+    "id": "dataslate",
+    "name": "Dataslate",
+    "type": "gear",
+    "ability_cost": "[passive]",
+    "cost": "5",
+    "effect": "+1 dice when interacting with computer terminals or hacking.",
+    "m": 0, "ws": 0, "bs": 0, "def": 0, "w": 0
+  },
+  {
+    "id": "field-rations",
+    "name": "Field Rations",
+    "type": "gear",
+    "ability_cost": "[action]",
+    "cost": "5",
+    "effect": "This fighter heals 2 Wounds. One-use per game.",
+    "m": 0, "ws": 0, "bs": 0, "def": 0, "w": 0
+  },
+  {
+    "id": "flak-armour",
+    "name": "Flak Armour",
+    "type": "gear",
+    "ability_cost": "[passive]",
+    "cost": "5",
+    "effect": "This fighter gains +1 Defence.",
+    "m": 0, "ws": 0, "bs": 0, "def": 1, "w": 0
+  },
+  {
+    "id": "scout-armour",
+    "name": "Scout Armour",
+    "type": "gear",
+    "ability_cost": "[passive]",
+    "cost": "10",
+    "effect": "This fighter gains +2 Defence.",
+    "m": 0, "ws": 0, "bs": 0, "def": 2, "w": 0
+  },
+  {
+    "id": "gas-mask",
+    "name": "Gas Mask",
+    "type": "gear",
+    "ability_cost": "[passive]",
+    "cost": "5",
+    "effect": "This fighter is immune to \"Gas\" or \"Toxic\" weapon traits.",
+    "m": 0, "ws": 0, "bs": 0, "def": 0, "w": 0
+  },
+  {
+    "id": "grapnel-line",
+    "name": "Grapnel Line",
+    "type": "gear",
+    "ability_cost": "[passive]",
+    "cost": "10",
+    "effect": "Climb vertical surfaces up to 6” high without spending extra movement.",
+    "m": 0, "ws": 0, "bs": 0, "def": 0, "w": 0
+  },
+  {
+    "id": "grav-chute",
+    "name": "Grav-chute",
+    "type": "gear",
+    "ability_cost": "[passive]",
+    "cost": "5",
+    "effect": "This fighter can move down any vertical distance for free without triggering a fall.",
+    "m": 0, "ws": 0, "bs": 0, "def": 0, "w": 0
+  },
+  {
+    "id": "holy-icon",
+    "name": "Holy Icon",
+    "type": "gear",
+    "ability_cost": "[passive]",
+    "cost": "10",
+    "effect": "Friendly fighters within 6\" add +1 to Bravery checks.",
+    "m": 0, "ws": 0, "bs": 0, "def": 0, "w": 0
+  },
+  {
+    "id": "infantry-primer",
+    "name": "Infantry Primer",
+    "type": "gear",
+    "ability_cost": "[passive]",
+    "cost": "5",
+    "effect": "This fighter ignores the first failed Bravery test of the game.",
+    "m": 0, "ws": 0, "bs": 0, "def": 0, "w": 0
+  },
+  {
+    "id": "jump-pack",
+    "name": "Jump Pack",
+    "type": "gear",
+    "ability_cost": "[passive]",
+    "cost": "35",
+    "effect": "This fighter gains the Fly runemark and +2 Move.",
+    "m": 2, "ws": 0, "bs": 0, "def": 0, "w": 0
+  },
+  {
+    "id": "magnoculars",
+    "name": "Magnoculars",
+    "type": "gear",
+    "ability_cost": "[double]",
+    "cost": "10",
+    "effect": "Reveal a Stealthed enemy within 12\". They lose Stealth and cannot regain it this round.",
+    "m": 0, "ws": 0, "bs": 0, "def": 0, "w": 0
+  },
+  {
+    "id": "master-crafted-kit",
+    "name": "Master-Crafted Kit",
+    "type": "gear",
+    "ability_cost": "[passive]",
+    "cost": "5",
+    "effect": "Once per game, re-roll a single failed hit roll with a specific weapon.",
+    "m": 0, "ws": 0, "bs": 0, "def": 0, "w": 0
+  },
+  {
+    "id": "medi-pack",
+    "name": "Medi-pack",
+    "type": "gear",
+    "ability_cost": "[double]",
+    "cost": "25",
+    "effect": "Choose a friendly fighter within 1\". That fighter heals 1D3 Wounds.",
+    "m": 0, "ws": 0, "bs": 0, "def": 0, "w": 0
+  },
+  {
+    "id": "medikit",
+    "name": "Medikit",
+    "type": "gear",
+    "ability_cost": "[action]",
+    "cost": "10",
+    "effect": "Heal a friendly fighter within 1\" for 1D6 Wounds.",
+    "m": 0, "ws": 0, "bs": 0, "def": 0, "w": 0
+  },
+  {
+    "id": "neural-processor",
+    "name": "Neural Processor",
+    "type": "gear",
+    "ability_cost": "[passive]",
+    "cost": "15",
+    "effect": "Fighter may use abilities normally in Round 1. Gain +1 to X when using abilities to a max of 6.",
+    "m": 0, "ws": 0, "bs": 0, "def": 0, "w": 0
+  },
+  {
+    "id": "photo-goggles",
+    "name": "Photo Goggles",
+    "type": "gear",
+    "ability_cost": "[passive]",
+    "cost": "5",
+    "effect": "This fighter ignores the effects of Smoke or Darkness when checking Line of Sight.",
+    "m": 0, "ws": 0, "bs": 0, "def": 0, "w": 0
+  },
+  {
+    "id": "power-armour",
+    "name": "Power Armour",
+    "type": "gear",
+    "ability_cost": "[passive]",
+    "cost": "30",
+    "effect": "This fighter gains +3 Defence.",
+    "m": 0, "ws": 0, "bs": 0, "def": 0, "w": 0
+  },
+  {
+    "id": "purity-seals",
+    "name": "Purity Seals",
+    "type": "gear",
+    "ability_cost": "[passive]",
+    "cost": "5",
+    "effect": "Immune to 'Fear' or 'Corruption' effects.",
+    "m": 0, "ws": 0, "bs": 0, "def": 0, "w": 0
+  },
+  {
+    "id": "refractor-field",
+    "name": "Refractor Field",
+    "type": "gear",
+    "ability_cost": "[double]",
+    "cost": "15",
+    "effect": "Until the end of the round, each time this fighter suffers damage, roll a dice; on a 5+, ignore that damage.",
+    "m": 0, "ws": 0, "bs": 0, "def": 0, "w": 0
+  },
+  {
+    "id": "repair-kit",
+    "name": "Repair Kit",
+    "type": "gear",
+    "ability_cost": "[double]",
+    "cost": "5",
+    "effect": "Target a fighter within 6 with the Cybernetic trait, remove X wounds from them.",
+    "m": 0, "ws": 0, "bs": 0, "def": 0, "w": 0
+  },
+  {
+    "id": "servo-skull",
+    "name": "Servo-Skull",
+    "type": "gear",
+    "ability_cost": "[passive]",
+    "cost": "10",
+    "effect": "This fighter can attempt \"Interact\" actions from up to 3\" away instead of 1\".",
+    "m": 0, "ws": 0, "bs": 0, "def": 0, "w": 0
+  },
+  {
+    "id": "shield",
+    "name": "Shield",
+    "type": "gear",
+    "ability_cost": "[passive]",
+    "cost": "5",
+    "effect": "This fighter gains +1 Defence against Melee attacks.",
+    "m": 0, "ws": 0, "bs": 0, "def": 0, "w": 0
+  },
+  {
+    "id": "shovel",
+    "name": "Shovel",
+    "type": "gear",
+    "ability_cost": "[action]",
+    "cost": "10",
+    "effect": "Place a \"Hasty Cover\" marker. Provides Light Cover to one fighter.",
+    "m": 0, "ws": 0, "bs": 0, "def": 0, "w": 0
+  },
+  {
+    "id": "silencer",
+    "name": "Silencer",
+    "type": "gear",
+    "ability_cost": "[passive]",
+    "cost": "5",
+    "effect": "An equipped Pistol gains the Silent trait.",
+    "m": 0, "ws": 0, "bs": 0, "def": 0, "w": 0
+  },
+  {
+    "id": "smoke-canister",
+    "name": "Smoke Canister",
+    "type": "gear",
+    "ability_cost": "[double]",
+    "cost": "15",
+    "effect": "Create 3\" smoke area within 6\" (Blocks LoS). Once per game.",
+    "m": 0, "ws": 0, "bs": 0, "def": 0, "w": 0
+  },
+  {
+    "id": "synthetic-grafting",
+    "name": "Synthetic Grafting",
+    "type": "gear",
+    "ability_cost": "[passive]",
+    "cost": "10",
+    "effect": "The \"one move action per turn\" restriction is removed.",
+    "m": 0, "ws": 0, "bs": 0, "def": 0, "w": 0
+  },
+  {
+    "id": "the-emperors-tarot",
+    "name": "The Emperor's Tarot",
+    "type": "gear",
+    "ability_cost": "[triple]",
+    "cost": "15",
+    "effect": "Roll dice equal to ability value. For each 4+, gain 1 Wild Dice.",
+    "m": 0, "ws": 0, "bs": 0, "def": 0, "w": 0
+  },
+  {
+    "id": "vox-bead",
+    "name": "Vox bead",
+    "type": "gear",
+    "ability_cost": "[passive]",
+    "cost": "5",
+    "effect": "Ignore range for abilities if the target also has a Comlink.",
+    "m": 0, "ws": 0, "bs": 0, "def": 0, "w": 0
+  },
+  {
+    "id": "vox-caster",
+    "name": "Vox-caster",
+    "type": "gear",
+    "ability_cost": "[passive]",
+    "cost": "10",
+    "effect": "Increases the range of the Leader's Command ability to 12\".",
+    "m": 0, "ws": 0, "bs": 0, "def": 0, "w": 0
+  },
+  {
+    "id": "vox-scrambler",
+    "name": "Vox Scrambler",
+    "type": "gear",
+    "ability_cost": "[double]",
+    "cost": "10",
+    "effect": "Enemies within 6” cannot use communication abilities this round.",
+    "m": 0, "ws": 0, "bs": 0, "def": 0, "w": 0
+  },
+  {
+    "id": "energy-shield",
+    "name": "Energy Shield",
+    "type": "gear",
+    "ability_cost": "[passive]",
+    "cost": "35",
+    "effect": "This model gains a 4+ Invulnerable Save (ignore damage on a 4+).",
+    "m": 0, "ws": 0, "bs": 0, "def": 0, "w": 0
+  },
+  {
+    "id": "markerlight",
+    "name": "Markerlight",
+    "type": "gear",
+    "ability_cost": "[action]",
+    "cost": "5",
+    "effect": "Simple Action to paint targets. Friendly Fighters gain +1 Attack dice against this target.",
+    "m": 0, "ws": 0, "bs": 0, "def": 0, "w": 0
+  },
+  {
+    "id": "auxiliary-grenade-launcher",
+    "name": "Auxiliary Grenade Launcher",
+    "type": "gear",
+    "ability_cost": "[passive]",
+    "cost": "5",
+    "effect": "Grenades fired by this Fighter have a range of 0-12.",
+    "m": 0, "ws": 0, "bs": 0, "def": 0, "w": 0
+  },
+  {
+    "id": "storm-shield",
+    "name": "Storm Shield",
+    "type": "gear",
+    "ability_cost": "[passive]",
+    "cost": "10",
+    "effect": "This shield gives +1 Defense. Requires a hand to use.",
+    "m": 0, "ws": 0, "bs": 0, "def": 1, "w": 0
+  },
+  {
+    "id": "cybernetic",
+    "name": "Cybernetic",
+    "type": "gear",
+    "ability_cost": "[passive]",
+    "cost": "-",
+    "effect": "This fighter has an parts of their anatomy replaced with cybernetics. They gain +1 def.",
+    "m": 0, "ws": 0, "bs": 0, "def": 1, "w": 0
+  },
+  {
+    "id": "resurrection-orb",
+    "name": "Resurrection Orb",
+    "type": "gear",
+    "ability_cost": "[triple]",
+    "cost": "30",
+    "effect": "Once per battle, you may reroll failed Reanimation Protocols checks for all friendly Necrons within 6\".",
+    "m": 0, "ws": 0, "bs": 0, "def": 0, "w": 0
+  },
+  {
+    "id": "phase-shifter",
+    "name": "Phase Shifter",
+    "type": "gear",
+    "ability_cost": "[passive]",
+    "cost": "25",
+    "effect": "This fighter gains a 4+ Invulnerable Save.",
+    "m": 0, "ws": 0, "bs": 0, "def": 0, "w": 0
+  },
+  {
+    "id": "quantum-shielding",
+    "name": "Quantum Shielding",
+    "type": "gear",
+    "ability_cost": "[passive]",
+    "cost": "20",
+    "effect": "This fighter cannot be damaged by attacks with the 'Lethal' or 'Melta' traits.",
+    "m": 0, "ws": 0, "bs": 0, "def": 0, "w": 0
+  },
+  {
+    "id": "chronometron",
+    "name": "Chronometron",
+    "type": "gear",
+    "ability_cost": "[double]",
+    "cost": "15",
+    "effect": "Target a friendly fighter within 6\". Until the next round, attackers suffer -1 to hit that fighter.",
+    "m": 0, "ws": 0, "bs": 0, "def": 0, "w": 0
+  }
+]
