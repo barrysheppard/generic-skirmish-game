@@ -1,6 +1,6 @@
 ---
-sidebar_label: '9. Design Guide'
-sidebar_position: 9
+sidebar_label: '10. Design Guide'
+sidebar_position: 10
 ---
 
 import { PointCalculator, WeaponCalculator } from '@site/src/components/DesignCalc';
@@ -13,9 +13,12 @@ Throughout this document there are a number of 'Philosophy' boxes that describe 
 
 Dice are rolled once and then the effects calculated. Rolling dice again might seem like a small thing, but if both players rerolled every dice roll in the game it would significantly increase the amount of time. As such, we avoid any ability that would reroll dice. If we want a similar effect, we can have abilities that modify dice (add +1 to any dice roll) or change the target of dice (count 5s as crits).
 
-## Points are balanced, Ability Dice are balanced
+## Points are balanced
 
 When we work with the raw stats of a Fighter or a Weapon we give those changes a points cost. Then when two players face off and have similar points they should have a roughly balanced game.
+
+## Ability Dice are balanced
+
 When it comes to abilities, as players are limited by the Ability Dice system in the number of abilities they can use. As such, a player with a [double] and 1 ability to use, is roughly balanced with a player who has a [double] and 5 abilities to use. The player with more abilities will have more options but both players will still end up using a single [double]. As such, rewarding players who win games with extra Abilities is a good way to reward but still retain some amount of balance.
 
 
@@ -27,7 +30,7 @@ The values below represent the total point contribution for each stat level. Sum
 | Stat | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 |
 | :--- | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
 | **Movement** | -15 | -10 | **0** | +10 | +25 | +35 | +45 | +50 |
-| **Defense** | -5 | **0** | +5 | +10 | +20 | +30 | +40 | +50 |
+| **Defence** | -5 | **0** | +5 | +10 | +20 | +30 | +40 | +50 |
 | **Ballistic Skill** | -5 | **0** | +5 | +10 | +20 | +30 | +40 | +50 |
 | **Weapon Skill** | -5 | **0** | +5 | +10 | +20 | +30 | +40 | +50 |
 
@@ -93,6 +96,6 @@ As a general rule of thumb:
 - A [quad] should be worth 2 or 3 actions.
 
 :::info Philosophy
-Philosophy: These are intended to be minor effects outside of normal ability dice system. As an example, a fighter may have a passive ability that allows them to change a missed dice into a hit if they have no hits. This ability is always active and does not require dice or actions to activate.
+These are intended to be minor effects outside of normal ability dice system. As an example, a fighter may have a passive ability that allows them to change a missed dice into a hit if they have no hits. This ability is always active and does not require dice or actions to activate.
 :::
 

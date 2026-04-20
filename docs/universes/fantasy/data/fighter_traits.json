@@ -1,74 +1,51 @@
 [
   {
-    "id": "assassins-mark",
     "name": "Assassin’s Mark",
     "type": "fighter-trait",
     "ability_cost": "[triple]",
     "cost": "-",
-    "effect": "Mark a visible enemy within 6\". While within 1\" of a friendly with a Stealth token, that enemy has -1 Defense.",
-    "m": 0, "ws": 0, "bs": 0, "def": 0, "w": 0
+    "effect": "Mark a visible enemy within 6\". While within 1\" of a friendly with a Stealth token, that enemy has -1 Defence."
   },
   {
-    "id": "fade-into-shadows",
     "name": "Fade into Shadows",
     "type": "fighter-trait",
     "ability_cost": "[double]",
     "cost": "-",
-    "effect": "This fighter gains a Stealth token.",
-    "m": 0, "ws": 0, "bs": 0, "def": 0, "w": 0
+    "effect": "This fighter gains a Stealth token."
   },
   {
-    "id": "leader",
     "name": "Leader",
     "type": "fighter-trait",
     "ability_cost": "[triple]",
     "cost": "-",
-    "effect": "Choose two friendly fighters within 6\" of this model. Both fighters may immediately perform a free 3\" move (this cannot be used to leave Melee Range).",
-    "m": 0, "ws": 0, "bs": 0, "def": 0, "w": 0
+    "effect": "Choose two friendly fighters within 6\" of this model. Both fighters may immediately perform a free 3\" move (this cannot be used to leave Melee Range)."
   },
   {
-    "id": "shadow-step",
     "name": "Shadow Step",
     "type": "fighter-trait",
     "ability_cost": "[double]",
     "cost": "-",
-    "effect": "Choose a point within 6” that is not visible to any enemy. Teleport this fighter to that point.",
-    "m": 0, "ws": 0, "bs": 0, "def": 0, "w": 0
+    "effect": "Choose a point within 6” that is not visible to any enemy. Teleport this fighter to that point."
   },
   {
-    "id": "silent-ambush",
     "name": "Silent Ambush",
     "type": "fighter-trait",
     "ability_cost": "[triple]",
     "cost": "-",
-    "effect": "This fighter makes a bonus Move if they have a Stealth token and are not visible.",
-    "m": 0, "ws": 0, "bs": 0, "def": 0, "w": 0
+    "effect": "This fighter makes a bonus Move if they have a Stealth token and are not visible."
   },
   {
-    "id": "smoke-bomb",
     "name": "Smoke Bomb",
     "type": "fighter-trait",
     "ability_cost": "[double]",
     "cost": "-",
-    "effect": "Friendly fighters within 6\" gain a Stealth token if they are not currently visible to enemy fighters.",
-    "m": 0, "ws": 0, "bs": 0, "def": 0, "w": 0
+    "effect": "Friendly fighters within 6\" gain a Stealth token if they are not currently visible to enemy fighters."
   },
   {
-    "id": "vanish",
     "name": "Vanish",
     "type": "fighter-trait",
     "ability_cost": "[quad]",
     "cost": "-",
-    "effect": "Remove fighter from board, set up 6\"+ from enemies. Gain Stealth token.",
-    "m": 0, "ws": 0, "bs": 0, "def": 0, "w": 0
-  },
-  {
-    "id": "reanimation-protocols",
-    "name": "Reanimation Protocols",
-    "type": "fighter-trait",
-    "ability_cost": "[passive]",
-    "cost": "-",
-    "effect": "In the End Phase, if this fighter has been taken Out of Action but not removed from the campaign, roll a dice. On a 5+, they return to the board with 1 Wound remaining.",
-    "m": 0, "ws": 0, "bs": 0, "def": 0, "w": 0
+    "effect": "Remove fighter from board, set up 6\"+ from enemies. Gain Stealth token."
   }
 ]

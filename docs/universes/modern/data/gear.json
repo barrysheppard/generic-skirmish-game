@@ -2,7 +2,7 @@
   {
     "name": "Ballistic Shield",
     "ability_cost": "[passive]",
-    "effect": "+1 Defense while in cover. Can be used for Shield Strike attacks.",
+    "effect": "+1 Defence while in cover. Can be used for Shield Strike attacks.",
     "cost": 15,
     "type": "gear",
     "def": 1  },
@@ -16,14 +16,14 @@
   {
     "name": "Tactical Plate Carrier",
     "ability_cost": "[passive]",
-    "effect": "+1 Defense. Standard issue for frontline operators.",
+    "effect": "+1 Defence. Standard issue for frontline operators.",
     "cost": 25,
     "type": "gear",
     "def": 1  },
   {
     "name": "EOD Juggernaut Suit",
     "ability_cost": "[passive]",
-    "effect": "+2 Defense, but reduces mobility significantly.",
+    "effect": "+2 Defence, but reduces mobility significantly.",
     "cost": 40,
     "type": "gear",
     "def": 2,

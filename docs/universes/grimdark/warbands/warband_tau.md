@@ -18,22 +18,15 @@ The T'au Empire prioritizes overwhelming firepower and advanced drone support. W
 
 ### Fire Caste Cadre
 
-<FactionTable faction="Adeptus Mechanicus" /> 
+<FactionTable faction="T'au Empire" /> 
 
-<FactionEquipmentSummary faction="Adeptus Mechanicus" />
+<FactionEquipmentSummary faction="T'au Empire" />
 
 ### Pulse Weaponry
-<FactionWeaponTable faction="Adeptus Astartes" />
+<FactionWeaponTable faction="T'au Empire" />
 
 ### Pulse Logistics (Gear)
-<FactionGearTable faction="Adeptus Astartes" />
+<FactionGearTable faction="T'au Empire" />
 
 ### Pulse Abilities
-<FactionAbilityTable faction="Adeptus Astartes" />
-
-
-#### Sample Unit Totals
-* **Strike Team Warrior:** <Total fighterId="fire-warrior" weapons={['pulse-rifle']} /> Credits
-* **XV25 Stealth Suit:** <Total fighterId="stealth-suit" weapons={['burst-cannon']} /> Credits
-* **Gun Drone:** <Total fighterId="drone-chassis" weapons={['twin-pulse-carbines']} /> Credits
-* **Shield Drone:** <Total fighterId="drone-chassis" weapons={['energy-shield']} /> Credits
+<FactionAbilityTable faction="T'au Empire" />

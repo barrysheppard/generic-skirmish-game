@@ -2,7 +2,7 @@
   {
     "name": "Shield",
     "ability_cost": "[passive]",
-    "effect": "+1 Defense",
+    "effect": "+1 Defence",
     "cost": 10,
     "type": "gear",
     "def": 1,
@@ -19,7 +19,7 @@
   {
     "name": "Medium Armour",
     "ability_cost": "[passive]",
-    "effect": "+1 Defense",
+    "effect": "+1 Defence",
     "cost": 20,
     "type": "gear",
     "def": 1,
@@ -28,7 +28,7 @@
   {
     "name": "Heavy Armour",
     "ability_cost": "[passive]",
-    "effect": "+2 Defense, -1 Movement",
+    "effect": "+2 Defence, -1 Movement",
     "cost": 30,
     "type": "gear",
     "def": 2,
@@ -41,7 +41,7 @@
     "effect": "10 Movement, +4 Wounds",
     "cost": 50,
     "type": "gear",
-    "m": 10, 
+    "m": 4, 
     "w": 4,
     "traits": ["Mount"]
   }

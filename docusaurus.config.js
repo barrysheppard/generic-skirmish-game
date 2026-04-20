@@ -28,8 +28,8 @@ const config = {
   
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
-  //organizationName: 'facebook', // Usually your GitHub org/user name.
-  //projectName: 'docusaurus', // Usually your repo name.
+  //  organizationName: 'barrysheppard', // Usually your GitHub org/user name.
+  //  projectName: 'generic-skirmish-game', // Usually your repo name.
 
   // Set this to 'ignore' to skip anchor checks
   onBrokenAnchors: 'ignore', 
@@ -96,12 +96,6 @@ const config = {
             sidebarId: 'CoreSidebar',
             position: 'left',
             label: 'Core Rules',
-          },
-          {
-            type: 'docSidebar',
-            sidebarId: 'CampaignSidebar',
-            position: 'left',
-            label: 'Campaign',
           },
           {
             type: 'docSidebar',

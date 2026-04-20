@@ -33,9 +33,3 @@ A Chaos warband is a dark reflection of the Imperium, pairing the genetic perfec
 ### Void Abilities
 
 <FactionAbilityTable faction="Heretic Astartes" />
-
-#### Sample Unit Totals
-* [**Meat Shield**](#chaos-cultist): [Cultist](#chaos-cultist) + [Autogun](../weapons#autogun) = <Total fighterId="chaos-cultist" weapons={['autogun']} /> Credits
-* [**Traitor Marine**](#legionary): [Legionary](#legionary) + [Boltgun](#boltgun) = <Total fighterId="legionary" weapons={['boltgun']} /> Credits
-* [**Melee Legionary**](#legionary): [Legionary](#legionary) + [Astartes Chainsword](#astartes-chainsword) + [Bolt Pistol](../weapons#bolt-pistol) = <Total fighterId="legionary" weapons={['astartes-chainsword', 'bolt-pistol']} /> Credits
-* [**Chaos Lord**](#aspiring-champion): [Aspiring Champion](#aspiring-champion) + [Daemon Blade](../weapons#daemon-blade) + [Bolt Pistol](../weapons#bolt-pistol) = <Total fighterId="aspiring-champion" weapons={['daemon-blade', 'bolt-pistol']} /> Credits

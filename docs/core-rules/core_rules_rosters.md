@@ -22,7 +22,9 @@ The exact requirements for a Warband will depend on the setting and possibly Mis
 - One fighter in the Warband must be the **Leader**, usually this will be the best fighter in the Warband.
 - Up to 2 other fighters can have the **Champion** trait, these are powerful fighters similar to the **Leader**.
 - Any number of other Fighters up to a maximum of 15 fighters total (including the leader and any champions).
-- The total points of Fighters and Gear must be less than or equal to 1000 points.
+- The total points of Fighters and Gear must be less than or equal to 1000 points (this total may change depending on campaigns, universe, and missions ).
+
+In some cases, the points cost on the Roster will be different to the points cost in the Warband. This reflects minor benefits that expand the flexibilty of a Fighter rather than the raw power. This means an experience Warband could have the same points as a new Warband, but the experienced one will have more options to pick from during the game.
 
 Details of Warbands and Fighter profiles will be covered in separate setting documents.
 

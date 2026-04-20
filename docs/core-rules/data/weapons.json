@@ -1,0 +1,5 @@
+[
+  { "name": "Unarmed", "range": "0-1", "att": "2", "dmg": "1/2", "traits": [], "cost": "-" },
+  { "name": "Knife", "range": "0-1", "att": "3", "dmg": "1/3", "traits": ["Silent"], "cost": "25" },
+  { "name": "Rifle", "range": "3-15", "att": "3", "dmg": "2/3", "traits": ["Reliable"], "cost": "60" }
+]

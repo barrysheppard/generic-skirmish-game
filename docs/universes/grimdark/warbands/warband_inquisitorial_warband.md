@@ -18,23 +18,18 @@ Inquisitors operate outside the standard chain of command, recruiting anyone fro
 
 ### The Retinue
 
-<FactionTable faction="Adeptus Mechanicus" /> 
+<FactionTable faction="Inquisition" /> 
 
-<FactionEquipmentSummary faction="Adeptus Mechanicus" />
+<FactionEquipmentSummary faction="Inquisition" />
 
 ### Armoury of the Holy Ordos
 
-<FactionWeaponTable faction="Adeptus Astartes" />
+<FactionWeaponTable faction="Inquisition" />
 
 ### Void Logistics (Gear)
 
-<FactionGearTable faction="Adeptus Astartes" />
+<FactionGearTable faction="Inquisition" />
 
 ### Void Abilities
 
-<FactionAbilityTable faction="Adeptus Astartes" />
-
-
-#### Sample Unit Totals
-* **The Lord Inquisitor:** Inquisitor + Inq. Bolter + Force Sword = <Total fighterId="inquisitor" weapons={['boltgun', 'force-sword']} /> Credits
-* **Holy Protector:** Crusader + Power Sword + Shield = <Total fighterId="crusader" weapons={['power-sword', 'shield']} /> Credits
+<FactionAbilityTable faction="Inquisition" />

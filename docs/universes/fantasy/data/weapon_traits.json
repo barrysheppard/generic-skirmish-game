@@ -23,7 +23,7 @@
   {
     "name": "Crushing",
     "ability_cost": "[double]",
-    "effect": "Until the end of the battle round, increase the Weapon Skill of attacks with this weapon by 2.",
+    "effect": "Until the end of the Mission round, increase the Weapon Skill of attacks with this weapon by 2.",
     "cost": "-",
     "type": "weapon-trait"
   },
@@ -44,14 +44,14 @@
   {
     "name": "Piercing",
     "ability_cost": "[double]",
-    "effect": "Until the end of the battle round, attacks with this weapon crit one step earlier (e.g. if it would crit on a 6 it now also crits on a 5, if it couldn't crit then it would crit on a 6).",
+    "effect": "Until the end of the Mission round, attacks with this weapon crit one step earlier (e.g. if it would crit on a 6 it now also crits on a 5, if it couldn't crit then it would crit on a 6).",
     "cost": "-",
     "type": "weapon-trait"
   },
   {
     "name": "Precise",
     "ability_cost": "[double]",
-    "effect": "Until the end of the battle round, add 1 to the Attacks characteristic of attack actions made by this weapon.",
+    "effect": "Until the end of the Mission round, add 1 to the Attacks characteristic of attack actions made by this weapon.",
     "cost": "-",
     "type": "weapon-trait"
   },

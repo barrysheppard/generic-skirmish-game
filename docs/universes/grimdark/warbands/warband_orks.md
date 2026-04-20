@@ -18,25 +18,18 @@ Orks are brutal melee combatants who rely on high wound counts and "Dakka" (volu
 
 ### The Green Tide
 
-<FactionTable faction="Adeptus Mechanicus" /> 
+<FactionTable faction= "Orks" /> 
 
-<FactionEquipmentSummary faction="Adeptus Mechanicus" />
+<FactionEquipmentSummary faction="Orks" />
 
 ### Ork Armory
 
-<FactionWeaponTable faction="Adeptus Astartes" />
+<FactionWeaponTable faction="Orks" />
 
 ### Ork Logistics (Gear)
 
-<FactionGearTable faction="Adeptus Astartes" />
+<FactionGearTable faction="Orks" />
 
 ### Ork Abilities
 
-<FactionAbilityTable faction="Adeptus Astartes" />
-
-
-
-#### Sample Unit Totals
-* **Slugga Boy:** <Total fighterId="ork-boy" weapons={['slugga', 'choppa']} /> Credits
-* **Shoota Boy:** <Total fighterId="ork-boy" weapons={['shoota']} /> Credits
-* **Nob Boss:** <Total fighterId="nob" weapons={['power-klaw', 'slugga']} /> Credits
+<FactionAbilityTable faction="Orks" />

@@ -18,24 +18,19 @@ The Kroot are master trackers and fierce predators. Unlike their T'au employers,
 
 ### The Kinbands
 
-<FactionTable faction="Adeptus Mechanicus" /> 
+<FactionTable faction="Kroot" /> 
 
-<FactionEquipmentSummary faction="Adeptus Mechanicus" />
+<FactionEquipmentSummary faction="Kroot" />
 
 ### Primitive Wargear
 
-<FactionWeaponTable faction="Adeptus Astartes" />
+<FactionWeaponTable faction="Kroot" />
 
 ### Kroot Logistics (Gear)
 
-<FactionGearTable faction="Adeptus Astartes" />
+<FactionGearTable faction="Kroot" />
 
 ### Kroot Abilities
 
-<FactionAbilityTable faction="Adeptus Astartes" />
+<FactionAbilityTable faction="Kroot" />
 
-
-#### Sample Unit Totals
-* **Carnivore Tracker:** <Total fighterId="kroot-carnivore" weapons={['kroot-rifle']} /> Credits
-* **Kroot Sniper:** <Total fighterId="farstalker" weapons={['kroot-rifle', 'kroot-bow']} /> Credits
-* **Krootox Heavy:** <Total fighterId="krootox-rider" weapons={['krootox-gun']} /> Credits

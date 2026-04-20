@@ -39,7 +39,3 @@ The Astra Militarum relies on standardized equipment, rigid discipline, and the 
 
 
 ---
-
-#### Sample Unit Totals
-* [**Platoon Commander**](#veteran): [Veteran](#veteran) + [Bolt Pistol](../weapons#bolt-pistol) + [Chainsword](../weapons#chainsword) + [Vox-caster](#vox-caster) = <Total fighterId="veteran" weapons={['bolt-pistol', 'chainsword', 'vox-caster']} /> Credits
-* [**Bullgryn**](#ogryn): [Ogryn](#ogryn) + [Ripper Gun](#ripper-gun) = <Total fighterId="ogryn" weapons={['ripper-gun']} /> Credits

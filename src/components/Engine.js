@@ -195,8 +195,20 @@ export function FactionGearTable({ faction, fighters = [], traits = [] }) {
             <th style={{ width: '20%', padding: '10px', textAlign: 'left' }}>Gear Item</th>
             <th style={{ width: '15%', padding: '10px' }}>Usage</th>
             <th style={{ padding: '10px', textAlign: 'left' }}>Effect</th>
-            <th style={{ width: '12%', padding: '10px' }}>Cost</th>
-          </tr>
+              <th style={{ width: '12%', padding: '10px' }}>
+                <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+                  <span>Cost</span>
+                  <span style={{ 
+                    fontSize: '0.6rem', 
+                    fontWeight: 'normal', 
+                    opacity: 0.7, 
+                    lineHeight: '1.2',
+                    marginTop: '2px' 
+                  }}>
+                    Warband/Roster
+                  </span>
+                </div>
+              </th>          </tr>
         </thead>
         <tbody>
           {factionGear.map((item) => (
@@ -217,6 +229,7 @@ export function FactionGearTable({ faction, fighters = [], traits = [] }) {
     </div>
   );
 }
+
 /**
  * COMPONENT: FactionAbilityTable
  * Displays innate abilities (fighter-traits) for a faction.
@@ -271,26 +284,44 @@ export function FactionAbilityTable({ faction, fighters = [], traits = [] }) {
   );
 }
 
-
-export const TraitGallery = ({ type, traits = [] }) => {
-  // Debug: Uncomment the line below to see what data is actually arriving
-  // console.log('Gallery Type:', type, 'Traits Count:', traits?.length);
-
+export const TraitGallery = ({ type, include = [], traits = [], showCost = true }) => {
   const filteredTraits = traits.filter(t => {
-    // Handle potential undefined types or case mismatch
+    // 1. If 'include' names are provided, check if the trait name matches any in the list
+    if (include.length > 0) {
+      return include.some(name => name.toLowerCase() === t.name.toLowerCase());
+    }
+    
+    // 2. Otherwise, fall back to the standard type filtering
     return t.type?.toLowerCase() === type?.toLowerCase();
   });
 
-  if (filteredTraits.length === 0) return <p>No traits found for {type}.</p>;
+  if (filteredTraits.length === 0) {
+    return <p>No traits found{type ? ` for ${type}` : ""}.</p>;
+  }
 
   return (
     <table>
       <thead>
         <tr>
           <th>Name</th>
-          <th>Usage</th>
+          <th>Activation Cost</th>
           <th>Effect</th>
-          <th>Cost</th>
+          {/* Only render the header if showCost is true */}
+          {showCost && <th style={{ width: '12%', padding: '10px' }}>
+            <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+              <span>Cost</span>
+              <span style={{ 
+                fontSize: '0.6rem', 
+                fontWeight: 'normal', 
+                opacity: 0.7, 
+                lineHeight: '1.2',
+                marginTop: '2px' 
+              }}>
+                Warband/Roster
+              </span>
+            </div>
+          </th>
+}
         </tr>
       </thead>
       <tbody>
@@ -299,10 +330,7 @@ export const TraitGallery = ({ type, traits = [] }) => {
           .map(trait => {
             const safeId = trait.name.toLowerCase().replace(/\s+/g, '-');
             
-            // 1. Get the raw type
             const rawType = trait.displayType || trait.type || "";
-
-            // 2. Format: replace hyphens with spaces and capitalize each word
             const formattedType = rawType
               .split('-')
               .map(word => word.charAt(0).toUpperCase() + word.slice(1))
@@ -317,14 +345,17 @@ export const TraitGallery = ({ type, traits = [] }) => {
                     opacity: 0.7, 
                     fontStyle: 'italic', 
                     marginTop: '2px',
-                    textTransform: 'none' // Ensures our manual capitalization stays exact
+                    textTransform: 'none'
                   }}>
                     {formattedType}
                   </div>
                 </td>
                 <td><code>{trait.ability_cost || '[passive]'}</code></td>
                 <td>{trait.effect}</td>
-                <td>{trait.cost && trait.cost !== "-" ? trait.cost : '-'}</td>
+                {/* Only render the cell if showCost is true */}
+                {showCost && (
+                  <td>{trait.cost && trait.cost !== "-" ? trait.cost : '-'}</td>
+                )}
               </tr>
             );
         })}
@@ -333,23 +364,24 @@ export const TraitGallery = ({ type, traits = [] }) => {
   );
 };
 
+export function Total({ fighter: fighterName, weapons: chosenWeaponNames = [], fighters = [], weaponsLibrary = [] }) {
+  // 1. Find Fighter by NAME (matches the Bridge lookup style)
+  const selectedFighter = fighters.find(f => 
+    String(f.name || '').toLowerCase().trim() === String(fighterName || '').toLowerCase().trim()
+  );
 
-export function Total({ fighterId, weapons: chosenWeaponNames = [], fighters = [], weaponsLibrary = [] }) {
-  // 1. Find Fighter by ID (This remains ID-based as it's the unique key)
-  const selectedFighter = fighters.find(f => f.id === fighterId);
+  // If no fighter found, return 0 or a dash
   if (!selectedFighter) return <span>0</span>;
   
   const fighterBaseCost = Number(selectedFighter.cost) || 0;
 
-  // 2. Normalize weapon names from MDX
+  // 2. Normalize weapon names (handle single string or array of strings)
   const weaponNamesToCalculate = Array.isArray(chosenWeaponNames) ? chosenWeaponNames : [chosenWeaponNames];
 
   // 3. Calculate Weapon Costs based on NAME
   const totalWeaponCost = weaponNamesToCalculate.reduce((runningSum, inputName) => {
     if (!inputName) return runningSum;
 
-    // We search the library for a weapon where the 'name' matches exactly.
-    // We use .toLowerCase() on both sides to ensure "Autogun" matches "autogun"
     const foundWeapon = weaponsLibrary.find(w => 
       String(w.name || '').toLowerCase().trim() === String(inputName).toLowerCase().trim()
     );
@@ -358,7 +390,7 @@ export function Total({ fighterId, weapons: chosenWeaponNames = [], fighters = [
     return runningSum + price;
   }, 0);
 
-  // 4. Final Math
+  // 4. Return the combined total
   return <span>{fighterBaseCost + totalWeaponCost}</span>;
 }
 
@@ -460,6 +492,8 @@ export function FactionEquipmentSummary({ faction, fighters = [], weapons = [], 
     </ul>
   );
 }
+
+
 /**
  * COMPONENT: TraitStat
  * Accesses specific fields (stat) of a trait by ID or Name.
@@ -518,4 +552,47 @@ export function FighterStat({ fighterId, stat, fighters = [], traits = [], baseP
 
   // 3. Return standard stats (M, WS, BS, etc.)
   return <span>{value !== undefined ? value : '-'}</span>;
+}
+
+
+/**
+ * COMPONENT: FactionAutoRegistry
+ * Automatically finds all unique factions in the fighters array
+ * and renders a section for each.
+ */
+export function FactionAutoRegistry({ fighters, traits, weapons, basePath }) {
+  // 1. Extract unique factions from the fighters data
+  const uniqueFactions = [...new Set(fighters.flatMap(f => 
+    Array.isArray(f.faction) ? f.faction : [f.faction]
+  ))].sort();
+
+  return (
+    <div className="faction-auto-registry">
+      {uniqueFactions.map((factionName) => (
+        <section key={factionName} style={{ marginBottom: '3rem' }}>
+          <h2 id={factionName.toLowerCase().replace(/\s+/g, '-')}>
+            {factionName}
+          </h2>
+          
+          <p><strong>Fighter Profiles</strong></p>
+          <FactionTable 
+            faction={factionName} 
+            fighters={fighters} 
+            traits={traits} 
+            basePath={basePath} 
+          />
+          
+          <p><strong>Equipment Summary</strong></p>
+          <FactionEquipmentSummary 
+            faction={factionName} 
+            fighters={fighters} 
+            weapons={weapons} 
+            traits={traits} 
+          />
+          
+          <hr style={{ margin: '2rem 0' }} />
+        </section>
+      ))}
+    </div>
+  );
 }

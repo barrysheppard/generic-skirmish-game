@@ -3,6 +3,8 @@ sidebar_label: '3. Fighters'
 sidebar_position: 3
 ---
 
+import { TraitGallery } from './js/settings';
+
 # Fighters
 
 ## 3.0 Fighter Characteristics {#4.1-fighter-characteristics}
@@ -16,7 +18,7 @@ Each fighter in the game is defined by a set of core characteristics which indic
 | **Move (M)** | The number of inches a fighter can move in a single move action. |
 | **Weapon Skill (WS)** | This represents the fighter’s ability to inflict damage with a melee weapon. This can represent a fighter’s ability to perfectly place an attack or their ability to smash through armour with raw strength. |
 | **Ballistic Skill (BS)** | This reflects the combination of perception and dexterity needed to use a ranged weapon. |
-| **Defense (Def)** | Represents how difficult the fighter is to wound, whether that is their skill to avoid being hit or toughness to avoid being injured when hit. |
+| **Defence (Def)** | Represents how difficult the fighter is to wound, whether that is their skill to avoid being hit or toughness to avoid being injured when hit. |
 | **Wounds (W)** | The total amount of damage a fighter can take before being removed from play. Fighters with higher Wound values are harder to eliminate. |
 | **Cost** | The cost of including this fighter in your Warband. Used during Warband creation to maintain balance between Warbands. |
 
@@ -33,8 +35,8 @@ By default, they will have the Unarmed weapon. For more information see the [Wea
 
 While this is assumed to be the default, setting packs may take a different approach for their own reasons (e.g. a gladiatorial pack might have bigger health pools with the goal of having fighters between two fighters last longer). Fighter profiles and points will be provided in the setting pack which is separate to this core rules document.
 
-:::info Philosophy
- In this variant, Toughness is changed to Defense and Strength is changed into Weapon Skill and Ballistic Skill. As these characteristics change the ‘to hit’ value, these phrases seem more appropriate. These Skills are is moved to the core fighter and are separate to the weapon.
+:::warning Change from Warcry
+ In this variant, Toughness is changed to Defence and Strength is changed into Weapon Skill and Ballistic Skill. As these characteristics change the ‘to hit’ value, these phrases seem more appropriate. These Skills are is moved to the core fighter and are separate to the weapon.
  :::
 
 
@@ -42,11 +44,13 @@ While this is assumed to be the default, setting packs may take a different appr
 
 Fighters will also have a number of Traits which indicate special rules for that Fighter. Every trait will reference an Ability of the same name.
 
-| Name | Ability Cost | Effect |
-| :---- | ----- | :---- |
-| **Beast** | \[passive\] | Cannot open doors, climb ladders, or use equipment. Often found on animal or creature-type fighters. |
-| **Fly** | \[passive\] | This fighter can move over terrain and other models without being impeded. They do not need to climb or go around obstacles when moving. They do not take damage from falling.|
+<TraitGallery include={["Fly", "Beast"]} showCost={false} />
+
 
 :::info Philosophy
 All Traits and Abilities and all Abilities are Traits. By aligning everything into this idea, we get a standard that should always make sense.
 :::
+
+:::warning Change from Warcry
+This isn't much of a change, but rather than having symbols for Runemarks we have the word as a Trait. Each Trait matches a unique Ability name rather than comparing runemarks. This means a Fighter may have a lot of Traits.
+ :::

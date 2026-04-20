@@ -3,6 +3,9 @@ sidebar_label: '5. Gear'
 sidebar_position: 5
 ---
 
+import { TraitGallery, WeaponGallery } from './js/settings';
+
+
 # Gear
 
 Gear are items given to a fighter to give them bonuses or extra abilities. This can include weapons, armour, and other equipment. Gear will appear as a list of Traits for the fighter. Each Trait then is in the format of an ability. Weapons are an exception to this as they follow a non-ability format but they essentially modify the Attack action.
@@ -23,24 +26,20 @@ A weapon profile determines how that weapon functions in combat, including how f
 
 A typical weapon will have the following characteristics
 
-| Name | Rng | Att | Dmg | Traits | Cost |
-| :-- | :---: | :---: | :---: | :---: | :---: |
-| Unarmed | 0-1 | 2 | 1/2 |  | - |
-| Knife | 0-1 | 3 | 1/3 | Silent | 25 |
-| Rifle | 3-15 | 3 | 2/3 | Reliable | 60 |
+<WeaponGallery/>
 
 Weapons may vary depending on the setting, a bow in a fantasy setting may have very different characteristics to a bow in a sci-fi setting. A list of available weapons will be provided in the setting pack which is separate to this core rules document.
 
+:::warning Change from Warcry
+Weapons are largely unchanged from Warcry, although the weapon strength is now found as WS or BS on the fighter profile. Also Weapons now have Traits and can have abilities that apply to attacks with that weapon.
+:::
 
 ## **5.2 Weapon Traits** {#4.2-weapon-traits}
 
 Depending on the setting, weapons may have Traits which align to Abilities. Each ability will have a name, cost, and effect as normal. Most Weapon abilities are tied to their Weapon profile, so when an ability mentions 'this attack' it can only be triggered when the weapons attack profile is used.
 
-| Name | Ability Cost | Effect |
-| :------------ | :---- | :---- |
-| **Assault** | [double] | For the remainder of the round, this weapon gains +1 attack dice at half range. |
-| **Parry** | [passive] | When this fighter is targeted in melee, increase their defense by 1. |
-| **Reliable** | [passive] | Reaction: After dice have been rolled for an attack with this weapon, if there are no hits or crits, change one miss to a hit. |
+
+<TraitGallery include={["Assault", "Parry", "Reliable"]} showCost={false} />
 
 :::info Philosophy
 Weapon traits can be a big boost for an attack. If they are passive and are always active, work out a points adjustment for the weapon base profile. If the ability is triggered using Ability Dice, it should be well balanced but does not need to increase the cost as it should be balanced within the Ability system.
@@ -51,14 +50,6 @@ Weapon traits can be a big boost for an attack. If they are passive and are alwa
 
 Fighters may have additional gear modifying their traits or giving abilities. Typically this will be represented as an ability.
 
-| Name | Ability Cost | Effect | Cost |
-| :---- | ----- | :---- | :---: |
-| **Light Armour**	 | \[passive\] | This fighter gains +1 Def. | 15 |
-| **Medical Kit**	 | \[double\] | Remove up to 3 points of damage from this fighter. Limited(1) | 5 |
+<TraitGallery include={["Light Armour", "Field Rations"]}/>
 
 In some cases gear may be slightly more complicated and comprise of several traits each of which provide an ability.
-
-| Name | Ability Cost | Effect | Cost |
-| :---- | ----- | :---- | :---: |
-| **Shield** | \[passive\] | This fighter gains +1 Def in melee and the **Block** ability. Requires free hand to use. | 10 |
-| **Block** | \[double\] | Reaction: After a ranged attack has been rolled against this fighter but before damage is calculated, change a crit to a hit. | - |

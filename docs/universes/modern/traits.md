@@ -11,13 +11,13 @@ This page automatically aggregates all special rules found across the various wa
 
 ## Weapon Traits
 Special properties applied to equipment and biological weaponry.
-<TraitGallery type="weapon-trait" />
+<TraitGallery type="weapon-trait"  showCost={false}/>/>
 
 ---
 
 ## Fighter Traits
 Innate abilities, racial keywords, or leadership bonuses.
-<TraitGallery type="fighter-trait" />
+<TraitGallery type="fighter-trait"  showCost={false}/>/>
 
 ---
 

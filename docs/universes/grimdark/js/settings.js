@@ -31,6 +31,7 @@ export const traits = Engine.mergeDataById(allBaseTraits, allBaseTraits);
 
 // We use 'traitPath' consistently now
 const traitPath = "/docs/universes/grimdark/traits";
+const weaponPath = "/docs/universes/grimdark/weapons";
 
 // 3. PARAMETERIZED EXPORTS
 
@@ -65,7 +66,12 @@ export const TraitGallery = (props) => (
 );
 
 export const TraitLink = (props) => (
-  <Engine.TraitLink {...props} traits={traits} basePath={traitPath} />
+  <Engine.TraitLink 
+    {...props} 
+    traits={traits} 
+    basePath={traitPath} 
+    weaponPath={weaponPath} 
+  />
 );
 
 
@@ -77,8 +83,14 @@ export const Total = (p) => (
   />
 );
 
-export const FighterStat = (p) => (
-  <Engine.FighterStat {...p} fighters={fighters} traits={traits} basePath={traitPath} />
+export const FighterStat = (props) => (
+  <Engine.FighterStat 
+    {...props} 
+    fighters={fighters} 
+    traits={traits} 
+    basePath={traitPath} 
+    weaponPath={weaponPath} // The crucial link
+  />
 );
 
 export const FactionWeaponTable = (p) => (
@@ -104,5 +116,17 @@ export const TraitStat = (p) => (
   <Engine.TraitStat 
     {...p} 
     traits={traits} // This passes the merged traits list to the function
+  />
+);
+
+// Add this to your Parameterized Exports in settings.js
+export const FactionAutoRegistry = (props) => (
+  <Engine.FactionAutoRegistry 
+    {...props} 
+    fighters={fighters} 
+    traits={traits} 
+    weapons={weapons} 
+    basePath={traitPath} 
+    weaponPath={weaponPath} 
   />
 );

@@ -2,7 +2,10 @@ import React, { useState, useMemo, useEffect } from 'react';
 import { DragDropContext, Droppable, Draggable } from '@hello-pangea/dnd';
 import { TraitLink } from './Engine';
 
-// Added fix for React 18/19
+/**
+ * UTILITY COMPONENTS & FUNCTIONS
+ */
+
 const StrictModeDroppable = ({ children, ...props }) => {
   const [enabled, setEnabled] = useState(false);
   useEffect(() => {
@@ -13,7 +16,6 @@ const StrictModeDroppable = ({ children, ...props }) => {
   return <Droppable {...props}>{children}</Droppable>;
 };
 
-// We use this to prevent crashes if TraitLink isn't loaded properly
 const SafeTraitLink = ({ trait, traits, basePath }) => {
   if (typeof TraitLink !== 'undefined' && TraitLink) {
     return <TraitLink trait={trait} traits={traits} basePath={basePath} />;
@@ -21,51 +23,180 @@ const SafeTraitLink = ({ trait, traits, basePath }) => {
   return <span>{trait}</span>;
 };
 
-// Logic for grouping duplicate items (e.g. 2x Hand Flamer)
 const groupItems = (items) => {
-  const counts = items.reduce((acc, item) => {
+  const activeItems = items.filter(i => !i.suppressed);
+  const counts = activeItems.reduce((acc, item) => {
     acc[item.name] = (acc[item.name] || 0) + 1;
     return acc;
   }, {});
   return Object.keys(counts).map(name => ({
     name,
-    count: counts[name]
+    count: counts[name],
+    originalItem: activeItems.find(i => i.name === name)
   }));
 };
 
-// Logic for stat modifications from gear
 const getModifiedStat = (fighter, statKey) => {
   const baseStat = parseInt(fighter[statKey]) || 0;
-  const bonus = (fighter.selectedExtras || []).reduce((sum, item) => {
-    return sum + (parseInt(item[statKey]) || 0);
-  }, 0);
+  const bonus = (fighter.selectedExtras || [])
+    .filter(e => !e.suppressed)
+    .reduce((sum, item) => {
+      return sum + (parseInt(item[statKey]) || 0);
+    }, 0);
   const finalValue = baseStat + bonus;
   return finalValue < 0 ? 0 : finalValue;
 };
 
+/**
+ * HOISTED ROW COMPONENT
+ */
+const FighterRow = ({ 
+  f, 
+  provided, 
+  isDraggable, 
+  activeTab, 
+  isDeployed, 
+  updateFighterName, 
+  addItem, 
+  allWeapons, 
+  gearOptions, 
+  abilityOptions, 
+  advancementOptions, 
+  injuryOptions, 
+  isAvailableForFighter, 
+  allTraitsData, 
+  basePath, 
+  removeItem, 
+  getDisplayCost,
+  duplicateFighter, 
+  removeFighter, 
+  moveToGroup
+}) => (
+  <tr 
+    ref={provided?.innerRef} 
+    {...(provided?.draggableProps || {})} 
+    className={isDeployed ? 'deployed-row' : ''} 
+    style={{ borderBottom: '1px solid var(--ifm-color-emphasis-300)', ...(provided?.draggableProps?.style || {}) }}
+  >
+    <td style={{ textAlign: 'left', padding: '10px' }}>
+      <div style={{ display: 'flex', alignItems: 'center' }}>
+        <input 
+          className="editable-input" 
+          style={{ fontWeight: 'bold', fontSize: '1rem' }} 
+          value={f.customName} 
+          onChange={(e) => updateFighterName(f.instanceId, e.target.value)}
+        />
+        {isDeployed && <span className="deployed-badge">{f.groupId}</span>}
+      </div>
+      <div style={{ fontSize: '0.7rem', opacity: 0.6 }}>{f.name}</div>
+      {activeTab === 'build' && !isDeployed && (
+        <div className="no-print" style={{ marginTop: '8px', display: 'flex', flexDirection: 'column', gap: '4px' }}>
+          <select onChange={(e) => addItem(f.instanceId, e.target.value, 'weapon')} value="" style={{ fontSize: '0.7rem' }}>
+            <option value="" disabled>+ Weapon</option>
+            {allWeapons.filter(w => isAvailableForFighter(w, f)).sort((a,b) => a.name.localeCompare(b.name)).map(w => <option key={w.name} value={w.name}>{w.name} ({w.cost})</option>)}
+          </select>
+          <select onChange={(e) => addItem(f.instanceId, e.target.value, 'extra')} value="" style={{ fontSize: '0.7rem' }}>
+            <option value="" disabled>+ Gear</option>
+            {gearOptions.filter(g => isAvailableForFighter(g, f)).sort((a,b) => a.name.localeCompare(b.name)).map(g => <option key={g.name} value={g.name}>{g.name} ({g.cost})</option>)}
+          </select>
+          <select onChange={(e) => addItem(f.instanceId, e.target.value, 'extra')} value="" style={{ fontSize: '0.7rem' }}>
+            <option value="" disabled>+ Ability</option>
+            {abilityOptions.filter(a => isAvailableForFighter(a, f)).sort((a,b) => a.name.localeCompare(b.name)).map(a => <option key={a.name} value={a.name}>{a.name} ({a.cost})</option>)}
+          </select>
+          <select onChange={(e) => addItem(f.instanceId, e.target.value, 'extra')} value="" style={{ fontSize: '0.7rem' }}>
+            <option value="" disabled>+ Advancement</option>
+            {advancementOptions.filter(adv => isAvailableForFighter(adv, f)).sort((a,b) => a.name.localeCompare(b.name)).map(adv => <option key={adv.name} value={adv.name}>{adv.name} ({adv.cost})</option>)}
+          </select>
+          <select onChange={(e) => addItem(f.instanceId, e.target.value, 'extra')} value="" style={{ fontSize: '0.7rem' }}>
+            <option value="" disabled>+ Injury</option>
+            {injuryOptions.filter(i => isAvailableForFighter(i, f)).sort((a,b) => a.name.localeCompare(b.name)).map(i => <option key={i.name} value={i.name}>{i.name} ({i.cost})</option>)}
+          </select>
+        </div>
+      )}
+    </td>
+    <td>{getModifiedStat(f, 'm')}</td><td>{getModifiedStat(f, 'ws') === 0 ? '-' : `${getModifiedStat(f, 'ws')}`}</td>
+    <td>{getModifiedStat(f, 'bs') === 0 ? '-' : `${getModifiedStat(f, 'bs')}`}</td><td>{getModifiedStat(f, 'def')}</td><td>{getModifiedStat(f, 'w')}</td>
+    <td style={{ textAlign: 'left', padding: '10px' }}>
+      <div style={{ display: 'flex', flexWrap: 'wrap', gap: '5px' }}>
+        {(Array.isArray(f.traits) ? f.traits : [f.traits]).filter(t => t !== "-").map((t, i) => (
+          <span key={i} className="trait-pill"><SafeTraitLink trait={t} traits={allTraitsData} basePath={basePath} /></span>
+        ))}
+        {groupItems(f.selectedWeapons || []).map((grouped, i) => (
+          <span key={`w-${i}`} className="trait-pill inline-flex">
+            {grouped.count > 1 && <span>{grouped.count}x </span>}
+            <SafeTraitLink trait={grouped.name} traits={allTraitsData} basePath={basePath} />
+            <span style={{ marginLeft: '4px' }}>({grouped.originalItem.cost})</span>
+            <span className="no-print remove-btn" onClick={() => removeItem(f.instanceId, i, 'weapon')}>×</span>
+          </span>
+        ))}
+        {groupItems(f.selectedExtras || []).map((grouped, i) => (
+          <span key={`e-${i}`} className="trait-pill inline-flex">
+            {grouped.count > 1 && <span>{grouped.count}x </span>}
+            <SafeTraitLink trait={grouped.name} traits={allTraitsData} basePath={basePath} />
+            <span style={{ marginLeft: '4px' }}>({grouped.originalItem.cost})</span>
+            <span className="no-print remove-btn" onClick={() => removeItem(f.instanceId, i, 'extra')}>×</span>
+          </span>
+        ))}
+      </div>
+    </td>
+    <td style={{ fontWeight: 'bold' }}>{getDisplayCost(f)}</td>
+    <td className="no-print">
+      <div style={{ display: 'flex', flexDirection: 'column', gap: '6px', alignItems: 'center' }}>
+        {isDraggable && <div {...provided.dragHandleProps} style={{ cursor: 'grab', fontSize: '1.2rem', opacity: 0.5 }}>⠿</div>}
+        <div style={{ display: 'flex', flexDirection: 'column', gap: '4px', width: '100%' }}>
+          {!isDeployed && activeTab === 'build' ? (
+            <>
+              <button className="action-btn-text field-btn" onClick={() => moveToGroup(f.instanceId, 'A')}>Field</button>
+              <button className="action-btn-text copy-btn" onClick={() => duplicateFighter(f)}>Copy</button>
+              <button className="action-btn-text del-btn" onClick={() => removeFighter(f.instanceId)}>Del</button>
+            </>
+          ) : (
+            <>
+              <button className="action-btn-text return-btn" onClick={() => moveToGroup(f.instanceId, 'Roster')}>Return</button>
+              <button className="action-btn-text copy-btn" disabled>Copy</button>
+              <button className="action-btn-text del-btn" disabled>Del</button>
+            </>
+          )}
+        </div>
+      </div>
+    </td>
+  </tr>
+);
+
+/**
+ * MAIN COMPONENT
+ */
 export const RosterBuilder = ({ fighters = [], weapons = [], traits = [], basePath }) => {
+  const [activeTab, setActiveTab] = useState('build'); 
   const [roster, setRoster] = useState([]);
-  const [warbandName, setWarbandName] = useState('My Warband');
+  const [masterRosterName, setMasterRosterName] = useState('My Master Roster');
+  const [warbandName, setWarbandName] = useState('My Active Warband');
   const [selectedFaction, setSelectedFaction] = useState('');
   const [houseRulesOverride, setHouseRulesOverride] = useState(false);
 
-  // Data references from props
   const allFighters = fighters;
   const allWeapons = weapons;
   const allTraitsData = traits;
 
+  const parseCost = (costVal, useWarbandCost = false) => {
+    if (!costVal || costVal === "-") return 0;
+    const s = String(costVal);
+    if (s.includes('/')) {
+      const parts = s.split('/').map(p => p.trim());
+      return useWarbandCost ? (parseInt(parts[0]) || 0) : (parseInt(parts[1]) || 0);
+    }
+    return parseInt(s) || 0;
+  };
+
   const factions = [...new Set(allFighters.flatMap(f => f.faction))].sort();
   const availableFighters = allFighters.filter(f => {
-    if (Array.isArray(f.faction)) {
-      return f.faction.includes(selectedFaction);
-    }
+    if (Array.isArray(f.faction)) return f.faction.includes(selectedFaction);
     return f.faction === selectedFaction;
   });
 
   const isAvailableForFighter = (item, fighter) => {
     if (houseRulesOverride) return true;
-    if (item.type?.toLowerCase() === 'advancement') return true;
-    if (item.type?.toLowerCase() === 'injury') return true; // Injuries are always "available" to be taken
+    if (item.type?.toLowerCase() === 'advancement' || item.type?.toLowerCase() === 'injury') return true;
     if (!fighter.allowed_items || !Array.isArray(fighter.allowed_items)) return false;
     return fighter.allowed_items.includes(item.name);
   };
@@ -75,7 +206,6 @@ export const RosterBuilder = ({ fighters = [], weapons = [], traits = [], basePa
   const advancementOptions = allTraitsData.filter(t => t.type?.toLowerCase() === 'advancement');
   const injuryOptions = allTraitsData.filter(t => t.type?.toLowerCase() === 'injury');
 
-  // --- NEW DRAG HANDLER ---
   const onDragEnd = (result) => {
     const { source, destination } = result;
     if (!destination) return;
@@ -85,15 +215,18 @@ export const RosterBuilder = ({ fighters = [], weapons = [], traits = [], basePa
       const newRoster = [...prev];
       const sourceGroup = newRoster.filter(f => f.groupId === source.droppableId);
       const movedFighter = sourceGroup[source.index];
-
       const globalRemoveIdx = newRoster.findIndex(f => f.instanceId === movedFighter.instanceId);
       newRoster.splice(globalRemoveIdx, 1);
-
+      
       movedFighter.groupId = destination.droppableId;
+
+      if (destination.droppableId === 'Roster') {
+        if (movedFighter.selectedWeapons) movedFighter.selectedWeapons.forEach(w => delete w.suppressed);
+        if (movedFighter.selectedExtras) movedFighter.selectedExtras.forEach(e => delete e.suppressed);
+      }
 
       const destGroup = newRoster.filter(f => f.groupId === destination.droppableId);
       const pivot = destGroup[destination.index];
-
       if (pivot) {
         const globalInsertIdx = newRoster.findIndex(f => f.instanceId === pivot.instanceId);
         newRoster.splice(globalInsertIdx, 0, movedFighter);
@@ -105,14 +238,8 @@ export const RosterBuilder = ({ fighters = [], weapons = [], traits = [], basePa
     });
   };
 
-  // --- SAVE / LOAD LOGIC ---
   const saveToFile = () => {
-    const dataStr = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify({ 
-        warbandName, 
-        selectedFaction, 
-        roster, 
-        houseRulesOverride 
-    }));
+    const dataStr = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify({ masterRosterName, warbandName, selectedFaction, roster, houseRulesOverride }));
     const downloadAnchorNode = document.createElement('a');
     downloadAnchorNode.setAttribute("href", dataStr);
     downloadAnchorNode.setAttribute("download", `${warbandName.replace(/\s+/g, '_')}_roster.json`);
@@ -128,13 +255,12 @@ export const RosterBuilder = ({ fighters = [], weapons = [], traits = [], basePa
     reader.onload = (e) => {
       try {
         const json = JSON.parse(e.target.result);
+        if (json.masterRosterName) setMasterRosterName(json.masterRosterName);
         if (json.warbandName) setWarbandName(json.warbandName);
         if (json.selectedFaction) setSelectedFaction(json.selectedFaction);
         if (json.houseRulesOverride !== undefined) setHouseRulesOverride(json.houseRulesOverride);
         setRoster(json.roster || []);
-      } catch (err) {
-        alert("Error loading file.");
-      }
+      } catch (err) { alert("Error loading file."); }
     };
     reader.readAsText(file);
   };
@@ -144,7 +270,7 @@ export const RosterBuilder = ({ fighters = [], weapons = [], traits = [], basePa
       ...template,
       customName: template.name, 
       instanceId: Math.random().toString(36).substr(2, 9),
-      groupId: 'A',
+      groupId: 'Roster', 
       selectedWeapons: [], 
       selectedExtras: []   
     }]);
@@ -160,15 +286,30 @@ export const RosterBuilder = ({ fighters = [], weapons = [], traits = [], basePa
 
   const removeFighter = (id) => setRoster(prev => prev.filter(f => f.instanceId !== id));
 
+  const moveToGroup = (id, targetGroup = 'A') => {
+    setRoster(prev => prev.map(f => {
+      if (f.instanceId === id) {
+        const updated = { ...f, groupId: targetGroup };
+        if (targetGroup === 'Roster') {
+          if (updated.selectedWeapons) updated.selectedWeapons.forEach(w => delete w.suppressed);
+          if (updated.selectedExtras) updated.selectedExtras.forEach(e => delete e.suppressed);
+        }
+        return updated;
+      }
+      return f;
+    }));
+  };
+
   const addItem = (instanceId, itemName, listType) => {
     const sourceList = listType === 'weapon' ? allWeapons : allTraitsData;
     const item = sourceList.find(i => i.name === itemName);
     if (!item) return;
     setRoster(prev => prev.map(f => {
       if (f.instanceId === instanceId) {
+        const newItem = { ...item }; 
         return listType === 'weapon' 
-          ? { ...f, selectedWeapons: [...(f.selectedWeapons || []), item] }
-          : { ...f, selectedExtras: [...(f.selectedExtras || []), item] };
+          ? { ...f, selectedWeapons: [...(f.selectedWeapons || []), newItem] }
+          : { ...f, selectedExtras: [...(f.selectedExtras || []), newItem] };
       }
       return f;
     }));
@@ -179,27 +320,64 @@ export const RosterBuilder = ({ fighters = [], weapons = [], traits = [], basePa
       if (f.instanceId === instanceId) {
         const key = listType === 'weapon' ? 'selectedWeapons' : 'selectedExtras';
         const newList = [...f[key]];
-        newList.splice(index, 1);
+        if (activeTab === 'build') {
+          newList.splice(index, 1);
+        } else {
+          const activeItems = newList.filter(i => !i.suppressed);
+          const itemToSuppress = activeItems[index];
+          const realIndex = newList.findIndex(i => i === itemToSuppress);
+          if (realIndex !== -1) {
+            newList[realIndex] = { ...newList[realIndex], suppressed: true };
+          }
+        }
         return { ...f, [key]: newList };
       }
       return f;
     }));
   };
 
-  // --- MATH ---
-  const calculateFighterTotal = (f) => {
-    const wCost = (f.selectedWeapons || []).reduce((sum, w) => sum + (parseInt(w.cost) || 0), 0);
-    const eCost = (f.selectedExtras || []).reduce((sum, e) => sum + (parseInt(e.cost) || 0), 0);
-    return (parseInt(f.cost) || 0) + wCost + eCost;
+  const calculateFighterTotal = (f, useWarband = false) => {
+    const baseCost = parseCost(f.cost, useWarband);
+    const activeWeapons = (f.selectedWeapons || []).filter(w => !w.suppressed);
+    
+    let weaponCost = 0;
+    if (activeWeapons.length > 0) {
+      if (useWarband) {
+        // Multi-weapon discount: Only most expensive weapon counts
+        weaponCost = Math.max(...activeWeapons.map(w => parseCost(w.cost, true)));
+      } else {
+        // Roster cost: Sum of ALL weapons
+        weaponCost = activeWeapons.reduce((sum, w) => sum + parseCost(w.cost, false), 0);
+      }
+    }
+
+    const eCost = (f.selectedExtras || []).filter(e => !e.suppressed).reduce((sum, e) => sum + parseCost(e.cost, useWarband), 0);
+    
+    return baseCost + weaponCost + eCost;
   };
 
-  const totalPoints = roster.reduce((acc, f) => acc + calculateFighterTotal(f), 0);
+  const getDisplayCost = (f) => {
+    const rosterCost = calculateFighterTotal(f, false);
+    const warbandCost = calculateFighterTotal(f, true);
+
+    if (activeTab === 'build') {
+      // Show XX/YY if multi-weapon discount is active or base cost is split
+      return (rosterCost !== warbandCost) ? `${warbandCost}/${rosterCost}` : warbandCost;
+    }
+    // Only show Warband points on the Warband Groups tab
+    return warbandCost;
+  };
+
+  const warbandTotalPoints = roster
+    .filter(f => ['A', 'B', 'C'].includes(f.groupId))
+    .reduce((acc, f) => acc + calculateFighterTotal(f, true), 0);
 
   const armorySummary = useMemo(() => {
     const seen = new Set();
     const list = [];
     roster.forEach(f => {
-      const allFighterWeapons = [...(f.selectedWeapons || [])];
+      if (activeTab === 'warband' && f.groupId === 'Roster') return;
+      const allFighterWeapons = (f.selectedWeapons || []).filter(w => !w.suppressed);
       (Array.isArray(f.traits) ? f.traits : []).forEach(tName => {
         const wMatch = allWeapons.find(w => w.name === tName);
         if (wMatch) allFighterWeapons.push(wMatch);
@@ -209,14 +387,15 @@ export const RosterBuilder = ({ fighters = [], weapons = [], traits = [], basePa
       });
     });
     return list.sort((a, b) => a.name.localeCompare(b.name));
-  }, [roster, allWeapons]);
+  }, [roster, allWeapons, activeTab]);
 
   const uniqueTraitData = useMemo(() => {
     const rosterNames = new Set();
     roster.forEach(f => {
+      if (activeTab === 'warband' && f.groupId === 'Roster') return;
       const ft = Array.isArray(f.traits) ? f.traits : [f.traits];
       ft.forEach(t => { if (t && t !== "-") rosterNames.add(t.trim()); });
-      (f.selectedExtras || []).forEach(e => rosterNames.add(e.name.trim()));
+      (f.selectedExtras || []).filter(e => !e.suppressed).forEach(e => rosterNames.add(e.name.trim()));
     });
     armorySummary.forEach(w => {
       const wt = Array.isArray(w.traits) ? w.traits : [w.traits];
@@ -229,17 +408,11 @@ export const RosterBuilder = ({ fighters = [], weapons = [], traits = [], basePa
         displayType: t.type ? t.type.replace('-', ' ').replace(/\b\w/g, l => l.toUpperCase()) : "Trait"
       }))
       .sort((a, b) => a.name.localeCompare(b.name)); 
-  }, [roster, armorySummary, allTraitsData]);
+  }, [roster, armorySummary, allTraitsData, activeTab]);
 
   const standardBtnStyle = {
-    padding: '6px 14px',
-    cursor: 'pointer',
-    backgroundColor: 'var(--ifm-color-emphasis-300)',
-    color: 'var(--ifm-color-content)',
-    border: 'none',
-    borderRadius: '4px',
-    fontSize: '0.85rem',
-    fontWeight: 'bold'
+    padding: '6px 14px', cursor: 'pointer', backgroundColor: 'var(--ifm-color-emphasis-300)',
+    color: 'var(--ifm-color-content)', border: 'none', borderRadius: '4px', fontSize: '0.85rem', fontWeight: 'bold'
   };
 
   return (
@@ -250,31 +423,32 @@ export const RosterBuilder = ({ fighters = [], weapons = [], traits = [], basePa
           .roster-builder-main-container, .roster-builder-main-container * { visibility: visible; }
           .roster-builder-main-container { position: absolute; left: 0; top: 0; width: 100%; }
           .no-print { display: none !important; } 
-          .reference-container { break-before: page; margin-top: 0 !important; }
+          .reference-container { break-before: page; margin-top: 0 !important; display: block !important; }
           input { border: none !important; background: transparent !important; padding: 0 !important; }
           body { background: white !important; color: black !important; }
         }
-        .reference-table thead tr { background-color: var(--ifm-color-emphasis-200) !important; }
         .editable-input { border: 1px solid transparent; background: transparent; color: inherit; font-family: inherit; width: 100%; }
         .editable-input:hover { border-bottom: 1px dashed var(--ifm-color-primary); }
-        .editable-input:focus { border: 1px solid var(--ifm-color-primary); background: var(--ifm-color-emphasis-100); outline: none; }
         .trait-pill { background-color: var(--ifm-color-emphasis-200); padding: 2px 8px; border-radius: 4px; font-size: 0.75rem; display: inline-block; }
         .trait-pill a { text-decoration: none !important; color: inherit !important; }
         .inline-flex { display: inline-flex; align-items: center; }
         .remove-btn { margin-left: 6px; cursor: pointer; color: var(--ifm-color-danger); font-weight: bold; }
-        .is-dragging { background: var(--ifm-color-emphasis-100) !important; display: table !important; }
         .group-header { 
-          background-color: var(--ifm-color-emphasis-200); 
-          padding: 8px 15px; 
-          margin-top: 30px; 
-          font-weight: bold; 
-          text-transform: uppercase; 
-          letter-spacing: 1px;
-          border-bottom: 2px solid var(--ifm-color-emphasis-300);
-          display: flex;
-          justify-content: space-between;
-          font-size: 0.9rem;
+          background-color: var(--ifm-color-emphasis-200); padding: 8px 15px; margin-top: 30px; 
+          font-weight: bold; text-transform: uppercase; border-bottom: 2px solid var(--ifm-color-emphasis-300);
+          display: flex; justify-content: space-between; font-size: 0.9rem;
         }
+        .tab-button { padding: 10px 20px; cursor: pointer; border: none; background: var(--ifm-color-emphasis-200); font-weight: bold; border-radius: 4px 4px 0 0; }
+        .tab-button.active { background: var(--ifm-color-primary); color: #000; }
+        .action-btn-text { font-size: 0.65rem; padding: 3px 8px; border: none; border-radius: 3px; font-weight: bold; cursor: pointer; text-transform: uppercase; transition: filter 0.1s ease; }
+        .field-btn { background-color: #28a745; color: white; }
+        .return-btn { background-color: #ffc107; color: black; }
+        .copy-btn { background-color: var(--ifm-color-emphasis-300); color: var(--ifm-color-content); }
+        .del-btn { background-color: var(--ifm-color-danger); color: white; }
+        .action-btn-text:disabled { opacity: 0.3; cursor: not-allowed; filter: grayscale(1); }
+        .action-btn-text:hover:not(:disabled) { filter: brightness(1.1); }
+        .deployed-row { opacity: 0.8; background-color: var(--ifm-color-emphasis-100); }
+        .deployed-badge { font-size: 0.6rem; background: var(--ifm-color-primary); color: #000; padding: 1px 4px; border-radius: 3px; margin-left: 5px; vertical-align: middle; font-weight: bold; }
       `}</style>
 
       {/* Toolbar */}
@@ -296,176 +470,105 @@ export const RosterBuilder = ({ fighters = [], weapons = [], traits = [], basePa
             <label htmlFor="houseRules" style={{ fontWeight: 'bold', cursor: 'pointer' }}>🏠 House Rules</label>
         </div>
       </div>
-      {/* Recruitment */}
-      <div className="no-print" style={{ padding: '15px', border: '1px solid var(--ifm-color-emphasis-300)', borderRadius: '8px' }}>
-        <div style={{ display: 'flex', gap: '8px', flexWrap: 'wrap' }}>
-          {availableFighters.map(f => (
-            <button 
-              key={f.name} // Updated to use name since we removed IDs
-              onClick={() => addFighter(f)} 
-              style={{ 
-                padding: '6px 14px', 
-                cursor: 'pointer', 
-                backgroundColor: 'var(--ifm-color-primary)', 
-                color: '#000', // Forces black text for readability on yellow/gold
-                border: 'none', 
-                borderRadius: '4px', 
-                fontSize: '0.8rem',
-                fontWeight: '600',
-                boxShadow: '0 2px 4px rgba(0,0,0,0.1)',
-                transition: 'transform 0.1s ease'
-              }}
-              onMouseOver={(e) => e.currentTarget.style.filter = 'brightness(1.1)'}
-              onMouseOut={(e) => e.currentTarget.style.filter = 'brightness(1.0)'}
-            >
-              + {f.name}
-            </button>
-          ))}
-        </div>
+
+      <div className="no-print" style={{ display: 'flex', gap: '2px' }}>
+        <button className={`tab-button ${activeTab === 'build' ? 'active' : ''}`} onClick={() => setActiveTab('build')}>1. Build Roster</button>
+        <button className={`tab-button ${activeTab === 'warband' ? 'active' : ''}`} onClick={() => setActiveTab('warband')}>2. Warband Groups</button>
       </div>
+
+      {activeTab === 'build' && (
+        <div className="no-print" style={{ padding: '15px', border: '1px solid var(--ifm-color-emphasis-300)', borderRadius: '8px' }}>
+            <div style={{ display: 'flex', gap: '8px', flexWrap: 'wrap' }}>
+            {availableFighters.map(f => (
+                <button key={f.name} onClick={() => addFighter(f)} style={{ ...standardBtnStyle, backgroundColor: 'var(--ifm-color-primary)', color: '#000' }}>+ {f.name}</button>
+            ))}
+            </div>
+        </div>
+      )}
 
       <div className="roster-container" style={{ width: '100%', overflowX: 'auto' }}>
         <div style={{ display: 'flex', justifyContent: 'space-between', borderBottom: '2px solid var(--ifm-color-primary)', paddingBottom: '8px', marginBottom: '10px', alignItems: 'center' }}>
           <div style={{ display: 'flex', alignItems: 'center', gap: '10px', flex: 1 }}>
-            <h3 style={{ margin: 0, textTransform: 'uppercase', whiteSpace: 'nowrap' }}>Warband:</h3>
-            <input 
-              className="editable-input" 
-              style={{ fontSize: '1.5rem', fontWeight: 'bold', borderBottom: '2px solid transparent' }} 
-              value={warbandName} 
-              onChange={(e) => setWarbandName(e.target.value)}
-              placeholder="Enter Warband Name..."
-            />
+            <h3 style={{ margin: 0, textTransform: 'uppercase' }}>{activeTab === 'build' ? 'Roster:' : 'Warband:'}</h3>
+            {activeTab === 'build' ? (
+                <input className="editable-input" style={{ fontSize: '1.5rem', fontWeight: 'bold' }} value={masterRosterName} onChange={(e) => setMasterRosterName(e.target.value)} placeholder="Enter Roster Name..."/>
+            ) : (
+                <input className="editable-input" style={{ fontSize: '1.5rem', fontWeight: 'bold' }} value={warbandName} onChange={(e) => setWarbandName(e.target.value)} placeholder="Enter Warband Name..."/>
+            )}
           </div>
-          <h3 style={{ margin: 0, color: 'var(--ifm-color-primary)' }}>{totalPoints}</h3>
+          {activeTab === 'warband' && (
+            <h3 style={{ margin: 0, color: 'var(--ifm-color-primary)' }}>{warbandTotalPoints}</h3>
+          )}
         </div>
 
         <DragDropContext onDragEnd={onDragEnd}>
-        {['A', 'B', 'C'].map((groupId) => {
-          const groupFighters = roster.filter(f => f.groupId === groupId);
-          const groupTotal = groupFighters.reduce((sum, f) => sum + calculateFighterTotal(f), 0);
+        {(activeTab === 'build' ? ['Roster'] : ['A', 'B', 'C']).map((groupId) => {
+          const groupFighters = (activeTab === 'build' && groupId === 'Roster') 
+            ? roster 
+            : roster.filter(f => f.groupId === groupId);
+
+          const groupTotal = groupFighters.reduce((sum, f) => sum + calculateFighterTotal(f, activeTab === 'warband'), 0);
 
           return (
             <div key={groupId} style={{ marginBottom: '20px' }}>
               <div className="group-header">
-                <span>Group {groupId} ({groupFighters.length})</span>
+                <span>{groupId === 'Roster' ? 'Master Roster List' : `Group ${groupId}`} ({groupFighters.length})</span>
                 {groupFighters.length > 0 && <span style={{ opacity: 0.7, fontSize: '0.75rem' }}>{groupTotal} Points</span>}
               </div>
               <StrictModeDroppable droppableId={groupId}>
               {(provided) => (
-              <table 
-                ref={provided.innerRef} {...provided.droppableProps}
-                style={{ width: '100%', minWidth: '100%', textAlign: 'center', fontSize: '0.85rem', borderCollapse: 'collapse' }}
-              >
+              <table ref={provided.innerRef} {...provided.droppableProps} style={{ width: '100%', textAlign: 'center', fontSize: '0.85rem', borderCollapse: 'collapse' }}>
                 <thead>
                   <tr style={{ backgroundColor: 'var(--ifm-color-emphasis-200)' }}>
-                    <th style={{ 
-                      textAlign: 'left', 
-                      padding: '10px', 
-                      minWidth: '200px', // Added this to prevent column collapse
-                      width: '25%'       // Added a percentage to help stabilize the layout
-                    }}>
-                      Fighter
-                    </th>
+                    <th style={{ textAlign: 'left', padding: '10px', width: '25%' }}>Fighter</th>
                     <th>M</th><th>WS</th><th>BS</th><th>Def</th><th>W</th>
-                    <th style={{ width: '40%' }}>Gear & Traits</th>
-                    <th>Cost</th>
-                    <th className="no-print">Actions</th>
+                    <th style={{ width: '40%' }}>Gear & Traits</th><th>Cost</th><th className="no-print">Actions</th>
                   </tr>
                 </thead>
                 <tbody>
                   {groupFighters.length === 0 ? (
-                    <tr>
-                      <td colSpan="9" style={{ padding: '20px', opacity: 0.4, fontStyle: 'italic', fontSize: '0.75rem' }}>
-                        No fighters in Group {groupId}
-                      </td>
-                    </tr>
+                    <tr><td colSpan="9" style={{ padding: '20px', opacity: 0.4, fontStyle: 'italic', fontSize: '0.75rem' }}>Empty</td></tr>
                   ) : (
-                    groupFighters.map((f, index) => (
-                      <Draggable key={f.instanceId} draggableId={f.instanceId} index={index}>
-                      {(provided, snapshot) => (
-                      <tr 
-                        ref={provided.innerRef} {...provided.draggableProps}
-                        className={snapshot.isDragging ? 'is-dragging' : ''}
-                        style={{ borderBottom: '1px solid var(--ifm-color-emphasis-300)', ...provided.draggableProps.style }}
-                      >
-                        <td style={{ textAlign: 'left', padding: '10px' }}>
-                          <input 
-                            className="editable-input"
-                            style={{ fontWeight: 'bold', fontSize: '1rem' }}
-                            value={f.customName}
-                            onChange={(e) => updateFighterName(f.instanceId, e.target.value)}
-                          />
-                          <div style={{ fontSize: '0.7rem', opacity: 0.6, paddingLeft: '2px' }}>{f.name}</div>
-                          <div className="no-print" style={{ marginTop: '8px', display: 'flex', flexDirection: 'column', gap: '4px' }}>
-                              <select onChange={(e) => addItem(f.instanceId, e.target.value, 'weapon')} value="" style={{ fontSize: '0.7rem' }}>
-                                <option value="" disabled>+ Weapon</option>
-                                {allWeapons.filter(w => isAvailableForFighter(w, f)).map(w => <option key={w.name} value={w.name}>{w.name} ({w.cost})</option>)}
-                              </select>
-                              <select onChange={(e) => addItem(f.instanceId, e.target.value, 'extra')} value="" style={{ fontSize: '0.7rem' }}>
-                                <option value="" disabled>+ Gear</option>
-                                {gearOptions.filter(g => isAvailableForFighter(g, f)).map(g => <option key={g.name} value={g.name}>{g.name} ({g.cost})</option>)}
-                              </select>
-                              <select onChange={(e) => addItem(f.instanceId, e.target.value, 'extra')} value="" style={{ fontSize: '0.7rem' }}>
-                                <option value="" disabled>+ Ability</option>
-                                {abilityOptions.filter(a => isAvailableForFighter(a, f)).map(a => <option key={a.name} value={a.name}>{a.name} ({a.cost})</option>)}
-                              </select>
-                              <select onChange={(e) => addItem(f.instanceId, e.target.value, 'extra')} value="" style={{ fontSize: '0.7rem' }}>
-                                <option value="" disabled>+ Advancement</option>
-                                {advancementOptions.filter(adv => isAvailableForFighter(adv, f)).map(adv => (
-                                  <option key={adv.name} value={adv.name}>
-                                    {adv.name} ({adv.cost})
-                                  </option>
-                                ))}
-                              </select>
-                              <select onChange={(e) => addItem(f.instanceId, e.target.value, 'extra')} value="" style={{ fontSize: '0.7rem' }}>
-                                <option value="" disabled>+ Injury</option>
-                                {injuryOptions.filter(i => isAvailableForFighter(i, f)).map(i => (
-                                  <option key={i.name} value={i.name}>
-                                    {i.name} ({i.cost})
-                                  </option>
-                                ))}
-                            </select>
-                          </div>
-                        </td>
-                        <td>{getModifiedStat(f, 'm')}</td>
-                        <td>{getModifiedStat(f, 'ws') === 0 ? '-' : `${getModifiedStat(f, 'ws')}`}</td>
-                        <td>{getModifiedStat(f, 'bs') === 0 ? '-' : `${getModifiedStat(f, 'bs')}`}</td>
-                        <td>{getModifiedStat(f, 'def')}</td>
-                        <td>{getModifiedStat(f, 'w')}</td>
-                        <td style={{ textAlign: 'left', padding: '10px' }}>
-                          <div style={{ display: 'flex', flexWrap: 'wrap', gap: '5px' }}>
-                            {(Array.isArray(f.traits) ? f.traits : [f.traits]).filter(t => t !== "-").map((t, i) => (
-                              <span key={i} className="trait-pill">
-                                <SafeTraitLink trait={t} traits={allTraitsData} basePath={basePath} />
-                              </span>
-                            ))}
-                            {groupItems(f.selectedWeapons || []).map((grouped, i) => (
-                              <span key={`w-${i}`} className="trait-pill inline-flex">
-                                <SafeTraitLink trait={grouped.count > 1 ? `${grouped.count}x ${grouped.name}` : grouped.name} traits={allTraitsData} basePath={basePath} />
-                                <span className="no-print remove-btn" onClick={() => removeItem(f.instanceId, f.selectedWeapons.findIndex(w => w.name === grouped.name), 'weapon')}>×</span>
-                              </span>
-                            ))}
-                            {groupItems(f.selectedExtras || []).map((grouped, i) => (
-                              <span key={`e-${i}`} className="trait-pill inline-flex">
-                                <SafeTraitLink trait={grouped.count > 1 ? `${grouped.count}x ${grouped.name}` : grouped.name} traits={allTraitsData} basePath={basePath} />
-                                <span className="no-print remove-btn" onClick={() => removeItem(f.instanceId, f.selectedExtras.findIndex(e => e.name === grouped.name), 'extra')}>×</span>
-                              </span>
-                            ))}
-                          </div>
-                        </td>
-                        <td style={{ fontWeight: 'bold' }}>{calculateFighterTotal(f)}</td>
-                        <td className="no-print">
-                          <div style={{ display: 'flex', flexDirection: 'column', gap: '4px', justifyContent: 'center', alignItems: 'center' }}>
-                            <div {...provided.dragHandleProps} style={{ cursor: 'grab', fontSize: '1.2rem', opacity: 0.5 }}>⠿</div>
-                            <button style={{ border: 'none', background: 'none', cursor: 'pointer' }} onClick={() => duplicateFighter(f)} title="Duplicate">📋</button>
-                            <button style={{ border: 'none', background: 'none', cursor: 'pointer' }} onClick={() => removeFighter(f.instanceId)}>🗑️</button>
-                          </div>
-                        </td>
-                      </tr>
-                      )}
-                      </Draggable>
-                    )
-                  ))}
+                    groupFighters.map((f, index) => {
+                      const isDeployedToAnotherGroup = groupId === 'Roster' && f.groupId !== 'Roster';
+                      
+                      const sharedProps = {
+                        f,
+                        activeTab,
+                        allWeapons,
+                        gearOptions,
+                        abilityOptions,
+                        advancementOptions,
+                        injuryOptions,
+                        isAvailableForFighter,
+                        allTraitsData,
+                        basePath,
+                        updateFighterName,
+                        addItem,
+                        removeItem,
+                        getDisplayCost,
+                        duplicateFighter,
+                        removeFighter,
+                        moveToGroup
+                      };
+
+                      if (isDeployedToAnotherGroup) {
+                        return <FighterRow key={`${f.instanceId}-shadow`} {...sharedProps} isDraggable={false} isDeployed={true} />;
+                      }
+                      return (
+                        <Draggable key={f.instanceId} draggableId={f.instanceId} index={index}>
+                          {(provided) => (
+                            <FighterRow 
+                              {...sharedProps}
+                              isDraggable={true} 
+                              provided={provided} 
+                              isDeployed={false} 
+                            />
+                          )}
+                        </Draggable>
+                      );
+                    })
+                  )}
                   {provided.placeholder}
                 </tbody>
               </table>
@@ -477,35 +580,22 @@ export const RosterBuilder = ({ fighters = [], weapons = [], traits = [], basePa
         </DragDropContext>
       </div>
 
-      {/* Reference Section */}
       {roster.length > 0 && (
         <div className="reference-container" style={{ marginTop: '30px', padding: '20px', border: '1px solid var(--ifm-color-emphasis-300)', borderRadius: '8px' }}>
           <h4 style={{ marginBottom: '10px', textTransform: 'uppercase' }}>Weapon Reference</h4>
-          <table className="reference-table" style={{ width: '100%', fontSize: '0.8rem', marginBottom: '30px', borderCollapse: 'collapse', tableLayout: 'fixed' }}>
+          <table style={{ width: '100%', fontSize: '0.8rem', marginBottom: '30px', borderCollapse: 'collapse', tableLayout: 'fixed' }}>
             <thead>
               <tr style={{ backgroundColor: 'var(--ifm-color-emphasis-200)' }}>
-                {/* Mirror the 25% Name width from the lower table */}
                 <th style={{ padding: '8px', textAlign: 'left', width: '25%' }}>Weapon</th>
-                
-                {/* Grouped stats: 3 columns at ~7% each to roughly match the 20-25% 'block' feel */}
-                <th style={{ width: '11%', textAlign: 'center' }}>Rng</th>
-                <th style={{ width: '7%', textAlign: 'center' }}>Att</th>
-                <th style={{ width: '7%', textAlign: 'center' }}>Dmg</th>
-                
-                {/* Trait column mirrors the 'Effect' column at 44% (keeping 10% for cost) */}
-                <th style={{ textAlign: 'left', width: '40%', padding: '8px' }}>Traits</th>
-                
-                {/* Mirror the 10% Cost width from the lower table */}
-                <th style={{ width: '10%', textAlign: 'center' }}>Cost</th>
+                <th style={{ width: '11%', textAlign: 'center' }}>Rng</th><th style={{ width: '7%', textAlign: 'center' }}>Att</th><th style={{ width: '7%', textAlign: 'center' }}>Dmg</th>
+                <th style={{ textAlign: 'left', width: '40%', padding: '8px' }}>Traits</th><th style={{ width: '10%', textAlign: 'center' }}>Cost</th>
               </tr>
             </thead>
             <tbody>
               {armorySummary.map(w => (
                 <tr key={w.name} style={{ borderBottom: '1px solid var(--ifm-color-emphasis-200)' }}>
                   <td style={{ padding: '8px' }}><strong>{w.name}</strong></td>
-                  <td style={{ textAlign: 'center' }}>{w.range}</td>
-                  <td style={{ textAlign: 'center' }}>{w.att}</td>
-                  <td style={{ textAlign: 'center' }}>{w.dmg}</td>
+                  <td style={{ textAlign: 'center' }}>{w.range}</td><td style={{ textAlign: 'center' }}>{w.att}</td><td style={{ textAlign: 'center' }}>{w.dmg}</td>
                   <td style={{ textAlign: 'left', padding: '8px', whiteSpace: 'normal', wordWrap: 'break-word' }}>
                     {Array.isArray(w.traits) && w.traits.length > 0 && w.traits[0] !== "-" ? w.traits.join(", ") : "-"}
                   </td>
@@ -514,24 +604,18 @@ export const RosterBuilder = ({ fighters = [], weapons = [], traits = [], basePa
               ))}
             </tbody>
           </table>
-
           <h4 style={{ marginBottom: '10px', textTransform: 'uppercase' }}>Trait Reference</h4>
-          <table className="reference-table" style={{ width: '100%', fontSize: '0.8rem', borderCollapse: 'collapse', tableLayout: 'fixed' }}>
+          <table style={{ width: '100%', fontSize: '0.8rem', borderCollapse: 'collapse', tableLayout: 'fixed' }}>
             <thead>
               <tr style={{ backgroundColor: 'var(--ifm-color-emphasis-200)' }}>
-                <th style={{ padding: '8px', textAlign: 'left', width: '25%' }}>Name</th>
-                <th style={{ width: '12%' }}>Ability Cost</th>
-                <th style={{ textAlign: 'left', width: '53%' }}>Effect</th>
-                <th style={{ width: '10%' }}>Cost</th>
+                <th style={{ padding: '8px', textAlign: 'left', width: '25%' }}>Name</th><th style={{ width: '12%' }}>Ability Cost</th>
+                <th style={{ textAlign: 'left', width: '53%' }}>Effect</th><th style={{ width: '10%' }}>Cost</th>
               </tr>
             </thead>
             <tbody>
               {uniqueTraitData.map(t => (
                 <tr key={t.name} style={{ borderBottom: '1px solid var(--ifm-color-emphasis-200)' }}>
-                  <td style={{ padding: '8px' }}>
-                    <strong>{t.name}</strong>
-                    <div style={{ fontSize: '0.65rem', opacity: 0.7, fontStyle: 'italic' }}>{t.displayType}</div>
-                  </td>
+                  <td style={{ padding: '8px' }}><strong>{t.name}</strong><div style={{ fontSize: '0.65rem', opacity: 0.7, fontStyle: 'italic' }}>{t.displayType}</div></td>
                   <td style={{ textAlign: 'center' }}><code>{t.ability_cost || "-"}</code></td>
                   <td style={{ textAlign: 'left', padding: '8px' }}>{t.effect}</td>
                   <td style={{ textAlign: 'center', fontWeight: 'bold' }}>{t.cost && t.cost !== "-" ? `${t.cost}` : "-"}</td>

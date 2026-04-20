@@ -34,12 +34,3 @@ The Space Marines are the ultimate defenders of humanity. They combine superior 
 
 <FactionAbilityTable faction="Adeptus Astartes" />
 
-
-
-
-#### Sample Unit Totals
-* **Scout Sniper** + Sniper Rifle + Cameleoline Cloak = <Total fighterId="scout-marine" weapons={['sniper-rifle', 'cameleoline-cloak']} /> Credits
-* **Primaris Intercessor** + Bolt Rifle = <Total fighterId="intercessor" weapons={['bolt-rifle']} /> Credits
-* **Terminator Sergeant** + Storm Bolter + Power Sword = <Total fighterId="terminator" weapons={['storm-bolter', 'power-sword']} /> Credits
-
----

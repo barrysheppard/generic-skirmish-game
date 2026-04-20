@@ -106,3 +106,14 @@ export const TraitStat = (p) => (
     traits={traits} // This passes the merged traits list to the function
   />
 );
+
+// Add this to your Parameterized Exports in settings.js
+export const FactionAutoRegistry = (props) => (
+  <Engine.FactionAutoRegistry 
+    {...props} 
+    fighters={fighters} 
+    traits={traits} 
+    weapons={weapons} 
+    basePath={traitPath} 
+  />
+);

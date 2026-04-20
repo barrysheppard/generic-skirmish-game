@@ -36,13 +36,8 @@ The Sisters of Battle are powered by unshakeable faith and equipped with the fin
 
 
 
-:::tip Faction Rule: Acts of Faith
-**Acts of Faith (Triple):** This fighter may perform a "Miracle." Until the end of the round, they may treat any single D6 roll (Hit, Wound, or Save) as an automatic 6.
-**Vanguard (Passive):** This fighter may perform a free Move action before the first battle round begins.
-:::
-
 
 #### Sample Unit Totals
-* **Battle Sister** + Bolt Rifle = <Total fighterId="battle-sister" weapons={['bolt-rifle']} /> Credits
-* **Seraphim** + 2x Hand Flamers = <Total fighterId="seraphim" weapons={['hand-flamer', 'hand-flamer']} /> Credits
-* **Repentia** + Eviscerator = <Total fighterId="repentia" weapons={['eviscerator']} /> Credits
+* **Battle Sister** + Bolt Gun = <Total fighter="Battle Sister" weaponsLibrary={['Boltgun']} /> Credits
+* **Seraphim** + 2x Hand Flamers = <Total fighter="seraphim" weapons={['hand-flamer', 'hand-flamer']} /> Credits
+* **Repentia** + Eviscerator = <Total fighter="repentia" weapons={['eviscerator']} /> Credits

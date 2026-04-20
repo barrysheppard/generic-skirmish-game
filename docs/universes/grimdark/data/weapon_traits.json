@@ -27,84 +27,12 @@
     "m": 0, "ws": 0, "bs": 0, "def": 0, "w": 0
   },
   {
-    "id": "assault",
-    "name": "Assault",
-    "type": "weapon-trait",
-    "ability_cost": "[double]",
-    "cost": "-",
-    "effect": "This attack gains +1 attack dice at half range.",
-    "m": 0, "ws": 0, "bs": 0, "def": 0, "w": 0
-  },
-  {
-    "id": "balanced",
-    "name": "Balanced",
-    "type": "weapon-trait",
-    "ability_cost": "[passive]",
-    "cost": "-",
-    "effect": "You may change one miss to a hit after rolling an attack with this weapon.",
-    "m": 0, "ws": 0, "bs": 0, "def": 0, "w": 0
-  },
-  {
     "id": "beam",
     "name": "Beam",
     "type": "weapon-trait",
     "ability_cost": "[passive]",
     "cost": "-",
     "effect": "When selecting a target for this weapon, draw a straight line up to the weapons max range. All Fighers underneath that line (friend and foe) are a target for the attack. Make a single attack for all targets determining the damage individually.",
-    "m": 0, "ws": 0, "bs": 0, "def": 0, "w": 0
-  },
-  {
-    "id": "blast",
-    "name": "Blast",
-    "type": "weapon-trait",
-    "ability_cost": "[double]",
-    "cost": "-",
-    "effect": "For the next attack with this weapon, if the attack has at least one hit or crit, all fighters (friend and foe) within 2\" of the target suffer damage equal to a hit damage.",
-    "m": 0, "ws": 0, "bs": 0, "def": 0, "w": 0
-  },
-  {
-    "id": "brutal",
-    "name": "Brutal",
-    "type": "weapon-trait",
-    "ability_cost": "[passive]",
-    "cost": "-",
-    "effect": "After an attack roll with this weapon, upgrade one hit to a crit.",
-    "m": 0, "ws": 0, "bs": 0, "def": 0, "w": 0
-  },
-  {
-    "id": "concussive",
-    "name": "Concussive",
-    "type": "weapon-trait",
-    "ability_cost": "[double]",
-    "cost": "-",
-    "effect": "After performing an attack with this weapon, if at least one hit or crit is scored, the target is shoved 3\" directly away from the attacker. If the target hits a piece of terrain or another model, they stop and immediately suffer 1 damage.",
-    "m": 0, "ws": 0, "bs": 0, "def": 0, "w": 0
-  },
-  {
-    "id": "heavy",
-    "name": "Heavy",
-    "type": "weapon-trait",
-    "ability_cost": "[passive]",
-    "cost": "-",
-    "effect": "This weapon cannot be fired if the Fighter has moved more than 2\" this turn.",
-    "m": 0, "ws": 0, "bs": 0, "def": 0, "w": 0
-  },
-  {
-    "id": "lethal",
-    "name": "Lethal",
-    "type": "weapon-trait",
-    "ability_cost": "[passive]",
-    "cost": "-",
-    "effect": "If an attack with this weapon would normally crit on a 6, it now also crits on a 5.",
-    "m": 0, "ws": 0, "bs": 0, "def": 0, "w": 0
-  },
-  {
-    "id": "limited(1)",
-    "name": "Limited(1)",
-    "type": "weapon-trait",
-    "ability_cost": "[passive]",
-    "cost": "-",
-    "effect": "This item can only be used once per battle. The item is available again the next battle.",
     "m": 0, "ws": 0, "bs": 0, "def": 0, "w": 0
   },
   {
@@ -117,93 +45,12 @@
     "m": 0, "ws": 0, "bs": 0, "def": 0, "w": 0
   },
   {
-    "id": "parry",
-    "name": "Parry",
-    "type": "weapon-trait",
-    "ability_cost": "[passive]",
-    "cost": "-",
-    "effect": "When this fighter is targeted in melee, increase their defense by 1.",
-    "m": 0, "ws": 0, "bs": 0, "def": 0, "w": 0
-  },
-  {
-    "id": "piercing",
-    "name": "Piercing",
-    "type": "weapon-trait",
-    "ability_cost": "[double]",
-    "cost": "-",
-    "effect": "For the next attack with this weapon, subtract 2 from the target’s Defence to a minimun of 3.",
-    "m": 0, "ws": 0, "bs": 0, "def": 0, "w": 0
-  },
-  {
-    "id": "pistol",
-    "name": "Pistol",
-    "type": "weapon-trait",
-    "ability_cost": "[passive]",
-    "cost": "-",
-    "effect": "Pistols are one-handed weapons. When in melee range (0-3) attacks with this weapon use Ballistic Skill.",
-    "m": 0, "ws": 0, "bs": 0, "def": 0, "w": 0
-  },
-  {
-    "id": "poison",
-    "name": "Poison",
-    "type": "weapon-trait",
-    "ability_cost": "[double]",
-    "cost": "-",
-    "effect": "If an attack with this weapon did at least one point of damage, roll X dice and do 1 damage to the same target for each 4-5 and X damage for each 6.",
-    "m": 0, "ws": 0, "bs": 0, "def": 0, "w": 0
-  },
-  {
     "id": "rad",
     "name": "Rad",
     "type": "weapon-trait",
     "ability_cost": "[passive]",
     "cost": "-",
     "effect": "After an attack with this weapon that does damage, the target suffers -1 Def until the end of the battle.",
-    "m": 0, "ws": 0, "bs": 0, "def": 0, "w": 0
-  },
-  {
-    "id": "rapid-fire",
-    "name": "Rapid Fire",
-    "type": "weapon-trait",
-    "ability_cost": "[double]",
-    "cost": "-",
-    "effect": "For the rest of the turn attacks with this weapon gain +1 attack dice.",
-    "m": 0, "ws": 0, "bs": 0, "def": 0, "w": 0
-  },
-  {
-    "id": "reliable",
-    "name": "Reliable",
-    "type": "weapon-trait",
-    "ability_cost": "[passive]",
-    "cost": "-",
-    "effect": "If this attack rolls no hits or crits, change one miss to a hit.",
-    "m": 0, "ws": 0, "bs": 0, "def": 0, "w": 0
-  },
-  {
-    "id": "relentless",
-    "name": "Relentless",
-    "type": "weapon-trait",
-    "ability_cost": "[double]",
-    "cost": "-",
-    "effect": "This fighter may immediately make a bonus 3\" move action.",
-    "m": 0, "ws": 0, "bs": 0, "def": 0, "w": 0
-  },
-  {
-    "id": "rending",
-    "name": "Rending",
-    "type": "weapon-trait",
-    "ability_cost": "[passive]",
-    "cost": "-",
-    "effect": "On a critical hit, increase the damage of all other hits from this attack by +1.",
-    "m": 0, "ws": 0, "bs": 0, "def": 0, "w": 0
-  },
-  {
-    "id": "scope",
-    "name": "Scope",
-    "type": "weapon-trait",
-    "ability_cost": "[passive]",
-    "cost": "-",
-    "effect": "This attack ignores the +1 cover bonus.",
     "m": 0, "ws": 0, "bs": 0, "def": 0, "w": 0
   },
   {
@@ -216,15 +63,6 @@
     "m": 0, "ws": 0, "bs": 0, "def": 0, "w": 0
   },
   {
-    "id": "shred",
-    "name": "Shred",
-    "type": "weapon-trait",
-    "ability_cost": "[passive]",
-    "cost": "-",
-    "effect": "After resolving an attack with this weapon, target suffers -1 Defense until the end of the round.",
-    "m": 0, "ws": 0, "bs": 0, "def": 0, "w": 0
-  },
-  {
     "id": "silent",
     "name": "Silent",
     "type": "weapon-trait",
@@ -234,48 +72,12 @@
     "m": 0, "ws": 0, "bs": 0, "def": 0, "w": 0
   },
   {
-    "id": "spread",
-    "name": "Spread",
-    "type": "weapon-trait",
-    "ability_cost": "[passive]",
-    "cost": "-",
-    "effect": "This attack may target up to two targets within 1\" of each other.",
-    "m": 0, "ws": 0, "bs": 0, "def": 0, "w": 0
-  },
-  {
-    "id": "stowed",
-    "name": "Stowed",
-    "type": "weapon-trait",
-    "ability_cost": "[passive]",
-    "cost": "-",
-    "effect": "This weapon does not require a hand to carry or use.",
-    "m": 0, "ws": 0, "bs": 0, "def": 0, "w": 0
-  },
-  {
     "id": "supercharge",
     "name": "Supercharge",
     "type": "weapon-trait",
     "ability_cost": "[passive]",
     "cost": "-",
     "effect": "Choose to increase damage by +1/+1; if you miss, fighter takes damage equal to a crit.",
-    "m": 0, "ws": 0, "bs": 0, "def": 0, "w": 0
-  },
-  {
-    "id": "two-handed",
-    "name": "Two-Handed",
-    "type": "weapon-trait",
-    "ability_cost": "[passive]",
-    "cost": "-",
-    "effect": "This weapon occupies both hand slots.",
-    "m": 0, "ws": 0, "bs": 0, "def": 0, "w": 0
-  },
-  {
-    "id": "unwieldy",
-    "name": "Unwieldy",
-    "type": "weapon-trait",
-    "ability_cost": "[passive]",
-    "cost": "-",
-    "effect": "This fighter cannot use this weapon to make Reactions.",
     "m": 0, "ws": 0, "bs": 0, "def": 0, "w": 0
   },
   {

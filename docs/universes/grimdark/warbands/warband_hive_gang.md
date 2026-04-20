@@ -33,11 +33,3 @@ The dregs of the hive cities survive through makeshift weaponry, brutal cunning,
 ### Hive Gang Abilities
 
 <FactionAbilityTable faction="Hive Gang" />
-
-
-#### Sample Unit Totals
-* [**The Disposable**](#hive-scum): [Hive Scum](#hive-scum) + [Stubber](#stubber) = <Total fighterId="hive-scum" weapons={['stubber']} /> Credits
-* [**Street Soldier**](#ganger): [Ganger](#ganger) + [Auto-Slugger](#auto-slugger) = <Total fighterId="ganger" weapons={['auto-slugger']} /> Credits
-* [**Enforcer**](#ganger): [Ganger](#ganger) + [Combat Shotgun](#combat-shotgun) = <Total fighterId="ganger" weapons={['combat-shotgun']} /> Credits
-* [**Wrecker**](#brute): [Brute](#brute) + [Sledgehammer](#sledgehammer) = <Total fighterId="brute" weapons={['sledgehammer']} /> Credits
-* [**Hive Kingpin**](#gang-boss): [Gang Boss](#gang-boss) + [Chainsword](#chainsword) = <Total fighterId="gang-boss" weapons={['chainsword']} /> Credits

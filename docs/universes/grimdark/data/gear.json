@@ -4,7 +4,7 @@
     "name": "Armoured Undersuit",
     "type": "gear",
     "ability_cost": "[passive]",
-    "cost": "10",
+    "cost": "0/10",
     "effect": "This fighter can reroll an injury roll during the end phase.",
     "m": 0, "ws": 0, "bs": 0, "def": 0, "w": 0
   },
@@ -14,7 +14,7 @@
     "type": "gear",
     "ability_cost": "[action]",
     "cost": "15",
-    "effect": "Target an enemy within 12\"; they lose the benefit of Cover until the end of the round.",
+    "effect": "Target an enemy within 12\" they lose the benefit of Cover until the end of the round.",
     "m": 0, "ws": 0, "bs": 0, "def": 0, "w": 0
   },
   {
@@ -49,7 +49,7 @@
     "name": "Camo Cloak",
     "type": "gear",
     "ability_cost": "[double]",
-    "cost": "10",
+    "cost": "0/10",
     "effect": "This fighter gains a Stealth token.",
     "m": 0, "ws": 0, "bs": 0, "def": 0, "w": 0
   },
@@ -76,17 +76,8 @@
     "name": "Dataslate",
     "type": "gear",
     "ability_cost": "[passive]",
-    "cost": "5",
+    "cost": "0/5",
     "effect": "+1 dice when interacting with computer terminals or hacking.",
-    "m": 0, "ws": 0, "bs": 0, "def": 0, "w": 0
-  },
-  {
-    "id": "field-rations",
-    "name": "Field Rations",
-    "type": "gear",
-    "ability_cost": "[action]",
-    "cost": "5",
-    "effect": "This fighter heals 2 Wounds. One-use per game.",
     "m": 0, "ws": 0, "bs": 0, "def": 0, "w": 0
   },
   {
@@ -112,7 +103,7 @@
     "name": "Gas Mask",
     "type": "gear",
     "ability_cost": "[passive]",
-    "cost": "5",
+    "cost": "0/5",
     "effect": "This fighter is immune to \"Gas\" or \"Toxic\" weapon traits.",
     "m": 0, "ws": 0, "bs": 0, "def": 0, "w": 0
   },
@@ -121,7 +112,7 @@
     "name": "Grapnel Line",
     "type": "gear",
     "ability_cost": "[passive]",
-    "cost": "10",
+    "cost": "0/10",
     "effect": "Climb vertical surfaces up to 6” high without spending extra movement.",
     "m": 0, "ws": 0, "bs": 0, "def": 0, "w": 0
   },
@@ -148,7 +139,7 @@
     "name": "Infantry Primer",
     "type": "gear",
     "ability_cost": "[passive]",
-    "cost": "5",
+    "cost": "0/5",
     "effect": "This fighter ignores the first failed Bravery test of the game.",
     "m": 0, "ws": 0, "bs": 0, "def": 0, "w": 0
   },
@@ -166,7 +157,7 @@
     "name": "Magnoculars",
     "type": "gear",
     "ability_cost": "[double]",
-    "cost": "10",
+    "cost": "0/10",
     "effect": "Reveal a Stealthed enemy within 12\". They lose Stealth and cannot regain it this round.",
     "m": 0, "ws": 0, "bs": 0, "def": 0, "w": 0
   },
@@ -229,7 +220,7 @@
     "name": "Purity Seals",
     "type": "gear",
     "ability_cost": "[passive]",
-    "cost": "5",
+    "cost": "0/5",
     "effect": "Immune to 'Fear' or 'Corruption' effects.",
     "m": 0, "ws": 0, "bs": 0, "def": 0, "w": 0
   },
@@ -374,7 +365,7 @@
     "type": "gear",
     "ability_cost": "[passive]",
     "cost": "10",
-    "effect": "This shield gives +1 Defense. Requires a hand to use.",
+    "effect": "This shield gives +1 Defence. Requires a hand to use.",
     "m": 0, "ws": 0, "bs": 0, "def": 1, "w": 0
   },
   {

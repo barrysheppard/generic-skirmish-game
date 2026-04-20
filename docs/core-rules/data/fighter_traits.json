@@ -1,0 +1,1472 @@
+[
+  {
+    "name": "Blood for the Blood God",
+    "type": "fighter-trait",
+    "ability_cost": "[double]",
+    "cost": "-",
+    "effect": "A fighter can only use this ability if an enemy fighter has been taken down by an attack action made by them this activation. This fighter makes a bonus move action or a bonus attack action."
+  },
+  {
+    "name": "Distant Lockdown",
+    "type": "fighter-trait",
+    "ability_cost": "[double]",
+    "cost": "-",
+    "effect": "Pick an enemy fighter within 20\" of this fighter. Until the end of the Mission round, that fighter cannot make disengage actions."
+  },
+  {
+    "name": "Engagement Aura",
+    "type": "fighter-trait",
+    "ability_cost": "[double]",
+    "cost": "-",
+    "effect": "Until the end of the Mission round, enemy fighters cannot make disengage actions while within 1\" of this fighter."
+  },
+  {
+    "name": "Marshal's Net",
+    "type": "fighter-trait",
+    "ability_cost": "[double]",
+    "cost": "-",
+    "effect": "Pick a visible enemy fighter within 3\" of this fighter and roll a dice. On a 3+, that fighter cannot make move actions or disengage actions this round."
+  },
+  {
+    "name": "Mesmerise",
+    "type": "fighter-trait",
+    "ability_cost": "[double]",
+    "cost": "-",
+    "effect": "Pick an enemy fighter within a number of inches of this fighter equal to the value of this ability and roll a dice. On a roll of 3+, until the end of the Mission round, that fighter cannot make move actions or disengage actions."
+  },
+  {
+    "name": "Evasive Reflex",
+    "type": "fighter-trait",
+    "ability_cost": "[action]",
+    "cost": "-",
+    "effect": "Reaction. A fighter can make this reaction when they are targeted by an attack action but before the hit rolls are made. Subtract 1 from the damage points allocated to this fighter by each hit from that attack action (to a minimum of 1)."
+  },
+  {
+    "name": "Reactive Recovery",
+    "type": "fighter-trait",
+    "ability_cost": "[action]",
+    "cost": "-",
+    "effect": "Reaction. A fighter can make this reaction after they are targeted by a melee attack action but before the hit rolls are made. Remove 3 damage points allocated to this fighter."
+  },
+  {
+    "name": "Sturdy Stance",
+    "type": "fighter-trait",
+    "ability_cost": "[double]",
+    "cost": "-",
+    "effect": "Until the end of the Mission round, subtract 1 from the damage points allocated by each hit and critical hit (to a minimum of 1) from attack actions that target this figther."
+  },
+  {
+    "name": "Riposte & Recover",
+    "type": "fighter-trait",
+    "ability_cost": "[action]",
+    "cost": "-",
+    "effect": "Reaction. A fighter can make this reaction after they are targeted by a melee attack action but before the hit rolls are made. If none of the hit rolls from that attack action result in a critical hit, allocate 3 damage points to the attacking fighter, and remove up to 3 damage points allocated to this fighter."
+  },
+  {
+    "name": "Vampiric Kill",
+    "type": "fighter-trait",
+    "ability_cost": "[double]",
+    "cost": "-",
+    "effect": "A fighter can only use this ability if an enemy fighter has been taken down by an attack action made by them this activation. Remove a number of damage points allocated to this fighter up to the value of this ability."
+  },
+  {
+    "name": "Basic Heal",
+    "type": "fighter-trait",
+    "ability_cost": "[double]",
+    "cost": "-",
+    "effect": "Remove a number of damage points from this fighter up to the value of this ability."
+  },
+  {
+    "name": "Regenerative Roll",
+    "type": "fighter-trait",
+    "ability_cost": "[double]",
+    "cost": "-",
+    "effect": "Roll a number of dice equal to the value of this ability. For each roll of 3+, remove up to 1 damage point allocated to this fighter."
+  },
+  {
+    "name": "Soul Heal",
+    "type": "fighter-trait",
+    "ability_cost": "[double]",
+    "cost": "-",
+    "effect": "Remove a number of damage points allocated to this fighter up to the value of this ability."
+  },
+  {
+    "name": "Group Heal on Kill",
+    "type": "fighter-trait",
+    "ability_cost": "[double]",
+    "cost": "-",
+    "effect": "A fighter can only use this ability if an enemy fighter was taken down by an attack action made by them this activation. Remove a number of damage points from each other friendly fighter within 3\" of this fighter, up to the value of this ability."
+  },
+  {
+    "name": "Beast Mend",
+    "type": "fighter-trait",
+    "ability_cost": "[double]",
+    "cost": "-",
+    "effect": "Pick a visible friendly fighter with the Beast runemark within 4\" of this fighter. Remove a number of damage points allocated to that fighter up to half the value of this ability (rounding up)."
+  },
+  {
+    "name": "Life Drain Ally",
+    "type": "fighter-trait",
+    "ability_cost": "[double]",
+    "cost": "-",
+    "effect": "Pick a visible friendly fighter with the Minion runemark within 6\" of this fighter. Allocate a number of damage points equal to the value of this ability to that fighter. Then, remove a number of damage points allocated to this fighter up to double the value of this ability."
+  },
+  {
+    "name": "Quiet Recovery",
+    "type": "fighter-trait",
+    "ability_cost": "[double]",
+    "cost": "-",
+    "effect": "A fighter cannot use this ability if they are within 1\" of any enemy fighters. Remove a number of damage points allocated to this fighter equal to the value of this ability."
+  },
+  {
+    "name": "Nature's Pulse",
+    "type": "fighter-trait",
+    "ability_cost": "[triple]",
+    "cost": "-",
+    "effect": "Remove up to D3 damage points allocated to each friendly fighter within 6\" of this fighter (roll for each)."
+  },
+  {
+    "name": "Holy Wave",
+    "type": "fighter-trait",
+    "ability_cost": "[quad]",
+    "cost": "-",
+    "effect": "Remove a number of damage points up to the value of this ability allocated to each friendly fighter within 9\" of this fighter."
+  },
+  {
+    "name": "Raise Minion",
+    "type": "fighter-trait",
+    "ability_cost": "[triple]",
+    "cost": "-",
+    "effect": "Pick a friendly fighter with the Minion runemark that has been taken down. Set that fighter up on a platform or the battlefield floor, wholly within 3\" of this fighter. That fighter has no damage points allocated to it. That fighter no longer counts as being taken down and has no damage points allocated to it. Give that fighter an activated token."
+  },
+  {
+    "name": "Smith's Modulation",
+    "type": "fighter-trait",
+    "ability_cost": "[double]",
+    "cost": "-",
+    "effect": "Pick a visible fighter (friendly or enemy) within 8\" of this fighter. If you picked an enemy fighter, subtract 2 from their Toughness characteristic for the rest of the Mission round. If you picked a friendly fighter that does not have the Terrifying runemark, add 2 to their Toughness characteristic for the rest of the Mission round. If you picked a friendly fighter that has the Terrifying runemark, remove 3 damage points allocated to them."
+  },
+  {
+    "name": "Defensive Glyph",
+    "type": "fighter-trait",
+    "ability_cost": "[double]",
+    "cost": "-",
+    "effect": "Pick a point on the battlefield within 9\" of this fighter and place a special token there. Until the end of the Mission round, subtract 1 from the damage points allocated by each critical hit from attack actions that target friendly fighters while they are within 6\" of the centre of that token."
+  },
+  {
+    "name": "Debuff Cloud",
+    "type": "fighter-trait",
+    "ability_cost": "[triple]",
+    "cost": "-",
+    "effect": "Pick a visible point within 6\" of this fighter that is on the battlefield floor or a platform and place a token there.While an enemy fighter is within 3\" of any cloud tokens, subtract 1 from their Toughness characteristic and subtract 1 from the Attacks characteristic of attack actions made by them (both to a minimum of 1). At the end of the Mission round, remove the token."
+  },
+  {
+    "name": "Terrifying Roar",
+    "type": "fighter-trait",
+    "ability_cost": "[triple]",
+    "cost": "-",
+    "effect": "Pick an enemy fighter within 6\" of this fighter.Until the end of the Mission round, subtract 1 from the Move characteristic of that fighter (to a minimum of 1) and subtract 1 from the damage points allocated by each hit and critical hit from attack actions made by that fighter (to a minimum of 1)."
+  },
+  {
+    "name": "Wither Strength",
+    "type": "fighter-trait",
+    "ability_cost": "[triple]",
+    "cost": "-",
+    "effect": "Pick an enemy fighter within 12\" of this fighter and roll a die. Until the end of the Mission round, subtract the value of the roll from the Toughness characteristic of that fighter (to a minimum of 1)."
+  },
+  {
+    "name": "Self-Destruct Blast",
+    "type": "fighter-trait",
+    "ability_cost": "[double]",
+    "cost": "-",
+    "effect": "Allocate D3 damage points to each enemy fighter within 3\" of this fighter and gain 1 wild dice. Then, remove this fighter from the battlefield (this fighter is taken down)."
+  },
+  {
+    "name": "Spite-tongue Curse",
+    "type": "fighter-trait",
+    "ability_cost": "[double]",
+    "cost": "-",
+    "effect": "Pick a visible enemy fighter within 9\" of this fighter and roll a number of dice equal to the value of this ability. For each 4+, allocate 1 damage point to that fighter. For each 1, allocate 1 damage point to the fighter using this ability."
+  },
+  {
+    "name": "Dark Pact",
+    "type": "fighter-trait",
+    "ability_cost": "[double]",
+    "cost": "-",
+    "effect": "Pick a visible enemy fighter within 12\" of this fighter.Roll a number of dice equal to the value of this ability.For each 3+, allocate 1 damage point to that fighter.After all of the dice have been rolled, allocate D3 damage points to this fighter."
+  },
+  {
+    "name": "Voracious Swarm",
+    "type": "fighter-trait",
+    "ability_cost": "[double]",
+    "cost": "-",
+    "effect": "Pick a visible enemy fighter within 12\" of this fighter and roll a number of dice equal to the value of this ability. For each roll of 3+, allocate 1 damage point to that enemy fighter."
+  },
+  {
+    "name": "Inspirational Relay",
+    "type": "fighter-trait",
+    "ability_cost": "[double]",
+    "cost": "-",
+    "effect": "Remove all friendly gong carrier tokens from the battlefield, then give this fighter a gong carrier token. For the rest of the Mission round, add 1 to the Attacks characteristic of melee attack actions made by friendly fighters with the Helsmiths of Hashut and Warrior runemarks while they are within 12\" of a friendly fighter with a gong carrier token."
+  },
+  {
+    "name": "Onslaught",
+    "type": "fighter-trait",
+    "ability_cost": "[triple]",
+    "cost": "-",
+    "effect": "Add 1 to the Attacks characteristic of melee attack actions made by this fighter until the end of their activation."
+  },
+  {
+    "name": "Ignited Fervour",
+    "type": "fighter-trait",
+    "ability_cost": "[triple]",
+    "cost": "-",
+    "effect": "Until the end of the Mission round, add 1 to the Attacks characteristic of melee attack actions made by visible friendly fighters while they are within 3\" of this fighter."
+  },
+  {
+    "name": "Warchanter's Beat",
+    "type": "fighter-trait",
+    "ability_cost": "[double]",
+    "cost": "-",
+    "effect": "Until the end of the Mission round, add 1 to the Attacks characteristic of melee attack actions made by other friendly fighters while they are within 6\" of this fighter."
+  },
+  {
+    "name": "Honour Our Oaths",
+    "type": "fighter-trait",
+    "ability_cost": "[triple]",
+    "cost": "-",
+    "effect": "A fighter can only use this ability if an enemy fighter has been taken down by an attack action made by them this activation. Until the end of the Mission round, add 1 to the Attacks characteristic of melee attack actions made by visible friendly fighters while they are within 6\" of this fighter."
+  },
+  {
+    "name": "Teleport Ally",
+    "type": "fighter-trait",
+    "ability_cost": "[triple]",
+    "cost": "-",
+    "effect": "Pick a friendly fighter with the Minion runemark. Remove that fighter from the battlefield, then set that fighter up on a platform or the battlefield floor within 6\" of this fighter."
+  },
+  {
+    "name": "Strategic Redeploy",
+    "type": "fighter-trait",
+    "ability_cost": "[double]",
+    "cost": "-",
+    "effect": "Remove this fighter from the battlefield, then set them up on a platform or the battlefield floor, more than 5\" from all enemy fighters."
+  },
+  {
+    "name": "Grapnel Launcher",
+    "type": "fighter-trait",
+    "ability_cost": "[triple]",
+    "cost": "-",
+    "effect": "A fighter can only use this ability if they are more than 3\" from any enemy fighters. Pick a point that is on an obstacle and is within 20\" of this fighter. Remove this fighter from the battlefield, then set that fighter up on a platform or the battlefield floor, wholly within 3\" of the point picked."
+  },
+  {
+    "name": "Self Teleport",
+    "type": "fighter-trait",
+    "ability_cost": "[triple]",
+    "cost": "-",
+    "effect": "Remove this fighter from the battlefield and set them up anywhere on the battlefield floor more than 5\" from any enemy fighters."
+  },
+  {
+    "name": "Kill & Reposition",
+    "type": "fighter-trait",
+    "ability_cost": "[quad]",
+    "cost": "-",
+    "effect": "A fighter can only use this ability if an enemy fighter has been taken down by an attack action made by them this activation. Remove this fighter from the battlefield, then set this fighter up on a platform or the battlefield floor, more than 6\" from all enemy fighters. You can subtract the value of this ability from that 6\", to a minimum of 0."
+  },
+  {
+    "name": "Defensive Reflex",
+    "type": "fighter-trait",
+    "ability_cost": "[double]",
+    "cost": "-",
+    "effect": "Reaction. A fighter can make this reaction after hit rolls are made but before damage is calculated. Add 1 to this fighter's Toughness characteristic during that attack action."
+  },
+  {
+    "name": "Self Toughness Buff",
+    "type": "fighter-trait",
+    "ability_cost": "[double]",
+    "cost": "-",
+    "effect": "Until the end of the Mission round, add 1 to the Toughness characteristic of this fighter."
+  },
+  {
+    "name": "Armor Break",
+    "type": "fighter-trait",
+    "ability_cost": "[double]",
+    "cost": "-",
+    "effect": "Until the end of this fighter's activation, if an attack action made by this fighter scores any hits or critical hits, subtract 1 from the target fighter's Toughness characteristic (to a minimum of 1) until the end of the Mission round."
+  },
+  {
+    "name": "Shieldwall",
+    "type": "fighter-trait",
+    "ability_cost": "[double]",
+    "cost": "-",
+    "effect": "Until the end of the Mission round, add 2 to the Toughness characteristic of friendly fighters with a Shield while they are within 3\" of this fighter."
+  },
+  {
+    "name": "Lethal Strikes",
+    "type": "fighter-trait",
+    "ability_cost": "[double]",
+    "cost": "-",
+    "effect": "Until the end of this fighter's activation, the Strength characteristic of attack actions made by this fighter count as being higher than the target's Toughness characteristic."
+  },
+  {
+    "name": "Targeted Vulnerability",
+    "type": "fighter-trait",
+    "ability_cost": "[double]",
+    "cost": "-",
+    "effect": "Pick an enemy fighter or objective within 6\" of this fighter to be the target. For the rest of the Mission round, subtract 1 from the Toughness of enemy fighters while they are within 3\" of and visible to the target."
+  },
+  {
+    "name": "Defensive Aura",
+    "type": "fighter-trait",
+    "ability_cost": "[double]",
+    "cost": "-",
+    "effect": "Until the end of the Mission round, add 1 to the Toughness characteristic of friendly fighters while they are within 6\" of this fighter."
+  },
+  {
+    "name": "Commanding Presence",
+    "type": "fighter-trait",
+    "ability_cost": "[double]",
+    "cost": "-",
+    "effect": "For the rest of the Mission round, while they are within 3\" of a friendly fighter with the Hero and Blood of the Bull runemarks, friendly fighters with the Blood of the Bull runemark count as 1 additional friendly fighter when determining control of objectives. In addition, if the value of this ability is 6, add 1 to the Toughness characteristic of those fighters for the rest of the Mission round."
+  },
+  {
+    "name": "Master's Training",
+    "type": "fighter-trait",
+    "ability_cost": "[triple]",
+    "cost": "-",
+    "effect": "Pick a visible friendly fighter with the Thunderstrike Stormcasts runemark within 6\" of this fighter. Until the end of the Mission round, add 2 to the Move characteristic of that fighter, add 2 to the Toughness characteristic of that fighter, and add 2 to the Attacks characteristic of the next melee attack action made by that fighter. This cannot affect friendly fighters with the Beast runemark."
+  },
+  {
+    "name": "Paralysing Stare",
+    "type": "fighter-trait",
+    "ability_cost": "[triple]",
+    "cost": "-",
+    "effect": "Pick a visible enemy fighter within 9\" of this fighter.Subtract half the value of this ability (rounding up) from either the Move characteristic or the Toughness characteristic of that fighter (to a minimum of 1) until the end of the Mission round."
+  },
+  {
+    "name": "Cultural Fortitude",
+    "type": "fighter-trait",
+    "ability_cost": "[triple]",
+    "cost": "-",
+    "effect": "Until the end of the Mission round, add half the value of this ability (rounding up) to the Toughness characteristic of friendly fighters while they are within 3\" of this fighter."
+  },
+  {
+    "name": "Celestial Haste",
+    "type": "fighter-trait",
+    "ability_cost": "[triple]",
+    "cost": "-",
+    "effect": "Until the end of the Mission round, add 1 to the Move and Toughness characteristics of friendly fighters while they are within 9\" of this fighter."
+  },
+  {
+    "name": "Cavalry Charge",
+    "type": "fighter-trait",
+    "ability_cost": "[triple]",
+    "cost": "-",
+    "effect": "Until the end of the Mission round, add 2 to the Move characteristic of friendly fighters with the Mount runemark and a Toughness characteristic of 5 or more."
+  },
+  {
+    "name": "Brace",
+    "type": "fighter-trait",
+    "ability_cost": "[triple]",
+    "cost": "-",
+    "effect": "Until the end of the Mission round, add half the value of this ability (rounding up) to the Toughness characteristic of this fighter."
+  },
+  {
+    "name": "Unyielding Form",
+    "type": "fighter-trait",
+    "ability_cost": "[triple]",
+    "cost": "-",
+    "effect": "A fighter can only use this ability if this fighter has not made a move or disengage action this activation, and if a fighter uses this ability they cannot make a move or disengage action this activation. Until the end of this fighter's activation, add 1 to the Attacks and Strength characteristics of melee attack actions made by this fighter, and until the end of the Mission round, add 1 to the Toughness characteristic of this fighter."
+  },
+  {
+    "name": "Holy Strike",
+    "type": "fighter-trait",
+    "ability_cost": "[triple]",
+    "cost": "-",
+    "effect": "This fighter makes a bonus melee attack action. Subtract 5 from the Toughness characteristic of the target of that attack action, to a minimum of 1, for that attack action."
+  },
+  {
+    "name": "Fading Strength",
+    "type": "fighter-trait",
+    "ability_cost": "[quad]",
+    "cost": "-",
+    "effect": "Pick a visible enemy fighter within 3\" of this fighter and roll a number of dice equal to the value of this ability. For each roll of 4-5, until the end of the Mission round, subtract 1 from that fighter's Toughness characteristic (to a minimum of 1). For each roll of 6, until the end of the battle, subtract 1 from that fighter's Toughness characteristic (to a minimum of 1)."
+  },
+  {
+    "name": "Queen's Blessing",
+    "type": "fighter-trait",
+    "ability_cost": "[quad]",
+    "cost": "-",
+    "effect": "Until the end of the Mission round, add half the value of this ability (rounding up) to the Toughness and Strength characteristics of friendly fighters while they are within 6\" of this fighter."
+  },
+  {
+    "name": "Weak Spot Strike",
+    "type": "fighter-trait",
+    "ability_cost": "[quad]",
+    "cost": "-",
+    "effect": "The next melee attack action made by this fighter scores critical hits on a 3+ regardless of the Toughness characteristic of the target."
+  },
+  {
+    "name": "Retreating Reaction",
+    "type": "fighter-trait",
+    "ability_cost": "[action]",
+    "cost": "-",
+    "effect": "Reaction. A fighter can make this reaction after they have been allocated damage points by a melee attack action. This fighter makes a bonus disengage action."
+  },
+  {
+    "name": "Acidic Counter",
+    "type": "fighter-trait",
+    "ability_cost": "[action]",
+    "cost": "-",
+    "effect": "Reaction. A fighter can make this reaction when they are targeted by a melee attack action.After the damage is totalled but before it is allocated to this fighter, roll a dice for each critical hit scored from that attack action.For each 3+, allocate 3 damage points to the fighter that made that attack action."
+  },
+  {
+    "name": "Guardian's Stand",
+    "type": "fighter-trait",
+    "ability_cost": "[action]",
+    "cost": "-",
+    "effect": "Reaction. A fighter can make this reaction after they are targeted by an attack action but before the hit rolls are made if they are within 3\" of another friendly fighter with the Bulwark and/or Elite runemark. If the other friendly fighter has the Bulwark runemark, add 1 to this fighter's Toughness characteristic until the end of the activation. If the other friendly fighter has the Elite runemark, for each hit roll from that attack action that misses, allocate 2 damage points to the attacking fighter. If the other friendly fighter has both the Bulwark and Elite runemarks, apply both effects."
+  },
+  {
+    "name": "Defensive Counter",
+    "type": "fighter-trait",
+    "ability_cost": "[action]",
+    "cost": "-",
+    "effect": "Reaction. A fighter can make this reaction after they are targeted by a melee attack action but before the hit rolls are made. If there are any unmodified hit rolls of 1, allocate 2 damage points to the attacking fighter. In addition, if there are 2 or more hit rolls from that attack action that miss, allocate 1 damage point to the attacking fighter."
+  },
+  {
+    "name": "Disengage Penalty",
+    "type": "fighter-trait",
+    "ability_cost": "[action]",
+    "cost": "-",
+    "effect": "Reaction. A fighter can make this reaction when a visible enemy fighter within 1\" of them makes a disengage action but before that fighter moves away. Roll a dice. On a 2+, allocate D6 damage points to that enemy fighter."
+  },
+  {
+    "name": "Vicious Disengage",
+    "type": "fighter-trait",
+    "ability_cost": "[action]",
+    "cost": "-",
+    "effect": "Reaction. A fighter can make this reaction when a visible enemy fighter within 1\" of them makes a disengage action but before that fighter moves away. Roll a dice. On a roll of 3+, allocate D6 damage points to that enemy fighter."
+  },
+  {
+    "name": "Ghostly Counter",
+    "type": "fighter-trait",
+    "ability_cost": "[action]",
+    "cost": "-",
+    "effect": "Reaction. A fighter can make this reaction after they are targeted by a melee attack action but before the hit rolls are made. If each hit roll from that attack action results in a miss, allocate 5 damage points to the attacking fighter."
+  },
+  {
+    "name": "Blade Ward",
+    "type": "fighter-trait",
+    "ability_cost": "[action]",
+    "cost": "-",
+    "effect": "Reaction. A fighter can make this reaction after they are targeted by a melee attack action but before the hit rolls are made. For each hit roll of 1 or 2 from that attack action, allocate 2 damage points to the attacking fighter."
+  },
+  {
+    "name": "Skillful Counter",
+    "type": "fighter-trait",
+    "ability_cost": "[action]",
+    "cost": "-",
+    "effect": "Reaction. A fighter can make this reaction after they are targeted by a melee attack action but before the hit rolls are made. If none of the hit rolls from that attack action result in a critical hit, allocate 4 damage points to the attacking fighter."
+  },
+  {
+    "name": "Bloody Reprisal",
+    "type": "fighter-trait",
+    "ability_cost": "[action]",
+    "cost": "-",
+    "effect": "Reaction. A fighter can make this reaction after they are targeted by a melee attack action but before the hit rolls are made. For each hit roll from that attack action that misses, allocate 2 damage points to the attacking fighter. For each critical hit from that attack action, allocate 1 additional damage point to this fighter."
+  },
+  {
+    "name": "Whirlwind Counter",
+    "type": "fighter-trait",
+    "ability_cost": "[action]",
+    "cost": "-",
+    "effect": "Reaction. A fighter can make this reaction after they are targeted by a melee attack action but before the hit rolls are made. For each hit roll of 1 from that attack action, allocate 3 damage points to the attacking fighter, or if this fighter has the Agile runemark, allocate 3 damage points to each enemy fighter within 1\" instead."
+  },
+  {
+    "name": "Vengeance Aura",
+    "type": "fighter-trait",
+    "ability_cost": "[action]",
+    "cost": "-",
+    "effect": "Reaction. A fighter can make this reaction when a friendly fighter is taken down. Until the end of the Mission round, add 1 to the damage points allocated to enemy fighters by each hit and critical hit from melee attack actions made by friendly fighters while they are within 6\" of this fighter."
+  },
+  {
+    "name": "Fungal Spores",
+    "type": "fighter-trait",
+    "ability_cost": "[action]",
+    "cost": "-",
+    "effect": "Reaction. A fighter can make this reaction when they are targeted by a melee attack action but before the hit rolls are made. For each hit roll of 5+ from that attack action, allocate 2 damage points to the attacking fighter."
+  },
+  {
+    "name": "Savage Counter",
+    "type": "fighter-trait",
+    "ability_cost": "[action]",
+    "cost": "-",
+    "effect": "Reaction. A fighter can make this reaction after they are targeted by a melee attack action but before the hit rolls are made. If none of the hit rolls from that attack action result in a critical hit, allocate 6 damage points to the attacking fighter."
+  },
+  {
+    "name": "Ranged Riposte",
+    "type": "fighter-trait",
+    "ability_cost": "[action]",
+    "cost": "-",
+    "effect": "Reaction. A fighter can make this reaction after they are targeted by an attack action but before the hit rolls are made if the attacker is within range of at least one of the target's weapons. For each hit roll from that attack action that misses, allocate 1 damage point to the attacking fighter. For each hit roll of 1, allocate 2 damage points to the attacking fighter instead."
+  },
+  {
+    "name": "Sacrificial Intervene",
+    "type": "fighter-trait",
+    "ability_cost": "[action]",
+    "cost": "-",
+    "effect": "Reaction. A fighter can make this reaction when a friendly fighter with the Hero runemark within 3\" of them is targeted by an attack action, after the damage is totalled but before it is allocated, if it is enough for that fighter to be taken down. Allocate those damage points, one at a time, to this fighter instead. If this fighter is taken down, allocate any remaining damage points to that friendly Hero."
+  },
+  {
+    "name": "Damage Reflection",
+    "type": "fighter-trait",
+    "ability_cost": "[action]",
+    "cost": "-",
+    "effect": "Reaction. A fighter can make this reaction after they are targeted by a melee attack action but before the hit rolls are made. For each hit roll from that attack action that hits, allocate 1 damage point to the attacking fighter. For each critical hit, allocate 2 damage points to the attacking fighter instead."
+  },
+  {
+    "name": "Evasive Retreat",
+    "type": "fighter-trait",
+    "ability_cost": "[action]",
+    "cost": "-",
+    "effect": "Reaction. A fighter can make this reaction after they have been allocated the total damage points by a melee attack action. This fighter makes a bonus disengage action."
+  },
+  {
+    "name": "Spiteful Death",
+    "type": "fighter-trait",
+    "ability_cost": "[action]",
+    "cost": "-",
+    "effect": "Reaction. A fighter can make this reaction when they are targeted by a melee attack action, after the damage is totalled but before it is allocated to this fighter, if it is enough for this fighter to be taken down. Roll a dice. On a roll of 4+, allocate 3 damage points to their attacker."
+  },
+  {
+    "name": "Punishing Disengage",
+    "type": "fighter-trait",
+    "ability_cost": "[action]",
+    "cost": "-",
+    "effect": "Reaction. A fighter can make this reaction when a visible enemy fighter within 1\" of them makes a disengage action but before that fighter moves away. Roll a dice. On a 4+, allocate D6 damage points to that enemy fighter."
+  },
+  {
+    "name": "Stalking Disengage",
+    "type": "fighter-trait",
+    "ability_cost": "[action]",
+    "cost": "-",
+    "effect": "Reaction. After a visible enemy fighter within 1\" of this fighter makes a disengage action, allocate D3 damage points to that fighter."
+  },
+  {
+    "name": "Expert Riposte",
+    "type": "fighter-trait",
+    "ability_cost": "[action]",
+    "cost": "-",
+    "effect": "Reaction. A fighter can make this reaction after they are targeted by a melee attack action but before the hit rolls are made. If each hit roll from that attack action results in a miss, allocate 10 damage points to the attacking fighter."
+  },
+  {
+    "name": "Explosive End",
+    "type": "fighter-trait",
+    "ability_cost": "[action]",
+    "cost": "-",
+    "effect": "Reaction. A fighter can make this reaction when they are targeted by a melee attack action, after the damage is totalled but before it is allocated to this fighter, if it is enough for this fighter to be taken down. Allocate D6 damage points to their attacker. Fighters with the Beast runemark or both the Scout and Fly runemarks cannot make this reaction."
+  },
+  {
+    "name": "Corrosive Disengage",
+    "type": "fighter-trait",
+    "ability_cost": "[double]",
+    "cost": "-",
+    "effect": "Pick a visible enemy fighter within 1\" of this fighter. This fighter makes a bonus disengage action. Then, allocate a number of damage points to that fighter equal to the value of this ability."
+  },
+  {
+    "name": "Ranged Focus",
+    "type": "fighter-trait",
+    "ability_cost": "[double]",
+    "cost": "-",
+    "effect": "Until the end of this fighter’s activation, add 1 to the damage points allocated to enemy fighters by each hit and critical hit from missile attack actions made by this fighter."
+  },
+  {
+    "name": "Bloodlust",
+    "type": "fighter-trait",
+    "ability_cost": "[double]",
+    "cost": "-",
+    "effect": "A fighter can only use this ability if they are within 3\" of a visible enemy fighter with 1 or more damage points allocated to them. Until the end of this fighter's activation, add 1 to the Attacks and Strength characteristics of melee attack actions made by this fighter."
+  },
+  {
+    "name": "Cursed Ground",
+    "type": "fighter-trait",
+    "ability_cost": "[double]",
+    "cost": "-",
+    "effect": "Pick an objective within 3\" of this fighter or a treasure token within 3\" of this fighter. That treasure token can be one that is being carried by a fighter if that fighter is visible to this fighter. Roll a dice at the end of the Mission round for each enemy fighter within 3\" of that objective or treasure token. On a roll of 3+, allocate D3 damage points for the fighter being rolled for. The same objective or treasure token cannot be picked more than once per Mission round."
+  },
+  {
+    "name": "Precision Strike",
+    "type": "fighter-trait",
+    "ability_cost": "[double]",
+    "cost": "-",
+    "effect": "Until the end of this fighter's activation, add half the value of this ability (rounding up) to the damage points allocated to enemy fighters by each critical hit from melee attack actions made by this fighter."
+  },
+  {
+    "name": "Rage Strike",
+    "type": "fighter-trait",
+    "ability_cost": "[double]",
+    "cost": "-",
+    "effect": "A fighter can only use this ability if 20 or more damage points have been allocated to them. Add 3 to the Attacks characteristic of the next melee attack action made by this fighter in this activation."
+  },
+  {
+    "name": "Area Slash",
+    "type": "fighter-trait",
+    "ability_cost": "[double]",
+    "cost": "-",
+    "effect": "Allocate a number of damage points equal to half the value of this ability (rounding up) to each visible enemy fighter within 3\" of this fighter."
+  },
+  {
+    "name": "Lacerate",
+    "type": "fighter-trait",
+    "ability_cost": "[double]",
+    "cost": "-",
+    "effect": "Pick each enemy fighter that was allocated any damage points by this fighter's attack actions this activation. That fighter is bleeding out. At the start of each Mission round, after the initiative roll, allocate D3 damage points to each enemy fighter that is bleeding out."
+  },
+  {
+    "name": "Poison Dart",
+    "type": "fighter-trait",
+    "ability_cost": "[double]",
+    "cost": "-",
+    "effect": "Pick a visible enemy fighter within 6\" of this fighter and roll 2 dice.For each 4+, allocate a number of damage points to that fighter equal to half the value of this ability (rounding up).In addition, for each 6, subtract 1 from that fighter's Toughness characteristic until the end of the Mission round."
+  },
+  {
+    "name": "Magic Missile",
+    "type": "fighter-trait",
+    "ability_cost": "[double]",
+    "cost": "-",
+    "effect": "Pick a visible enemy fighter within 9\" of this fighter and roll 2 dice. For each roll of 4-5, allocate 1 damage point to that fighter. For each roll of 6, allocate a number of damage points to that fighter equal to the value of this ability."
+  },
+  {
+    "name": "Lightning Strike",
+    "type": "fighter-trait",
+    "ability_cost": "[double]",
+    "cost": "-",
+    "effect": "Pick a visible enemy fighter within 18\" of this fighter and roll a number of dice equal to half the value of this ability (rounding up). For each roll of 4+, allocate 3 damage points to that fighter."
+  },
+  {
+    "name": "Powerful Bite",
+    "type": "fighter-trait",
+    "ability_cost": "[double]",
+    "cost": "-",
+    "effect": "Pick a visible enemy fighter within 1\" of this fighter and roll a number of dice equal to half the value of this ability (rounding up). For each roll of 3+, allocate 3 damage points to that fighter."
+  },
+  {
+    "name": "Persistent Rage",
+    "type": "fighter-trait",
+    "ability_cost": "[double]",
+    "cost": "-",
+    "effect": "A fighter can only use this ability if 15 or more damage points have been allocated to them. Until the end of the battle, add 1 to the Attacks characteristic of melee attack actions made by this fighter."
+  },
+  {
+    "name": "Heavy Swing",
+    "type": "fighter-trait",
+    "ability_cost": "[double]",
+    "cost": "-",
+    "effect": "Add half the value of this ability (rounding up) to the damage points allocated by each critical hit from the next attack action made by this fighter this activation."
+  },
+  {
+    "name": "Choke Trap",
+    "type": "fighter-trait",
+    "ability_cost": "[double]",
+    "cost": "-",
+    "effect": "Pick a visible enemy fighter within 5\" of this fighter and roll a dice. On a roll of 3-4, allocate 1 damage point to that fighter. On a roll of 5+, allocate a number of damage points to that fighter equal to the value of this ability."
+  },
+  {
+    "name": "Gambler's Buff",
+    "type": "fighter-trait",
+    "ability_cost": "[double]",
+    "cost": "-",
+    "effect": "Roll a number of dice equal to the value of this ability. For each roll of 1, allocate 1 damage point to this fighter. For each roll of 4+, add 1 to the damage points allocated to enemy fighters by each hit or critical hit from the next missile attack action made by this fighter in this activation."
+  },
+  {
+    "name": "Electric Chain",
+    "type": "fighter-trait",
+    "ability_cost": "[double]",
+    "cost": "-",
+    "effect": "Roll a number of dice equal to the value of this ability. For each roll of 5+, pick a visible enemy fighter within 3\" of this fighter.Allocate 1 damage point to that fighter for each friendly fighter with this ability's runemarks within 3\" of that fighter."
+  },
+  {
+    "name": "Cripple Darts",
+    "type": "fighter-trait",
+    "ability_cost": "[double]",
+    "cost": "-",
+    "effect": "Pick a visible enemy fighter within 9\" of this fighter and roll 2 dice. For each roll of 4+, allocate 2 damage points to that fighter. In addition, if either dice rolls a 6, until the end of the Mission round, halve the Move characteristic of that fighter (rounding up)."
+  },
+  {
+    "name": "Muting Strike",
+    "type": "fighter-trait",
+    "ability_cost": "[double]",
+    "cost": "-",
+    "effect": "Pick an enemy fighter that had any damage points allocated to them by this fighter this activation. That fighter cannot use reactions for the rest of the Mission round. In addition, if the value of this ability is 6, that fighter cannot use abilities for the rest of the Mission round."
+  },
+  {
+    "name": "Devour",
+    "type": "fighter-trait",
+    "ability_cost": "[double]",
+    "cost": "-",
+    "effect": "Pick a visible enemy fighter within 1\" of this fighter and roll a number of dice equal to the value of this ability.For each 4-5, allocate 1 damage point to that fighter.For each 6, allocate 3 damage points to that fighter."
+  },
+  {
+    "name": "Hellish Might",
+    "type": "fighter-trait",
+    "ability_cost": "[double]",
+    "cost": "-",
+    "effect": "Add 1 to the damage points allocated by each critical hit from the next melee attack action made by this fighter this activation. If the value of this ability is 6, add 1 to the Strength characteristic of that attack action and add 1 to the Attacks characteristic of that attack action."
+  },
+  {
+    "name": "Stunning Blow",
+    "type": "fighter-trait",
+    "ability_cost": "[double]",
+    "cost": "-",
+    "effect": "After this fighter's next melee attack action in this activation, if at least 1 hit roll from that attack action results in a hit, the target forfeits 1 of their actions in this Mission round. If the target has already activated or if they have no more actions to forfeit, allocate 3 damage points to the target instead."
+  },
+  {
+    "name": "Execution Strike",
+    "type": "fighter-trait",
+    "ability_cost": "[double]",
+    "cost": "-",
+    "effect": "Add half the value of this ability (rounding up) to the number of damage points allocated by each critical hit from the next attack action made by this fighter this activation that has a Range characteristic of 3 or less."
+  },
+  {
+    "name": "Poisoned Weapons",
+    "type": "fighter-trait",
+    "ability_cost": "[double]",
+    "cost": "-",
+    "effect": "Add 1 to the damage points allocated by each hit and critical hit from the next attack action made by this fighter this activation."
+  },
+  {
+    "name": "Thorn Burst",
+    "type": "fighter-trait",
+    "ability_cost": "[double]",
+    "cost": "-",
+    "effect": "Allocate a number of damage points equal to half the value of this ability to each enemy fighter within 1\" of this fighter."
+  },
+  {
+    "name": "Explosive Shot",
+    "type": "fighter-trait",
+    "ability_cost": "[double]",
+    "cost": "-",
+    "effect": "After the next missile attack action made by this fighter in this activation, if it scored one or more hits, allocate a number of damage points to each other fighter within 3\" of the target equal to half the value of this ability (rounding up)."
+  },
+  {
+    "name": "Forced Disengage",
+    "type": "fighter-trait",
+    "ability_cost": "[double]",
+    "cost": "-",
+    "effect": "Pick a visible enemy fighter within 9\" of this fighter that is within 1\" of a friendly fighter. That enemy fighter must make a bonus disengage action. If they cannot do so, allocate D6 damage points to that enemy fighter instead."
+  },
+  {
+    "name": "Fire Strike",
+    "type": "fighter-trait",
+    "ability_cost": "[double]",
+    "cost": "-",
+    "effect": "Add 1 to the damage points allocated by each hit and each critical hit from the next melee attack action made by this fighter this activation."
+  },
+  {
+    "name": "Vulnerability Aura",
+    "type": "fighter-trait",
+    "ability_cost": "[double]",
+    "cost": "-",
+    "effect": "Until the end of the Mission round, add 1 to the damage points allocated by each critical hit from attack actions made by friendly fighters that target an enemy fighter within 6\" of this fighter."
+  },
+  {
+    "name": "Fire Breath",
+    "type": "fighter-trait",
+    "ability_cost": "[double]",
+    "cost": "-",
+    "effect": "Roll a dice for each visible enemy figther within 1\" of this fighter.On a roll of 4+, allocate 3 damage points to the fighter being rolled for."
+  },
+  {
+    "name": "Savage Claws",
+    "type": "fighter-trait",
+    "ability_cost": "[double]",
+    "cost": "-",
+    "effect": "Pick a visible enemy fighter within 1\" of this fighter and roll 2 dice. For each roll of 4-5, allocate D3 damage points to that fighter. For each roll of 6, allocate D6 damage points to that fighter."
+  },
+  {
+    "name": "Throwing Axe",
+    "type": "fighter-trait",
+    "ability_cost": "[double]",
+    "cost": "-",
+    "effect": "Pick a visible enemy fighter within 6\" of this fighter and roll 2 dice. For each roll of 4-5, allocate 1 damage point to that fighter. For each roll of 6, allocate a number of damage points to that fighter equal to the value of this ability."
+  },
+  {
+    "name": "Relentless Strikes",
+    "type": "fighter-trait",
+    "ability_cost": "[double]",
+    "cost": "-",
+    "effect": "A fighter can only use this ability if an enemy fighter has been allocated damage points by an attack action made by them this activation.Add half the value of this ability (rounding up) to the damage points allocated by each hit and critical hit from the next melee attack action this activation that targets that enemy fighter."
+  },
+  {
+    "name": "Barbed Hook",
+    "type": "fighter-trait",
+    "ability_cost": "[double]",
+    "cost": "-",
+    "effect": "Until the end of the Mission round, after an enemy fighter makes a disengage action that began within 3\" of this fighter, allocate D6 damage points to that fighter."
+  },
+  {
+    "name": "Predatory Reflex",
+    "type": "fighter-trait",
+    "ability_cost": "[double]",
+    "cost": "-",
+    "effect": "Until the end of the Mission round, each time an enemy fighter within 6\" of this fighter makes a disengage action but before that fighter moves away, allocate D6 damage points to that fighter."
+  },
+  {
+    "name": "Hunter's Focus",
+    "type": "fighter-trait",
+    "ability_cost": "[double]",
+    "cost": "-",
+    "effect": "Until the end of this fighter's activation, add 1 to the damage points allocated to enemy fighters by each hit and critical hit from attack actions made by this fighter."
+  },
+  {
+    "name": "Thrown Projectile",
+    "type": "fighter-trait",
+    "ability_cost": "[double]",
+    "cost": "-",
+    "effect": "Pick a visible enemy fighter within 6\" of this fighter and roll 2 dice.For each 4-5, allocate 1 damage point to that fighter.For each 6, allocate a number of damage points equal to the value of this ability to that fighter."
+  },
+  {
+    "name": "Throw Rock",
+    "type": "fighter-trait",
+    "ability_cost": "[double]",
+    "cost": "-",
+    "effect": "A fighter can only use this ability if they are within 1\" of an obstacle. Pick a visible enemy fighter within 8\" of this fighter and roll a dice. On a roll of 2-4, allocate 1 damage point to that fighter. On a roll of 5+, allocate a number of damage points to that fighter equal to the value of this ability."
+  },
+  {
+    "name": "Brutal Punch",
+    "type": "fighter-trait",
+    "ability_cost": "[double]",
+    "cost": "-",
+    "effect": "Pick a visible enemy fighter within 1\" of this fighter and roll a number of dice equal to half the value of this ability (rounding up). For each roll of 4+, allocate 3 damage points to that fighter."
+  },
+  {
+    "name": "Brutal Blow",
+    "type": "fighter-trait",
+    "ability_cost": "[double]",
+    "cost": "-",
+    "effect": "Add 1 to the damage points allocated by each hit and critical hit from the next melee attack action made by this fighter this activation."
+  },
+  {
+    "name": "Cursed Strike",
+    "type": "fighter-trait",
+    "ability_cost": "[double]",
+    "cost": "-",
+    "effect": "Until the end of this fighter's activation, add 1 to the damage points allocated by each hit and critical hit from attack actions made by this fighter."
+  },
+  {
+    "name": "Devastating Impact",
+    "type": "fighter-trait",
+    "ability_cost": "[double]",
+    "cost": "-",
+    "effect": "A fighter can only use this ability if they have finished a move action this activation. Pick a visible enemy fighter within 1\" of this fighter and roll a dice. On a roll of 4-5, allocate 1 damage point to that fighter. On a roll of 6, allocate a number of damage points to that fighter equal to the value of this ability."
+  },
+  {
+    "name": "Fell Swoop",
+    "type": "fighter-trait",
+    "ability_cost": "[double]",
+    "cost": "-",
+    "effect": "A fighter can only use this ability if they have finished a move action this activation. Pick a visible enemy fighter within 1\" of this fighter and roll a dice. On a roll of 3-4, allocate 1 damage point to that fighter. On a roll of 5-6, allocate a number of damage points to that fighter equal to the value of this ability."
+  },
+  {
+    "name": "Fireburst",
+    "type": "fighter-trait",
+    "ability_cost": "[double]",
+    "cost": "-",
+    "effect": "Allocate 1 damage point to each visible enemy fighter within 3\" of this fighter. For each roll of 6, allocate a number of damage points to that fighter equal to half the value of this ability (rounding up) instead."
+  },
+  {
+    "name": "Icy Blast",
+    "type": "fighter-trait",
+    "ability_cost": "[double]",
+    "cost": "-",
+    "effect": "Pick a visible enemy fighter within 6\" of this fighter and roll 2 dice. For each roll of 4+, allocate a number of damage points to that fighter equal to half the value of this ability (rounding up). In addition, if either dice rolls a 6, until the end of the Mission round, halve the Move characteristic of that fighter (rounding up)."
+  },
+  {
+    "name": "Piercing Strike",
+    "type": "fighter-trait",
+    "ability_cost": "[double]",
+    "cost": "-",
+    "effect": "Until the end of this fighter's activation, the Strength characteristic of melee attack actions made by this fighter count as being higher than the target's Toughness characteristic."
+  },
+  {
+    "name": "Savage Strike",
+    "type": "fighter-trait",
+    "ability_cost": "[double]",
+    "cost": "-",
+    "effect": "Until the end of this fighter's activation, add 1 to the damage points allocated by each hit and critical hit from melee attack actions made by this fighter."
+  },
+  {
+    "name": "Vicious Peck",
+    "type": "fighter-trait",
+    "ability_cost": "[double]",
+    "cost": "-",
+    "effect": "Pick a visible enemy fighter within 1\" of this fighter and roll a number of dice equal to the value of this ability. For each roll of 4+, allocate 1 damage point to that fighter."
+  },
+  {
+    "name": "Furious Strike",
+    "type": "fighter-trait",
+    "ability_cost": "[double]",
+    "cost": "-",
+    "effect": "Until the end of this fighter's activation, add 1 to the damage points allocated by each critical hit from attack actions made by this fighter."
+  },
+  {
+    "name": "Magma Burst",
+    "type": "fighter-trait",
+    "ability_cost": "[double]",
+    "cost": "-",
+    "effect": "Pick a visible enemy fighter on the battlefield floor within 12\" of this fighter and roll a number of dice equal to the value of this ability. For each roll of 4-5, allocate 1 damage point to that fighter. For each roll of 6, allocate 2 damage points to that fighter."
+  },
+  {
+    "name": "Goaded into a Frenzy",
+    "type": "fighter-trait",
+    "ability_cost": "[triple]",
+    "cost": "-",
+    "effect": "Pick a visible friendly fighter with the Beast runemark within 12\" of this fighter and roll a number of dice equal to the value of this ability. For each roll of 4+, allocate 1 damage point to that friendly fighter. For each damage point allocated to that fighter by this ability, add 1 to the Attacks characteristic of the next melee attack action made by that fighter until the end of the Mission round."
+  },
+  {
+    "name": "Disgusting Sneeze",
+    "type": "fighter-trait",
+    "ability_cost": "[triple]",
+    "cost": "-",
+    "effect": "Pick a visible enemy fighter within 7\" of this fighter and roll a number of dice equal to the value of this ability. For each roll of 2+, allocate 1 damage point to that fighter."
+  },
+  {
+    "name": "Dominate Mind",
+    "type": "fighter-trait",
+    "ability_cost": "[triple]",
+    "cost": "-",
+    "effect": "Pick a visible enemy fighter within 6\" of this fighter and roll a number of dice equal to the value of this ability. For each roll of 2-5, allocate 1 damage point to that fighter. For each roll of 6, allocate 3 damage points to that fighter."
+  },
+  {
+    "name": "Doomfire Bolt",
+    "type": "fighter-trait",
+    "ability_cost": "[triple]",
+    "cost": "-",
+    "effect": "Pick a visible enemy fighter within 9\" of this fighter and roll a number of dice equal to the value of this ability. For each roll of 4+, allocate 2 damage points to that fighter."
+  },
+  {
+    "name": "Emotional Transference",
+    "type": "fighter-trait",
+    "ability_cost": "[triple]",
+    "cost": "-",
+    "effect": "Pick a visible friendly fighter with the Lumineth Realm-lords faction runemark that has 1 or more damage points allocated to them and that is within 12\" of this fighter. Then, pick a visible enemy fighter within 12\" of this fighter. Roll a number of dice equal to the number of damage points allocated to that friendly fighter. For each 4+, allocate 1 damage point to that enemy fighter."
+  },
+  {
+    "name": "Inferno",
+    "type": "fighter-trait",
+    "ability_cost": "[triple]",
+    "cost": "-",
+    "effect": "Roll a dice for each visible enemy fighter within 3\" of this fighter. On a roll of 4+, allocate a number of damage points to the fighter being rolled for equal to the value of this ability."
+  },
+  {
+    "name": "Kill!",
+    "type": "fighter-trait",
+    "ability_cost": "[triple]",
+    "cost": "-",
+    "effect": "Pick a visible enemy fighter. Allocate a number of damage points to that enemy fighter equal to three times the number of friendly fighters with both the Wildercorps Hunters faction runemark and the Beast runemark within 3\" of them."
+  },
+  {
+    "name": "Killer of Kings",
+    "type": "fighter-trait",
+    "ability_cost": "[triple]",
+    "cost": "-",
+    "effect": "Pick an enemy fighter that was allocated any damage points this activation by any of this fighter’s melee attack actions to be the target and roll a number of dice equal to the value of this ability. On any unmodified rolls of 6, allocate a number of damage points to that enemy fighter equal to the value of this ability."
+  },
+  {
+    "name": "Searing Light",
+    "type": "fighter-trait",
+    "ability_cost": "[triple]",
+    "cost": "-",
+    "effect": "Allocate 3 damage points to all visible enemy fighters within 3\" of this fighter."
+  },
+  {
+    "name": "Self-Command",
+    "type": "fighter-trait",
+    "ability_cost": "[triple]",
+    "cost": "-",
+    "effect": "Until the end of the Mission round, add 1 to the Toughness characteristic of this fighter and add 1 to the damage points allocated to enemy fighters by each hit and critical hit from melee attack actions made by this fighter."
+  },
+  {
+    "name": "Sentenced to Eternal Torment",
+    "type": "fighter-trait",
+    "ability_cost": "[triple]",
+    "cost": "-",
+    "effect": "Pick a visible enemy fighter. Roll a dice for that fighter.If the roll is equal to or less than the number of the current Mission round, allocate 6 damage points to that fighter."
+  },
+  {
+    "name": "Shatter Spirit Flask",
+    "type": "fighter-trait",
+    "ability_cost": "[triple]",
+    "cost": "-",
+    "effect": "Allocate a number of damage points equal to the value of this ability to this fighter and to all visible fighters within 3\" of this fighter."
+  },
+  {
+    "name": "Shield Smash",
+    "type": "fighter-trait",
+    "ability_cost": "[triple]",
+    "cost": "-",
+    "effect": "Pick an enemy fighter within 1\" of this fighter to be the target. The target moves 3\" directly away from this fighter as if they were jumping, even if they are within 1\" of any enemy fighters. In addition, if this fighter is within 6\" of a friendly fighter with the Ironjawz runemark and the Icon Bearer runemark, allocate a number of damage points to the target equal to the value of this ability."
+  },
+  {
+    "name": "Slashing Attack",
+    "type": "fighter-trait",
+    "ability_cost": "[triple]",
+    "cost": "-",
+    "effect": "Roll a dice for each visible enemy fighter within 3\" of this fighter.On a 3-4, allocate 1 damage point to the fighter being rolled for.On a 5-6, allocate a number of damage points to the fighter being rolled for equal to the value of this ability."
+  },
+  {
+    "name": "Whirling Death",
+    "type": "fighter-trait",
+    "ability_cost": "[quad]",
+    "cost": "-",
+    "effect": "Allocate a number of damage points equal to the value of this ability to all visible enemy fighters within 3\" of this fighter."
+  },
+  {
+    "name": "Wound the Realm",
+    "type": "fighter-trait",
+    "ability_cost": "[quad]",
+    "cost": "-",
+    "effect": "Pick two visible battlefield corners or pick two visible objective tokens and draw a 1mm line between each. Roll a dice for each model touching that line. On a 3+, allocate a number of damage points equal to the value of this ability to that fighter."
+  },
+  {
+    "name": "Baffling Parlay",
+    "type": "fighter-trait",
+    "ability_cost": "[action]",
+    "cost": "-",
+    "effect": "Reaction. A fighter can make this reaction after they are targeted by a melee attack action but before the hit rolls are made.Subtract 1 from the Attacks characteristic of that attack action, to a minimum of 1."
+  },
+  {
+    "name": "Bay for Coward's Blood",
+    "type": "fighter-trait",
+    "ability_cost": "[action]",
+    "cost": "-",
+    "effect": "Reaction. A fighter can make this reaction after a visible enemy fighter within 1\" of them makes a disengage action.Until the end of the Mission round, add 1 to the Attacks characteristic of melee attack actions made by friendly fighters that target that enemy fighter."
+  },
+  {
+    "name": "Blinding Brilliance",
+    "type": "fighter-trait",
+    "ability_cost": "[action]",
+    "cost": "-",
+    "effect": "Reaction. A fighter can make this reaction after they are targeted by a missile attack action but before the hit rolls are made. After the hit rolls have been made, roll a dice for each critical hit. On a roll of 4+, that critical hit becomes a hit instead."
+  },
+  {
+    "name": "Clashing Iron",
+    "type": "fighter-trait",
+    "ability_cost": "[action]",
+    "cost": "-",
+    "effect": "Reaction. A fighter can make this reaction after they are targeted by a melee attack action but before the hit rolls are made. Subtract 1 from the Attacks characteristic (to a minimum of 1) of that attack action."
+  },
+  {
+    "name": "Bloody Trophy",
+    "type": "fighter-trait",
+    "ability_cost": "[double]",
+    "cost": "-",
+    "effect": "A fighter can only use this ability if an enemy fighter has been taken down by an attack action made by them this activation. Add one wild dice to your saved wild dice."
+  },
+  {
+    "name": "Brutal Blows",
+    "type": "fighter-trait",
+    "ability_cost": "[double]",
+    "cost": "-",
+    "effect": "A fighter can only use this ability if they are within 1\" of 2 or more enemy fighters. Add half the value of this ability (rounding up) to the Attacks characteristic of the next melee attack action made by this fighter."
+  },
+  {
+    "name": "Channelled Empowerment",
+    "type": "fighter-trait",
+    "ability_cost": "[double]",
+    "cost": "-",
+    "effect": "Add the value of this ability to the Strength characteristic of the next melee attack action made by this fighter in this activation. Fighters with the Beast runemark cannot use this ability."
+  },
+  {
+    "name": "Lay Low the Tyrants",
+    "type": "fighter-trait",
+    "ability_cost": "[double]",
+    "cost": "-",
+    "effect": "Until the end of this fighter's activation, add 1 to the Attacks and Strength characteristics of melee attack actions made by this fighter. While targeting an enemy fighter with a Wounds characteristic of 25 or more, count each hit scored from attack actions made by this fighter as a critical hit instead."
+  },
+  {
+    "name": "Leave the Land in Ruin",
+    "type": "fighter-trait",
+    "ability_cost": "[double]",
+    "cost": "-",
+    "effect": "Pick each obstacle within 3\" of this fighter that is touching the battlefield floor and that does not have a desolation token. Give each of those obstacles a desolation token."
+  },
+  {
+    "name": "Lodge Leader",
+    "type": "fighter-trait",
+    "ability_cost": "[double]",
+    "cost": "-",
+    "effect": "Until the end of the Mission round, add 1 to the Strength characteristic of melee attack actions made by visible friendly fighters while they are within 6\" of this fighter."
+  },
+  {
+    "name": "Loonshine Potion",
+    "type": "fighter-trait",
+    "ability_cost": "[double]",
+    "cost": "-",
+    "effect": "Pick a visible friendly fighter within 3\" of this fighter. Until the end of the Mission round, add 3 to the Attacks characteristic of the next melee attack action made by that fighter."
+  },
+  {
+    "name": "Master of Murk",
+    "type": "fighter-trait",
+    "ability_cost": "[double]",
+    "cost": "-",
+    "effect": "A fighter can only use this ability if they are within 1\" of an obstacle.Until the end of the Mission round, as long as this fighter is within 1\" of an obstacle, they cannot be picked as the target of attack actions made by enemy fighters that are more than 8\" away."
+  },
+  {
+    "name": "Memories of Past Glories",
+    "type": "fighter-trait",
+    "ability_cost": "[double]",
+    "cost": "-",
+    "effect": "You can give this fighter 1 Memorian token, to a maximum of 1. Until the end of their activation, add 1 to the Move characteristic of this fighter and add half the value of this ability (rounding up) to the Strength characteristics of melee attack actions made by this fighter."
+  },
+  {
+    "name": "Merciless Raiders",
+    "type": "fighter-trait",
+    "ability_cost": "[double]",
+    "cost": "-",
+    "effect": "A fighter can only use this ability if it is the first Mission round. Until the end of this fighter's activation, add 2 to the Move characteristic of this fighter and add 1 to the Attacks characteristic of melee attack actions made by this fighter."
+  },
+  {
+    "name": "Meteoric Slam",
+    "type": "fighter-trait",
+    "ability_cost": "[double]",
+    "cost": "-",
+    "effect": "Until the end of this fighter's activation, add 1 to the Attacks and Strength characteristics of melee attack actions made by this fighter."
+  },
+  {
+    "name": "Monstrous Reach",
+    "type": "fighter-trait",
+    "ability_cost": "[double]",
+    "cost": "-",
+    "effect": "Until the end of this monster's activation, do not count the vertical distance when measuring the range for attack actions made by this monster."
+  },
+  {
+    "name": "Broadside",
+    "type": "fighter-trait",
+    "ability_cost": "[triple]",
+    "cost": "-",
+    "effect": "Add 3 to the Attacks characteristic of the next attack action made by this fighter that targets an enemy fighter more than 3\" away in this activation."
+  },
+  {
+    "name": "Call to Battle",
+    "type": "fighter-trait",
+    "ability_cost": "[triple]",
+    "cost": "-",
+    "effect": "Until the end of the Mission round, add 1 to the Attacks characteristic of melee attack actions made by visible friendly fighters while they are within 6\" of this fighter."
+  },
+  {
+    "name": "Carve a Path to Glory",
+    "type": "fighter-trait",
+    "ability_cost": "[triple]",
+    "cost": "-",
+    "effect": "Until the end of this fighter's activation, add half the value of this ability (rounding up) to the Attacks characteristic of melee attack actions made by this fighter. If this fighter is favoured, add the value of this ability to the Attacks characteristic of melee attack actions made by this fighter instead."
+  },
+  {
+    "name": "Grombindal's Wisdom",
+    "type": "fighter-trait",
+    "ability_cost": "[triple]",
+    "cost": "-",
+    "effect": "Pick another friendly fighter within 3\" of this fighter to dispense some sagely wisdom to. Add 1 to that fighter's Move characteristic and the Attacks characteristic of melee attack actions made by that fighter until the end of the round. In addition, that fighter counts as 2 additional fighters for the purpose of controlling objectives until the end of the round."
+  },
+  {
+    "name": "Guiding Lightning",
+    "type": "fighter-trait",
+    "ability_cost": "[triple]",
+    "cost": "-",
+    "effect": "A fighter can only use this ability after it has made a missile attack action in this activation. Until the end of the Mission round, add 1 to the Attacks characteristic of attack actions that target the target of that attack action."
+  },
+  {
+    "name": "Harness Shadow",
+    "type": "fighter-trait",
+    "ability_cost": "[triple]",
+    "cost": "-",
+    "effect": "Until the end of the Mission round, subtract 1 from the Attacks characteristic (to a minimum of 1) of attack actions made by enemy fighters while they target a fighter within 3\" of this fighter."
+  },
+  {
+    "name": "Hateful Hail",
+    "type": "fighter-trait",
+    "ability_cost": "[triple]",
+    "cost": "-",
+    "effect": "You can count 1 hit from the next missile attack action made by this fighter as a critical hit instead."
+  },
+  {
+    "name": "High Tide",
+    "type": "fighter-trait",
+    "ability_cost": "[triple]",
+    "cost": "-",
+    "effect": "A fighter can only use this ability if it is the third Mission round. Add 1 to the Attacks and Strength characteristics of melee attack actions made by friendly fighters while they are within 6\" of this fighter."
+  },
+  {
+    "name": "Horrifying Trophies",
+    "type": "fighter-trait",
+    "ability_cost": "[triple]",
+    "cost": "-",
+    "effect": "A fighter can only use this ability if an enemy fighter has been taken down by an attack action made by them this activation.Until the end of the Mission round, visible enemy fighters within 6\" of this fighter cannot use abilities."
+  },
+  {
+    "name": "Hurled Bolas",
+    "type": "fighter-trait",
+    "ability_cost": "[triple]",
+    "cost": "-",
+    "effect": "Pick a visible enemy fighter within 8\" of this fighter and roll a number of dice equal to the value of this ability.If 1 of the dice scores a 6, that fighter makes 1 fewer action in this Mission round (to a minimum of 0).If a fighter is reduced to 0 actions in this way, that fighter cannot be activated in this Mission round."
+  },
+  {
+    "name": "Incisive Mind",
+    "type": "fighter-trait",
+    "ability_cost": "[triple]",
+    "cost": "-",
+    "effect": "Until the end of the Mission round, each time an enemy fighter within 6\" of this fighter is activated, you can roll a dice. On a 4+, that fighter cannot use abilities that activation."
+  },
+  {
+    "name": "Inspiring Presence",
+    "type": "fighter-trait",
+    "ability_cost": "[triple]",
+    "cost": "-",
+    "effect": "Pick a visible friendly fighter within 6\" of this fighter that has not activated yet this Mission round. You can activate that fighter immediately after this fighter's activation ends."
+  },
+  {
+    "name": "Sword-like Claws",
+    "type": "fighter-trait",
+    "ability_cost": "[triple]",
+    "cost": "-",
+    "effect": "Add 3 to the Attacks characteristic of the next melee attack action made by this fighter this activation."
+  },
+  {
+    "name": "Tangle Them Up",
+    "type": "fighter-trait",
+    "ability_cost": "[triple]",
+    "cost": "-",
+    "effect": "Pick a visible enemy fighter within 3\" of this fighter. Until the end of the Mission round, subtract 2 from the Attacks characteristic (to a minimum of 1) of melee attack actions made by that fighter."
+  },
+  {
+    "name": "Tendrils of Unnatural Smoke",
+    "type": "fighter-trait",
+    "ability_cost": "[triple]",
+    "cost": "-",
+    "effect": "Until the end of the Mission round, subtract 1 from the Attacks characteristic (to a minimum of 1) of attack actions made by enemy fighters while they are within 6\" of this fighter."
+  },
+  {
+    "name": "The True Master's Favour",
+    "type": "fighter-trait",
+    "ability_cost": "[triple]",
+    "cost": "-",
+    "effect": "A fighter can use this ability only if an enemy fighter has been taken down by an attack action made by them this activation.Until the end of the Mission round, add 1 to the Attacks characteristic of melee attack actions made by friendly fighters while they are within 9\" of this fighter."
+  },
+  {
+    "name": "Trailblazer's Might",
+    "type": "fighter-trait",
+    "ability_cost": "[triple]",
+    "cost": "-",
+    "effect": "Until the end of this fighter's activation, attack actions made by this fighter score a critical hit on a roll of 5+."
+  },
+  {
+    "name": "Unbreakable Defence",
+    "type": "fighter-trait",
+    "ability_cost": "[triple]",
+    "cost": "-",
+    "effect": "Until the end of the Mission round, count each critical hit scored from each attack action that targets a friendly fighter with the Thunderstrike Stormcasts runemark that is within 3\" of this fighter as a hit instead. This cannot affect friendly fighters with the Beast runemark."
+  },
+  {
+    "name": "Uncanny Shot",
+    "type": "fighter-trait",
+    "ability_cost": "[triple]",
+    "cost": "-",
+    "effect": "Until the end of this fighter's activation, add half the value of this ability (rounding up) to the Attacks characteristic of missile attack actions made by this fighter. While this fighter is favoured and/or targeting an enemy fighter within 1\" of a friendly Gunnar Brand, add the value of this ability to the Attacks characteristic of missile attack actions made by this fighter instead."
+  },
+  {
+    "name": "Unleashed Rage",
+    "type": "fighter-trait",
+    "ability_cost": "[triple]",
+    "cost": "-",
+    "effect": "One critical hit from the next melee attack action made by this fighter in this activation scores 1 additional critical hit. When a fighter uses this ability, you can discard two of your saved wild dice. If you do so, one critical hit from the next melee attack action made by this fighter in this activation scores 2 additional critical hits instead."
+  },
+  {
+    "name": "Unstoppable Advance",
+    "type": "fighter-trait",
+    "ability_cost": "[triple]",
+    "cost": "-",
+    "effect": "Until the end of the Mission round, add half the value of this ability (rounding up) to the Move characteristic of friendly fighters that are in the same battle group as this fighter."
+  },
+  {
+    "name": "Volley of Arrows",
+    "type": "fighter-trait",
+    "ability_cost": "[triple]",
+    "cost": "-",
+    "effect": "Add half the value of this ability (rounding up) to the Attacks characteristic of the next missile attack action made by this fighter in this activation."
+  },
+  {
+    "name": "The Royal Hunt",
+    "type": "fighter-trait",
+    "ability_cost": "[quad]",
+    "cost": "-",
+    "effect": "Add 1 to the Attacks and Damage characteristics of this fighter's melee weapons for each visible friendly fighter within 3\" of them until the end of their activation."
+  },
+  {
+    "name": "Thunderous Blast of Hot Metal",
+    "type": "fighter-trait",
+    "ability_cost": "[quad]",
+    "cost": "-",
+    "effect": "Add 3 to the Attacks and Strength characteristics of the next missile attack action made by this fighter this activation."
+  },
+  {
+    "name": "Toll of the Doom Bell",
+    "type": "fighter-trait",
+    "ability_cost": "[quad]",
+    "cost": "-",
+    "effect": "Until the end of the Mission round, enemy fighters cannot use reactions or abilities while they are within 7\" of this fighter."
+  },
+  {
+    "name": "Undignified Effort",
+    "type": "fighter-trait",
+    "ability_cost": "[quad]",
+    "cost": "-",
+    "effect": "Add 2 to the Attacks characteristic of the next melee attack action made by this fighter this activation."
+  },
+  {
+    "name": "Questin' Knight",
+    "type": "fighter-trait",
+    "ability_cost": "[double]",
+    "cost": "-",
+    "effect": "Until the end of this fighter's activation, after the enemy fighter is taken down by a melee attack action made this fighter, this fighter can make a bonus move action nor a bonus attack action."
+  },
+  {
+    "name": "Swooping Dive",
+    "type": "fighter-trait",
+    "ability_cost": "[double]",
+    "cost": "-",
+    "effect": "Add 3 this fighter's Move characteristic for their next move action in this activation."
+  },
+  {
+    "name": "Thundering Strides",
+    "type": "fighter-trait",
+    "ability_cost": "[double]",
+    "cost": "-",
+    "effect": "Pick another friendly fighter within 6\" of this fighter.That fighter makes a bonus move action."
+  },
+  {
+    "name": "Tireless Hunters",
+    "type": "fighter-trait",
+    "ability_cost": "[double]",
+    "cost": "-",
+    "effect": "Add 3 to this fighter's Move characteristic for their next move action in this activation."
+  },
+  {
+    "name": "Champion of Darkness",
+    "type": "fighter-trait",
+    "ability_cost": "[triple]",
+    "cost": "-",
+    "effect": "A fighter can use this ability only if an enemy fighter has been taken down by an attack action made by them this activation. This fighter makes a bonus move action. Then, they can make a bonus attack action."
+  },
+  {
+    "name": "Coordinated Strike",
+    "type": "fighter-trait",
+    "ability_cost": "[triple]",
+    "cost": "-",
+    "effect": "Pick a number of visible friendly fighters equal to half the value of this ability (rounding up) within 9\" of this fighter. Those fighters can each make a bonus move action or a bonus attack action (some can make a bonus move action and others can make a bonus attack action)."
+  },
+  {
+    "name": "Creed of Flame",
+    "type": "fighter-trait",
+    "ability_cost": "[triple]",
+    "cost": "-",
+    "effect": "Pick a friendly fighter that is not within 6\" of this fighter. That fighter makes 2 bonus move actions or a bonus attack action. If that friendly fighter has the Beast runemark, that fighter makes 2 bonus move actions, then a bonus attack action"
+  },
+  {
+    "name": "Blind Devotion",
+    "type": "fighter-trait",
+    "ability_cost": "[quad]",
+    "cost": "-",
+    "effect": "This fighter and a friendly fighter with the Zondara's Gravebreakers runemark and the Agile runemark can each make either a bonus move action or a bonus attack action."
+  },
+  {
+    "name": "Blood-fuelled Assault",
+    "type": "fighter-trait",
+    "ability_cost": "[quad]",
+    "cost": "-",
+    "effect": "This fighter makes a bonus move action. Then, they can make a bonus attack action. In addition, until the end of this fighter's activation, add half the value of this ability (rounding up) to the Strength characteristic of melee attack actions made by this fighter."
+  },
+  {
+    "name": "Death from Above",
+    "type": "fighter-trait",
+    "ability_cost": "[quad]",
+    "cost": "-",
+    "effect": "This fighter makes a bonus move action. Then, they can make a bonus attack action. Add 1 to the Strength characteristic of that attack action if the fighter finished the move action 2\" or more vertically lower than their starting position."
+  },
+  {
+    "name": "Death on the Wind",
+    "type": "fighter-trait",
+    "ability_cost": "[quad]",
+    "cost": "-",
+    "effect": "This fighter makes a bonus move action. Then, they can make a bonus attack action. Add 1 to the Strength characteristic of that attack action if the fighter finished the move action 6\" or more from their starting position."
+  },
+  {
+    "name": "Ego-driven Excess",
+    "type": "fighter-trait",
+    "ability_cost": "[quad]",
+    "cost": "-",
+    "effect": "This fighter can make a bonus move action or a bonus attack action. In addition, each time a fighter is taken down by an attack action made by this fighter this activation, this fighter can make a further bonus move action or bonus attack action."
+  },
+  {
+    "name": "Ensnaring Strike",
+    "type": "fighter-trait",
+    "ability_cost": "[quad]",
+    "cost": "-",
+    "effect": "This fighter makes a bonus attack action.In addition, if that attack action scores any critical hits, the target fighter cannot make move actions or disengage actions for the rest of the Mission round."
+  },
+  {
+    "name": "Thunderous Pounce",
+    "type": "fighter-trait",
+    "ability_cost": "[quad]",
+    "cost": "-",
+    "effect": "Until the end of this fighter's activation, the next time this fighter finishes a move action within 1\" of an enemy fighter, pick a visible enemy fighter within 1\" of this fighter. Allocate a number of damage points to that fighter equal to [double] the value of this ability."
+  },
+  {
+    "name": "Timed Charges",
+    "type": "fighter-trait",
+    "ability_cost": "[quad]",
+    "cost": "-",
+    "effect": "A fighter can only use this ability if they are within 3\" of an enemy fighter. Allocate a number of damage points equal to the value of this ability to enemy fighters within 1\" of this fighter. Then, this fighter makes a bonus disengage action or a bonus move action."
+  },
+  {
+    "name": "Cavalcade of Madness",
+    "type": "fighter-trait",
+    "ability_cost": "[quad]",
+    "cost": "-",
+    "effect": "This fighter makes a bonus attack action. In addition, if either this fighter or the target of the attack has any damage points allocated to them, add 1 to the Attacks characteristic of that bonus attack action. If both this fighter and the target fighter have any damage points allocated to them, add 3 to the Attacks characteristic of that bonus attack action instead."
+  },
+  {
+    "name": "Chosen Champion",
+    "type": "fighter-trait",
+    "ability_cost": "[quad]",
+    "cost": "-",
+    "effect": "A fighter can only use this ability if they are within 6\" of a visible friendly fighter with the Soulblight Gravelords faction runemark and the Hero runemark. This fighter can make a bonus attack action. In addition, add half the value of this ability (rounding up) to the Attacks and Strength characteristics of that attack action."
+  },
+  {
+    "name": "Desecration",
+    "type": "fighter-trait",
+    "ability_cost": "[quad]",
+    "cost": "-",
+    "effect": "This fighter makes a bonus attack action. Additionally, if this fighter is within 3\" of any objective markers, add half the value of this ability (rounding up) to the Attacks and Strength characteristics of that bonus attack action."
+  },
+  {
+    "name": "Earth-shattering Blow",
+    "type": "fighter-trait",
+    "ability_cost": "[quad]",
+    "cost": "-",
+    "effect": "This fighter makes a bonus attack action. In addition, add half the value of this ability (rounding up) to the damage points allocated to enemy fighters by each hit and critical hit from that attack action."
+  },
+  {
+    "name": "Empowered Bolts",
+    "type": "fighter-trait",
+    "ability_cost": "[quad]",
+    "cost": "-",
+    "effect": "This fighter makes a bonus attack action. In addition, if that bonus attack action has the Blast runemark, add half the value of this ablilty (rounding up) to the Attacks and Strength characteristics of that bonus attack action."
+  },
+  {
+    "name": "Executioner's Strike",
+    "type": "fighter-trait",
+    "ability_cost": "[quad]",
+    "cost": "-",
+    "effect": "This fighter makes a bonus attack action.In addition, add 1 to the Attacks and Strength characteristics of that attack action."
+  }
+]

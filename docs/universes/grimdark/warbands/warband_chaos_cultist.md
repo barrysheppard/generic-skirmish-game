@@ -33,11 +33,3 @@ Cultists are the chaff of the Dark Gods—numerous, fanatical, and ultimately ex
 ### Cultist Abilities
 
 <FactionAbilityTable faction="Chaos Cultists" />
-
-#### Sample Unit Totals
-* [**Chaos Cultist**](#chaos-neophyte): [Neophyte](#chaos-cultist) + [Autogun](../weapons#autogun) = <Total fighterId="chaos-cultist" weapons={['Autogun']} /> Credits
-* [**Cultist Butcher**](#cultist-zealot): [Zealot](#cultist-zealot) + [Great Cleaver](../weapons#great-cleaver) = <Total fighterId="cultist-zealot" weapons={['great-cleaver']} /> Credits
-* [**Chaos Firebrand**](#cult-champion): [Champion](#cult-champion) + [Flamer](../weapons#flamer) + [Brutal Tool](#brutal-assault-tool) = <Total fighterId="cult-champion" weapons={['flamer', 'brutal-assault-tool']} /> Credits
-
-
----

@@ -1,9 +1,9 @@
 ---
-sidebar_label: '8. Term Definitions'
-sidebar_position: 8
+sidebar_label: '9. Term Definitions'
+sidebar_position: 9
 ---
 
-# 8.1 Term Definitions {#8.1-term-definitions}
+# 9.1 Term Definitions {#8.1-term-definitions}
 
 **Line of Sight** \- Line of Sight (LoS) is determined by drawing a straight, unobstructed line from any point on the attacker’s base to any point on the target’s base. If this line is not blocked by terrain that fully obscures the view, the target is considered **visible**. If the LoS does pass through a piece of terrain, check to see from the view of the attacker if the terrain fully conceals or only partially conceals the target. If the terrain only partially conceals the target, then the Line of Sight is still valid and the target will be considered **visible** but in **cover**. If no LoS can be drawn, the target is considered **not visible**. In some cases, the view from the attacker will be clear, for example where the attacker is standing behind a barricade, in this case the view is considered unobstructed.
 

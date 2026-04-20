@@ -33,8 +33,3 @@ The Aeldari are a dying race of peerless warriors. They rely on extreme mobility
 ### Aeldari Abilities
 
 <FactionAbilityTable faction="Aeldari" />
-
-#### Sample Unit Totals
-* [**Guardian Defender**](#guardian): [Guardian](#guardian) + [Shuriken Catapult](../weapons#shuriken-catapult) = <Total fighterId="guardian" weapons={['shuriken-catapult']} /> Credits
-* [**Pathfinder**](#ranger): [Ranger](#ranger) + [Ranger Long Rifle](../weapons#ranger-long-rifle) + [Shuriken Pistol](../weapons#shuriken-pistol) = <Total fighterId="ranger" weapons={['ranger-long-rifle', 'shuriken-pistol']} /> Credits
-* [**Exarch (Avenger)**](#dire-avenger): [Dire Avenger](#dire-avenger) + [Avenger Catapult](#avenger-catapult) + [Power Sword](../weapons#power-sword) = <Total fighterId="dire-avenger" weapons={['avenger-catapult', 'power-sword']} /> Credits
