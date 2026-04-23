@@ -3,7 +3,7 @@ sidebar_label: 'Abilities'
 sidebar_position: 3
 ---
 
-# **Character Trait Abilities**
+# Character Trait Abilities
 
 This section defines character-based traits across several skill categories. Each trait grants a unique ability of the same name that the fighter can use in battle. Some fighters like the Captain and Champions gain access to Skills at the start, other fighters may gain access to skills as they advance through a campaign.
 

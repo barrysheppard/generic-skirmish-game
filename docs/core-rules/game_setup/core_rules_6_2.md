@@ -6,7 +6,7 @@ import { TraitGallery } from '../js/settings';
 
 # Battlefield Setup
 
-## **6.2 Battlefield Preparation** {#6.2-battlefield-preparation}
+## 6.2 Battlefield Preparation
 
 - The default board is a 22" by 30" play area. Deployment typically occurs in the centre and sides of the board edges, so keeping these areas clear for deployment would be good.
 

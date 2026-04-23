@@ -15,7 +15,7 @@ import {
 
 
 
-# **Fighter Basic Profiles**
+# Fighter Basic Profiles
 
 When creating a Warband, fighters are selected using the profiles below. You can only ever have one leader (Rank 1\)  and up to two champions (Rank 2).
 

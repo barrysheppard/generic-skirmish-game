@@ -5,7 +5,7 @@ sidebar_position: 6.4
 
 # Fighter Selection
 
-## **6.4 Fighter Selection** {#6.4-fighter-selection}
+## 6.4 Fighter Selection
 
 Now the Battlefield has been set up and the Victory condition determined, players select Fighters for their Warband from their Roster. This will allow a player to make some strategic decisions to help achieve their objective. Depending on the setting, this may include selecting specialists who are good at specific tasks, for example a Thief to get through locked doors or a Hacker to break into a computer vault.
 

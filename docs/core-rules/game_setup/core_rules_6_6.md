@@ -5,7 +5,7 @@ sidebar_position: 6.6
 
 # Twist
 
-## **6.6 Twist** {#6.5-victory-&-twist}
+## 6.6 Twist
 
 If both players agree, randomly select a Twist. The twist is a special rule in effect for the game to add an extra element of chaos. This might be environmental such as a storm or darkness reducing the effectiveness of ranged attacks. It provides an extra challenge that the players must account for and increases the variety of games.
 

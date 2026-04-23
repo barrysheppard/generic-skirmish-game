@@ -94,3 +94,22 @@ html {
 .menu__list-item.hidden {
   display: none;
 }
+
+/* Add this inside the existing <style> tag */
+.group-select-btn {
+  background-color: var(--ifm-color-emphasis-300);
+  color: var(--ifm-color-content);
+  border: 1px solid var(--ifm-color-emphasis-400);
+  padding: 2px 0;
+}
+
+.group-select-btn.active {
+  background-color: var(--ifm-color-primary) !important;
+  color: black !important;
+  opacity: 1 !important;
+  border-color: var(--ifm-color-primary-darker);
+}
+
+.group-select-btn:hover:not(:disabled) {
+  background-color: var(--ifm-color-emphasis-400);
+}

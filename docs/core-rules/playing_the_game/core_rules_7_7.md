@@ -9,7 +9,7 @@ import { TraitGallery } from '../js/settings';
 # Other actions
 
 
-## **7.7 Wait Action** {#7.7-wait-action}
+## 7.7 Wait Action
 
 <TraitGallery include={["Wait"]} showCost={false} />
 
@@ -19,7 +19,7 @@ Typically a Wait token is indicated with a single line and an Acted token is two
 
 A fighter with a wait token can be activated later in the round at which point they can take that remaining action. This **Wait** action is a way for a Warband to control tempo within the game by trading an action to force their opponent to act first.
 
-## **7.8 Ability Actions** {#7.8-ability-actions}
+## 7.8 Ability Actions
 
 <TraitGallery include={["Lever"]} showCost={false} />
 

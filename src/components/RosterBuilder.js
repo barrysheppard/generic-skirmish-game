@@ -140,19 +140,47 @@ const FighterRow = ({
       </div>
     </td>
     <td style={{ fontWeight: 'bold' }}>{getDisplayCost(f)}</td>
-    <td className="no-print">
+<td className="no-print">
       <div style={{ display: 'flex', flexDirection: 'column', gap: '6px', alignItems: 'center' }}>
         {isDraggable && <div {...provided.dragHandleProps} style={{ cursor: 'grab', fontSize: '1.2rem', opacity: 0.5 }}>⠿</div>}
         <div style={{ display: 'flex', flexDirection: 'column', gap: '4px', width: '100%' }}>
           {!isDeployed && activeTab === 'build' ? (
             <>
               <button className="action-btn-text field-btn" onClick={() => moveToGroup(f.instanceId, 'A')}>Field</button>
+              {/* NEW: ABC Quick Move Buttons */}
+              <div style={{ display: 'flex', gap: '2px', justifyContent: 'center' }}>
+                {['A', 'B', 'C'].map(group => (
+                  <button
+                    key={group}
+                    className={`action-btn-text group-select-btn ${f.groupId === group ? 'active' : ''}`}
+                    onClick={() => moveToGroup(f.instanceId, group)}
+                    disabled={f.groupId === group}
+                    style={{ flex: 1 }}
+                  >
+                    {group}
+                  </button>
+                ))}
+              </div>
               <button className="action-btn-text copy-btn" onClick={() => duplicateFighter(f)}>Copy</button>
               <button className="action-btn-text del-btn" onClick={() => removeFighter(f.instanceId)}>Del</button>
             </>
           ) : (
             <>
               <button className="action-btn-text return-btn" onClick={() => moveToGroup(f.instanceId, 'Roster')}>Return</button>
+              {/* NEW: ABC Quick Move Buttons for the Group view */}
+              <div style={{ display: 'flex', gap: '2px', justifyContent: 'center' }}>
+                {['A', 'B', 'C'].map(group => (
+                  <button
+                    key={group}
+                    className={`action-btn-text group-select-btn ${f.groupId === group ? 'active' : ''}`}
+                    onClick={() => moveToGroup(f.instanceId, group)}
+                    disabled={f.groupId === group}
+                    style={{ flex: 1 }}
+                  >
+                    {group}
+                  </button>
+                ))}
+              </div>
               <button className="action-btn-text copy-btn" disabled>Copy</button>
               <button className="action-btn-text del-btn" disabled>Del</button>
             </>

@@ -1,0 +1,130 @@
+[
+  {
+    "name": "Block",
+    "ability_cost": "[double]",
+    "effect": "Reaction: After a ranged attack has been rolled against this fighter but before damage is calculated, change a crit to a hit.",
+    "cost": "-",
+    "type": "weapon-trait"
+  },
+  {
+    "name": "Brutal",
+    "ability_cost": "[double]",
+    "effect": "A fighter can only use this ability if an enemy fighter has been taken down by an attack action or ability made by this fighter during this activation. This fighter makes a bonus attack action.",
+    "cost": "-",
+    "type": "weapon-trait"
+  },
+  {
+    "name": "Cleaving",
+    "ability_cost": "[triple]",
+    "effect": "Allocate a number of damage points equal to half the value of this ability (rounding up) to all visible enemy fighters within 1\" of this fighter.",
+    "cost": "-",
+    "type": "weapon-trait"
+  },
+  {
+    "name": "Crushing",
+    "ability_cost": "[double]",
+    "effect": "Until the end of the Mission round, increase the Weapon Skill of attacks with this weapon by 2.",
+    "cost": "-",
+    "type": "weapon-trait"
+  },
+  {
+    "name": "Overwhelming",
+    "ability_cost": "[double]",
+    "effect": "After an attack with this weapon does damage, push the fighter who took damage back 2 inches.",
+    "cost": "-",
+    "type": "weapon-trait"
+  },
+  {
+    "name": "Parry",
+    "ability_cost": "[double]",
+    "effect": "Reaction: A fighter can make this reaction after they have been hit by a melee attack action but before damage is assigned. Change one hit from that attack action to a miss (this cannot modify a crit).",
+    "cost": "-",
+    "type": "weapon-trait"
+  },
+  {
+    "name": "Piercing",
+    "ability_cost": "[double]",
+    "effect": "Until the end of the Mission round, attacks with this weapon do +1 damage on a critical hit.",
+    "cost": "-",
+    "type": "weapon-trait"
+  },
+  {
+    "name": "Precise",
+    "ability_cost": "[double]",
+    "effect": "Until the end of the Mission round, add 1 to the Attacks characteristic of attack actions made by this weapon.",
+    "cost": "-",
+    "type": "weapon-trait"
+  },
+  {
+    "name": "Quick",
+    "ability_cost": "[double]",
+    "effect": "Before attacking with this weapon, this fighter can take a 2 inch move (but not disengage).",
+    "cost": "-",
+    "type": "weapon-trait"
+  },
+  {
+    "name": "Riposte",
+    "ability_cost": "[double]",
+    "effect": "Reaction: A fighter can make this reaction after a melee attack targeting them was rolled with no hits or crits, the attacker takes one hit's worth of damage from the Riposte weapon.",
+    "cost": "-",
+    "type": "weapon-trait"
+  },
+  {
+    "name": "Barbed",
+    "ability_cost": "[double]",
+    "effect": "Allocate a number of damage points equal to half the value of this ability to a fighter who has taken damage from this weapon this turn.",
+    "cost": "-",
+    "type": "weapon-trait"
+  },
+  {
+    "name": "Sprint",
+    "ability_cost": "[double]",
+    "effect": "Increase the movement value of this fighter by 1 until the end of their activation.",
+    "cost": "-",
+    "type": "weapon-trait"
+  },
+  {
+    "name": "Thrown",
+    "ability_cost": "[double]",
+    "effect": "Pick a visible enemy fighter within 6\" of this fighter and roll 2 dice. For each roll of 4-5, allocate 1 damage point to that fighter. For each roll of 6, allocate a number of damage points to that fighter equal to the value of this ability.",
+    "cost": "-",
+    "type": "weapon-trait"
+  },
+    {
+    "name": "Low Sweeping Blow",
+    "ability_cost": "[double]",
+    "effect": "Roll a dice for each visible enemy fighter within 2\" of this fighter. On a roll of 4-5, allocate 1 damage point to the fighter being rolled for. On a roll of 6, allocate a number of damage points to the fighter being rolled for equal to the value of this ability.",
+    "cost": "-",
+    "type": "weapon-trait"
+  },
+  {
+    "name": "Spine-crushing Blow",
+    "type": "weapon-trait",
+    "ability_cost": "[double]",
+    "cost": "-",
+    "effect": "Until the end of this fighter's activation, add the value of this ability to the Weapon Skill characteristic of this fighter."
+  },
+  {
+    "name": "Whirlwind of Death",
+    "type": "weapon-trait",
+    "ability_cost": "[quad]",
+    "cost": "-",
+    "effect": "Allocate a number of damage points equal to the value of this ability to all visible enemy fighters within 3\" of this fighter."
+  },
+  {
+    "name": "Chain Garrotte",
+    "type": "weapon-trait",
+    "ability_cost": "[double]",
+    "cost": "-",
+    "effect": "Pick a visible enemy fighter within 5\" of this fighter and roll a dice. On a roll of 3-4, allocate 1 damage point to that fighter. On a roll of 5+, allocate a number of damage points to that fighter equal to the value of this ability."
+  },
+  {
+    "name": "Harpoon Snag",
+    "type": "weapon-trait",
+    "ability_cost": "[triple]",
+    "cost": "-",
+    "effect": "This fighter makes a bonus attack action. After that attack action, the target of that attack action makes a bonus move action directly towards this fighter, as if they were jumping, a number of inches equal to the value of this ability. When doing so, they can move away from enemy fighters within 1\" at the start of that move action."
+  }
+
+
+]

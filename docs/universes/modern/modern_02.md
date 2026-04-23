@@ -25,7 +25,7 @@ Bows and Rifles (Range 13"+).
 
 ---
 
-# **Weapon Traits and Abilities**
+# Weapon Traits and Abilities
 
 <TraitGallery type="weapon-trait"  showCost={false}/>/>
 

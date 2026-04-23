@@ -8,7 +8,7 @@ import { TraitGallery } from '../js/settings';
 
 # Attack Action
 
-## **7.6 Attack action** {#7.6-attack-action}
+## 7.6 Attack action
 
 
 <TraitGallery include={["Attack"]} showCost={false} />

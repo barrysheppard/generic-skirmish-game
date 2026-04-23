@@ -5,7 +5,7 @@ sidebar_position: 6.1
 
 # Mission Overview
 
-## **6.1 Mission Setup** {#6.1-game-setup}
+##6.1 Mission Setup
 
 In the default approach, the **Deployment**, **Victory Condition**, and **Twist** details are randomly selected from a limited pool of options. This approach gives good variety and replayability but may result in some combinations which favour one Warband or another.
 
