@@ -11,6 +11,16 @@ import { TraitGallery } from './js/settings';
 
 Each fighter in the game is defined by a set of core characteristics which indicate how fast they move, how good they are with weapons, how hard they are to damage, and how many wounds they can take before they go down. Each fighter will also have at least one weapon profile which will show how they can deal damage.
 
+A typical human will have the following characteristics
+
+| Name | M | WS | BS | Def | W | Traits | Cost |
+| :---- | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| Average Human | 4 | 3 | 3 | 3 | 12 | - | 40 |
+
+
+While this is assumed to be the default, setting packs may take a different approach for their own reasons (e.g. a gladiatorial pack might have bigger health pools with the goal of having fighters between two fighters last longer). Fighter profiles and points will be provided in the setting pack which is separate to this core rules document.
+
+
 ## 3.1 Core Characteristics {#4.2-core-characteristics}
 
 | Characteristic | Description |
@@ -21,19 +31,6 @@ Each fighter in the game is defined by a set of core characteristics which indic
 | **Defence (Def)** | Represents how difficult the fighter is to wound, whether that is their skill to avoid being hit or toughness to avoid being injured when hit. |
 | **Wounds (W)** | The total amount of damage a fighter can take before being removed from play. Fighters with higher Wound values are harder to eliminate. |
 | **Cost** | The cost of including this fighter in your Warband. Used during Warband creation to maintain balance between Warbands. |
-
-A typical human will have the following characteristics
-
-| Name | M | WS | BS | Def | W | Traits | Cost |
-| :---- | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
-| Average Human | 4 | 3 | 3 | 3 | 12 | - | 40 |
-
-By default, they will have the Unarmed weapon. For more information see the [Weapons](core_rules_gear#4.1-weapon-profiles) section.
-| Name | Rng | Att | Dmg | Traits | Cost |
-| :-- | :---: | :---: | :---: | :---: | :---: |
-| Unarmed | 0-1 | 2 | 1/2| - | - |
-
-While this is assumed to be the default, setting packs may take a different approach for their own reasons (e.g. a gladiatorial pack might have bigger health pools with the goal of having fighters between two fighters last longer). Fighter profiles and points will be provided in the setting pack which is separate to this core rules document.
 
 :::warning Change from Warcry
  In this variant, Toughness is changed to Defence and Strength is changed into Weapon Skill and Ballistic Skill. As these characteristics change the ‘to hit’ value, these phrases seem more appropriate. These Skills are is moved to the core fighter and are separate to the weapon.

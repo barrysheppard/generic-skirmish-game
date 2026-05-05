@@ -14,7 +14,11 @@ Gear given to a Fighter stays with that Fighter and cannot be moved to another F
 
 ## 5.1 Weapon Profiles {#4.1-weapon-profiles}
 
-A weapon profile determines how that weapon functions in combat, including how far it can strike, how many attack dice are rolled, and how much damage it deals.
+A weapon profile determines how that weapon functions in combat, including how far it can strike, how many attack dice are rolled, and how much damage it deals. Here are some sample weapons.
+<WeaponGallery/>
+
+A typical weapon will have the following characteristics
+
 
 | Characteristic | Description |
 | :---- | :---- |
@@ -24,9 +28,7 @@ A weapon profile determines how that weapon functions in combat, including how f
 | **Traits** | Special rules relating to the weapon are referenced here, each trait will have a corresponding rule. |
 | **Cost** | The cost of equipping a fighter with this weapon. Used during Warband creation to maintain balance between Warbands. Depending on the setting, this might be Silver pieces or Imperial Credits|
 
-A typical weapon will have the following characteristics
 
-<WeaponGallery/>
 
 Weapons may vary depending on the setting, a bow in a fantasy setting may have very different characteristics to a bow in a sci-fi setting. A list of available weapons will be provided in the setting pack which is separate to this core rules document.
 

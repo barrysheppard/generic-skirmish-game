@@ -1,6 +1,6 @@
 ---
 sidebar_label: 'Weapons'
-sidebar_position: 2
+sidebar_position: 3
 ---
 
 
@@ -27,7 +27,7 @@ Bows and Rifles (Range 13"+).
 
 # Weapon Traits and Abilities
 
-<TraitGallery type="weapon-trait" />
+<TraitGallery type="weapon-trait" showCost={false}/>
 
 :::info Philosophy
 Abilities that boost weapon damage can be problematic when combined with the right profile, e.g. a \+1 attack is much better with a low attack profile than a high attack profile. Here we link damage boosting abilities to the weapon so we always know what profile it uses.

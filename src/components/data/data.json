@@ -1,0 +1,145 @@
+{
+  "names": {
+    "Universal": {
+      "first": [
+        "John", "Sarah", "Mike", "Alex", "Chris", "Jordan", "Taylor", "Morgan", "Casey", "Riley",
+        "Parker", "Sam", "Pat", "Terry", "Jamie", "Blake", "Drew", "Skylar", "Quinn", "Hayden",
+        "Logan", "Charlie", "Emerson", "Finley", "Rowan", "River", "Phoenix", "Sage", "Dakota", "Reese",
+        "Ellis", "Remi", "Avery", "Peyton", "Dallas", "Adrian", "Cameron", "Jules", "Sawyer", "Lee"
+      ],
+      "last": [
+        "Smith", "Doe", "Johnson", "Miller", "Brown", "Wilson", "Davis", "White", "Clark", "Lewis",
+        "Walker", "Hall", "Young", "King", "Wright", "Mason", "Garrison", "Fields", "Steele", "Rivers",
+        "Stone", "Cross", "Hunter", "Wolfe", "Forester", "Mercer", "Archer", "Sawyer", "Thatcher", "Colt",
+        "Brooks", "Lane", "West", "Rhodes", "Vance", "Porter", "Sullivan", "Hayes", "Ford", "Grant"
+      ]
+    }
+  },
+  "weapons": [
+    { "id": "knife", "name": "Knife", "range": "0-1", "att": "3", "dmg": "1/3", "traits": ["Silent"], "cost": "Free" }
+  ],
+  "gear": [
+    {
+      "id": "shield",
+      "name": "Shield",
+      "type": "gear",
+      "ability_cost": "[passive]",
+      "cost": "5",
+      "effect": "This fighter gains +1 Defence against Melee attacks.",
+      "m": 0, "ws": 0, "bs": 0, "def": 0, "w": 0
+    }
+  ],
+  "abilities": [
+    { "name": "Move", "type": "Action", "ability_cost": "[action]", "cost": "-", "effect": "Move up to the Fighter's Movement characteristic in inches. A Fighter within melee range of an enemy cannot move out of melee range with that enemy." },
+    { "name": "Disengage", "type": "Action", "ability_cost": "[action]", "cost": "-", "effect": "Move up to 3\" ending movement more than 1” away from all enemy Fighters." },
+    { "name": "Attack", "type": "Action", "ability_cost": "[action]", "cost": "-", "effect": "Make a melee or ranged attack with one of the Fighter's weapon profiles." },
+    { "name": "Wait", "type": "Action", "ability_cost": "[action]", "cost": "-", "effect": "The Fighter may choose to end their activation, delaying any remaining actions for another activation later in the phase."},
+    { "name": "Stealth", "type": "Action", "ability_cost": "[action]", "cost": "-", "effect": "A fighter that cannot draw line of sight to an enemy fighter, can take this action to gain a stealth token. While they have this token, They cannot be targeted by attacks or abilities unless the attacker can draw an unobstructed line of sight. Enemy fighters cannot react to actions of this fighter. At the end of a fighter’s activation they lose the token if they Made an attack with a weapon (that doesn't have the Silent trait) this activation, or they are visible to an enemy fighter within 6\", or they are visible to an enemy fighter with an unobstructed line of sight."},
+
+    { "name": "Swamp", "type": "Terrain", "ability_cost": "[passive]", "cost": "-", "effect": "Movement through this terrain is halved (rounding up)."},
+    { "name": "Lever", "type": "Terrain", "ability_cost": "[action]", "cost": "-", "effect": "A Fighter within 1\" of this terrain can use this ability to open or close the Door."},
+    { "name": "Into the Pit", "type": "Terrain", "ability_cost": "[triple]", "cost": "-", "effect": "A Fighter after doing damage to another Fighter within 1\" of this terrain feature can activate this ability to remove the damaged Fighter from the battlefield and have them considered taken out."},
+
+    { "name": "▲ Boost WS +1", "type": "Advancement", "ability_cost": "[passive]", "cost": "10", "effect": "Boost WS by +1", "m": 0, "ws": 1, "bs": 0, "def": 0, "w": 0 },
+    { "name": "▲ Boost WS +2", "type": "Advancement", "ability_cost": "[passive]", "cost": "30", "effect": "Boost WS by +2", "m": 0, "ws": 2, "bs": 0, "def": 0, "w": 0 },
+    { "name": "▲ Boost BS +1", "type": "Advancement", "ability_cost": "[passive]", "cost": "10", "effect": "Boost BS by +1", "m": 0, "ws": 0, "bs": 1, "def": 0, "w": 0 },
+    { "name": "▲ Boost BS +2", "type": "Advancement", "ability_cost": "[passive]", "cost": "30", "effect": "Boost BS by +2", "m": 0, "ws": 0, "bs": 2, "def": 0, "w": 0 },
+    { "name": "▲ Boost Def +1", "type": "Advancement", "ability_cost": "[passive]", "cost": "10", "effect": "Boost Def by +1", "m": 0, "ws": 0, "bs": 0, "def": 1, "w": 0 },
+    { "name": "▲ Boost Def +2", "type": "Advancement", "ability_cost": "[passive]", "cost": "30", "effect": "Boost Def by +2", "m": 0, "ws": 0, "bs": 0, "def": 2, "w": 0 },
+    { "name": "▲ Boost W +4", "type": "Advancement", "ability_cost": "[passive]", "cost": "20", "effect": "Boost Wounds by +4", "m": 0, "ws": 0, "bs": 0, "def": 0, "w": 2 },
+    { "name": "▲ Boost W +8", "type": "Advancement", "ability_cost": "[passive]", "cost": "40", "effect": "Boost Wounds by +8 ", "m": 0, "ws": 0, "bs": 0, "def": 0, "w": 4 },
+
+    { "name": "Sprint", "type": "universal", "ability_cost": "[double]", "cost": "-", "effect": "For the rest of this Fighter's activation, increase the move trait by 1.", "m": 0, "ws": 0, "bs": 0, "def": 0, "w": 0 },
+    { "name": "Charge!", "type": "universal", "ability_cost": "[double]", "cost": "-", "effect": "Use this ability only after this Fighter has taken a move action which ended in melee range of an enemy Fighter. This Fighter's next melee attack gains +1 attack dice.", "m": 0, "ws": 0, "bs": 0, "def": 0, "w": 0 },
+    { "name": "Overwatch", "type": "universal", "ability_cost": "[triple]", "cost": "-", "effect": "Reaction. After an enemy Fighter finishes a move action. This Fighter can make an Attack action with a weapon that can target the moving Fighter (they will need to spend an action as normal to make that Attack).", "m": 0, "ws": 0, "bs": 0, "def": 0, "w": 0 },
+    { "name": "Surge", "type": "universal", "ability_cost": "[quad]", "cost": "-", "effect": "This Fighter can make a bonus move action up to X or the Fighter's move (whichever is shorter). Then the Fighter can make a free attack action (they do not spend an action for this attack).", "m": 0, "ws": 0, "bs": 0, "def": 0, "w": 0 },
+
+    { "name": "Death", "type": "Injury", "ability_cost": "[passive]", "cost": "0", "effect": "The Fighter has died and is removed from the Roster along with their Gear." },
+    { "name": "Miss next mission", "type": "Injury", "ability_cost": "[passive]", "cost": "0", "effect": "This fighter will survive, but is recovering and will not be available for the next mission." },
+    { "name": "▼ Gut Wound", "type": "Injury", "ability_cost": "[passive]", "cost": "-5", "effect": "This Fighter's wound characteristic is reduced by 2. This injury can be taken multiple times (to a minimuum of 2 W). Decrease this Fighter's cost by 5.", "m": 0, "ws": 0, "bs": 0, "def": 0, "w": -2 },
+    { "name": "▼ Cracked Rib", "type": "Injury", "ability_cost": "[passive]", "cost": "-5", "effect": "This Fighter can only take one move action per turn. This injury can be taken multiple times but has no additional affect. Decrease this Fighter's cost by 5.", "m": 0, "ws": 0, "bs": 0, "def": 0, "w": 0 },
+    { "name": "▼ Eye Injury", "type": "Injury", "ability_cost": "[passive]", "cost": "-5", "effect": "This Fighter's Ballistic Skill is reduced by 1. This injury can be taken multiple times (to a minimum of 2 BS). Decrease this Fighter's cost by 5.", "m": 0, "ws": 0, "bs": -1, "def": 0, "w": 0 },
+    { "name": "▼ Broken Arm", "type": "Injury", "ability_cost": "[passive]", "cost": "-5", "effect": "This Fighter's Weapon Skill is reduced by 1. This injury can be taken multiple times (to a minimum of 2 WS). Decrease this Fighter's cost by 5.", "m": 0, "ws": -1, "bs": 0, "def": 0, "w": 0 },
+    { "name": "▼ Leg Fracture", "type": "Injury", "ability_cost": "[passive]", "cost": "-5", "effect": "Subtract 1 from the Move characteristic of this Fighter. This injury can be taken multiple times (to a minimum of 2 Move). Decrease this Fighter's cost by 5.", "m": -1, "ws": 0, "bs": 0, "def": 0, "w": 0 },
+    { "name": "▼ Head Trauma", "type": "Injury", "ability_cost": "[passive]", "cost": "-5", "effect": "This Fighter cannot use abilities in the first Mission round, and thereafter can use only one ability per round. This injury can be taken multiple times but has no additional affect. Decrease this Fighter's cost by 5.", "m": 0, "ws": 0, "bs": 0, "def": 0, "w": 0 },
+    { "name": "Flesh Wound", "type": "Injury", "ability_cost": "[passive]", "cost": "0", "effect": "This Fighter suffers no effects. This is not considered an injury and can be removed." },
+    { "name": "Lucky Escape", "type": "Injury", "ability_cost": "[passive]", "cost": "0", "effect": "Survival against the odds, the Fighter gains 10 points to spend on Advancement, Gear, or Weapons. This is not considered an injury and can be removed." },
+
+    { "name": "Fly", "type": "fighter-trait", "ability_cost": "[passive]", "cost": "-", "effect": "This Fighter can move over terrain and other models without being impeded. They do not need to climb or go around obstacles when moving. At the end of Fighter's activation, they must end their move with the centre of their base on a platform or the battlefield floor.", "m": 0, "ws": 0, "bs": 0, "def": 0, "w": 0},
+    { "name": "Leader", "type": "fighter-trait", "ability_cost": "[triple]", "cost": "-", "effect": "Choose two friendly fighters within 6\" of this model. Both fighters may immediately perform a free 3\" move (this cannot be used to leave Melee Range).", "m": 0, "ws": 0, "bs": 0, "def": 0, "w": 0 },
+    { "name": "Beast", "type": "fighter-trait", "ability_cost": "[passive]", "cost": "-", "effect": "Cannot open doors, climb ladders, or use equipment. Often found on animal or creature-type fighters.", "m": 0, "ws": 0, "bs": 0, "def": 0, "w": 0 },
+    { "name": "Champion", "type": "fighter-trait", "ability_cost": "[passive]", "cost": "-", "effect": "If no other Fighter in this warband has the Leader trait, this Fighter can act as the Leader.", "m": 0, "ws": 0, "bs": 0, "def": 0, "w": 0 },
+  
+    { "name": "Assault", "type": "weapon-trait", "ability_cost": "[double]", "cost": "-", "effect": "For the remainder of the round, this weapon gains +1 attack dice at half range.", "m": 0, "ws": 0, "bs": 0, "def": 0, "w": 0 },
+    { "name": "Balanced", "type": "weapon-trait", "ability_cost": "[passive]", "cost": "-", "effect": "Reaction. After dice have been rolled for an attack with this weapon, if there are no hits or crits, change one miss to a hit.", "m": 0, "ws": 0, "bs": 0, "def": 0, "w": 0 },
+    { "name": "Blast", "type": "weapon-trait", "ability_cost": "[double]", "cost": "-", "effect": "For the next attack with this weapon, if the attack has at least one hit or crit, all fighters (friend and foe) within 2\" of the target suffer damage equal to a hit damage.", "m": 0, "ws": 0, "bs": 0, "def": 0, "w": 0 },
+    { "name": "Brutal", "type": "weapon-trait", "ability_cost": "[passive]", "cost": "-", "effect": "Reaction. After an attack roll with this weapon, upgrade one hit to a crit.", "m": 0, "ws": 0, "bs": 0, "def": 0, "w": 0 },
+    { "name": "Concussive", "type": "weapon-trait", "ability_cost": "[double]", "cost": "-", "effect": "After performing an attack with this weapon, if at least one hit or crit is scored, the target is shoved 3\" directly away from the attacker. If the target hits a piece of terrain or another model, they stop and immediately suffer 1 damage.", "m": 0, "ws": 0, "bs": 0, "def": 0, "w": 0 },
+    { "name": "Heavy", "type": "weapon-trait", "ability_cost": "[passive]", "cost": "-", "effect": "This weapon cannot be fired if the Fighter has moved more than 2\" this turn.", "m": 0, "ws": 0, "bs": 0, "def": 0, "w": 0 },
+    { "name": "Lethal", "type": "weapon-trait", "ability_cost": "[passive]", "cost": "-", "effect": "If an attack with this weapon would normally crit on a 6, it now also crits on a 5.", "m": 0, "ws": 0, "bs": 0, "def": 0, "w": 0 },
+    { "name": "Limited(1)", "type": "weapon-trait", "ability_cost": "[passive]", "cost": "-", "effect": "This item can only be used once per battle. The item is available again the next battle.", "m": 0, "ws": 0, "bs": 0, "def": 0, "w": 0 },
+    { "name": "Parry", "type": "weapon-trait", "ability_cost": "[double]", "cost": "-", "effect": "Reaction: After a melee attack has been rolled against a fighter wielding this weapon, but before damage is calculated, change a hit (but not a crit) to a miss.", "m": 0, "ws": 0, "bs": 0, "def": 0, "w": 0 },
+    { "name": "Piercing", "type": "weapon-trait", "ability_cost": "[double]", "cost": "-", "effect": "For the next attack with this weapon, subtract 2 from the target’s Defence to a minimun of 3.", "m": 0, "ws": 0, "bs": 0, "def": 0, "w": 0 },
+    { "name": "Pistol", "type": "weapon-trait", "ability_cost": "[passive]", "cost": "-", "effect": "Pistols are one-handed weapons. When in melee range (0-3) attacks with this weapon use Ballistic Skill.", "m": 0, "ws": 0, "bs": 0, "def": 0, "w": 0 },
+    { "name": "Poison", "type": "weapon-trait", "ability_cost": "[double]", "cost": "-", "effect": "If an attack with this weapon did at least one point of damage, roll X dice and do 1 damage to the same target for each 4-5 and X damage for each 6.", "m": 0, "ws": 0, "bs": 0, "def": 0, "w": 0 },
+    { "name": "Rapid Fire", "type": "weapon-trait", "ability_cost": "[double]", "cost": "-", "effect": "For the rest of the turn attacks with this weapon gain +1 attack dice.", "m": 0, "ws": 0, "bs": 0, "def": 0, "w": 0 },
+    { "name": "Reliable", "type": "weapon-trait", "ability_cost": "[passive]", "cost": "-", "effect": "Reaction. After dice have been rolled for an attack with this weapon, if there are no hits or crits, change one miss to a hit.", "m": 0, "ws": 0, "bs": 0, "def": 0, "w": 0 },
+    { "name": "Relentless", "type": "weapon-trait", "ability_cost": "[double]", "cost": "-", "effect": "This fighter may immediately make a bonus 3\" move action.", "m": 0, "ws": 0, "bs": 0, "def": 0, "w": 0 },
+    { "name": "Rending", "type": "weapon-trait", "ability_cost": "[passive]", "cost": "-", "effect": "On a critical hit, increase the damage of all other hits from this attack by +1.", "m": 0, "ws": 0, "bs": 0, "def": 0, "w": 0 },
+    { "name": "Shred", "type": "weapon-trait", "ability_cost": "[passive]", "cost": "-", "effect": "After resolving an attack with this weapon, target suffers -1 Defence until the end of the round.", "m": 0, "ws": 0, "bs": 0, "def": 0, "w": 0 },
+    { "name": "Silent", "type": "weapon-trait", "ability_cost": "[passive]", "cost": "-", "effect": "Enemy Fighters cannot use Reactions in response to an attack with this weapon. Attacking with this weapon does not break Stealth.", "m": 0, "ws": 0, "bs": 0, "def": 0, "w": 0 },
+    { "name": "Spread", "type": "weapon-trait", "ability_cost": "[passive]", "cost": "-", "effect": "This attack may target up to two targets within 1\" of each other.", "m": 0, "ws": 0, "bs": 0, "def": 0, "w": 0 },
+    { "name": "Stowed", "type": "weapon-trait", "ability_cost": "[passive]", "cost": "-", "effect": "This weapon does not require a hand to carry or use.", "m": 0, "ws": 0, "bs": 0, "def": 0, "w": 0 },
+    { "name": "Two-Handed", "type": "weapon-trait", "ability_cost": "[passive]", "cost": "-", "effect": "This weapon occupies both hand slots.", "m": 0, "ws": 0, "bs": 0, "def": 0, "w": 0 },
+    { "name": "Unwieldy", "type": "weapon-trait", "ability_cost": "[passive]", "cost": "-", "effect": "This fighter cannot use this weapon to make Reactions.", "m": 0, "ws": 0, "bs": 0, "def": 0, "w": 0 },
+
+    { "name": "Quick Shot", "type": "shooting-talent", "ability_cost": "[double]", "cost": "0/20", "effect": "Make a bonus ranged attack action with -1 attack die. Target must be within half max range." },
+    { "name": "Pistolier", "type": "shooting-talent", "ability_cost": "[double]", "cost": "0/20", "effect": "Next attack with paired weapons may target two enemies within 6\". -1 attack dice per target; roll separately." },
+    { "name": "Eagle Eye", "type": "shooting-talent", "ability_cost": "[double]", "cost": "0/20", "effect": "Add 5\" to the maximum range of this fighter's next ranged attack action this turn." },
+    { "name": "Trick Shooter", "type": "shooting-talent", "ability_cost": "[double]", "cost": "0/20", "effect": "Next ranged attack ignores Line of Sight requirements. Instead measure range along an unobstructure path which does not have to be straight." },
+    { "name": "Aimed Shot", "type": "shooting-talent", "ability_cost": "[triple]", "cost": "0/20", "effect": "If this fighter hasn't moved this round, deal +1/+1 damage on next ranged attack. This Fighter cannot move for the rest of the turn." },
+    { "name": "Marksman", "type": "shooting-talent", "ability_cost": "[double]", "cost": "0/20", "effect": "Add +2 to this Fighter's Ballistic Skill (BS) for the next ranged attack action." },
+
+    { "name": "Teleport", "type": "magic-talent", "ability_cost": "[quad]", "cost": "0/20", "effect": "Remove from battlefield; place anywhere on the floor more than 5\" from enemies." },
+    { "name": "Curse", "type": "magic-talent", "ability_cost": "[triple]", "cost": "0/20", "effect": "Target visible enemy within 6\" takes X/2 damage and -1 Defence until end of round." },
+    { "name": "Heal", "type": "magic-talent", "ability_cost": "[double]", "cost": "0/20", "effect": "Choose a friendly within 6\", remove X damage points from that Fighter." },
+    { "name": "Arcane Shield", "type": "magic-talent", "ability_cost": "[double]", "cost": "0/20", "effect": "Until the end of the round, this Fighter gains +2 Defence." },
+    { "name": "Binding Shackles", "type": "magic-talent", "ability_cost": "[triple]", "cost": "0/20", "effect": "Pick a visible enemy within 6\". That fighter cannot make Move actions during their next activation." },
+    { "name": "Blessing of Might", "type": "magic-talent", "ability_cost": "[triple]", "cost": "0/20", "effect": "Pick a friendly fighter within 6\". Until the end of the battle round, add +1 to the Attack characteristic of that fighter's melee weapons." },
+
+    { "name": "Strike to Injure", "type": "melee-talent", "ability_cost": "[triple]", "cost": "0/20", "effect": "For the next melee attack, critical hits deal double damage and reduce target Defence by 1." },
+    { "name": "Combat Master", "type": "melee-talent", "ability_cost": "[quad]", "cost": "0/20", "effect": "Make a melee attack against every visible enemy within 1\". Resolve each separately." },
+    { "name": "Hamstring", "type": "melee-talent", "ability_cost": "[double]", "cost": "0/20", "effect": "Reaction. After a successful melee attack, the target may not take the disengage action until the end of the round." },
+    { "name": "Wall of Steel", "type": "melee-talent", "ability_cost": "[double]", "cost": "0/20", "effect": "Reaction. When hit in melee, roll a d6. On a 5+, the attacker suffers 2 damage." },
+    { "name": "Victory Rush", "type": "melee-talent", "ability_cost": "[double]", "cost": "0/20", "effect": "Use only if you took down an enemy. Heal yourself for 3 wounds." },
+    { "name": "Knife-Fighter", "type": "melee-talent", "ability_cost": "[double]", "cost": "0/20", "effect": "Reaction. Make a bonus melee attack with a Knife/Dagger if an enemy ends a move within 3\"." },
+
+    { "name": "Shield Bash", "type": "strength-talent", "ability_cost": "[double]", "cost": "0/20", "effect": "If this Fighter has a shield, pick an enemy Fighter within 1\" and move that Fighter up to 3\" directly away." },
+    { "name": "Pit Fighter", "type": "strength-talent", "ability_cost": "[double]", "cost": "0/20", "effect": "If within 1\" of 2+ enemies, add +1 to Attacks characteristic for this activation." },
+    { "name": "Resilient", "type": "strength-talent", "ability_cost": "[double]", "cost": "0/20", "effect": "Use when hit but before damage. Ignore up to 2 damage from that specific hit/crit." },
+    { "name": "Fearsome", "type": "strength-talent", "ability_cost": "[double]", "cost": "0/20", "effect": "Enemy Fighters within 3\" suffer -1 Weapon Skill until end of round." },
+    { "name": "Unstoppable Charge", "type": "strength-talent", "ability_cost": "[triple]", "cost": "0/20", "effect": "After a move ending within 1\" of an enemy, make a free melee attack." },
+    { "name": "Savage Blow", "type": "strength-talent", "ability_cost": "[triple]", "cost": "0/20", "effect": "For the next melee attack action, critical hits do +2 damage." },
+
+    { "name": "Leap", "type": "agility-talent", "ability_cost": "[double]", "cost": "0/20", "effect": "For the next Move action, this Fighter gains the fly trait." },
+    { "name": "Dash", "type": "agility-talent", "ability_cost": "[triple]", "cost": "0/20", "effect": "This Fighter takes a free move action." },
+    { "name": "Acrobat", "type": "agility-talent", "ability_cost": "[double]", "cost": "0/20", "effect": "For the remainder of this activation, this Fighter can move out of melee range of enemy Fighters." },
+    { "name": "Step Aside", "type": "agility-talent", "ability_cost": "[action]", "cost": "0/20", "effect": "Reaction. If enemy ends move within 1\", make a free disengage action." },
+    { "name": "Lightning Reflexes", "type": "agility-talent", "ability_cost": "[double]", "cost": "0/20", "effect": "Reaction. After being hit by a ranged attack but before damage is applied, change one hit to a miss or one crit to a hit." },
+    { "name": "Nimble", "type": "agility-talent", "ability_cost": "[double]", "cost": "0/20", "effect": "This Fighter can make a free Move action up to 2\"." },
+
+    { "name": "Voice of Command", "type": "command-talent", "ability_cost": "[double]", "cost": "0/20", "effect": "Allies within 6\" may make a free move of up to 3\"." },
+    { "name": "Inspirational", "type": "command-talent", "ability_cost": "[triple]", "cost": "0/20", "effect": "Allies within 6\" gain +1 Attack dice for this first attack action this turn." },
+    { "name": "Iron Will", "type": "command-talent", "ability_cost": "[double]", "cost": "0/20", "effect": "Allies with Shields within 6\" gain +2 Defence until end of round." },
+    { "name": "Mentor", "type": "command-talent", "ability_cost": "[double]", "cost": "0/20", "effect": "Activate a visible friendly within 6\" immediately after this activation ends." },
+    { "name": "Overseer", "type": "command-talent", "ability_cost": "[triple]", "cost": "0/20", "effect": "Pick an ally within 6\". They can make a bonus move or attack action." },
+    { "name": "Regroup", "type": "command-talent", "ability_cost": "[triple]", "cost": "0/20", "effect": "Allies within 6\" may make a Disengage action and remove 2 wounds." },
+
+    { "name": "Fade into Shadows", "type": "stealth-talent", "ability_cost": "[double]", "cost": "0/20", "effect": "This Fighter gains a Stealth token." },
+    { "name": "Shadow Step", "type": "stealth-talent", "ability_cost": "[double]", "cost": "0/20", "effect": "Teleport to a point within 6\" not visible to any enemy." },
+    { "name": "Smoke Bomb", "type": "stealth-talent", "ability_cost": "[double]", "cost": "0/20", "effect": "Other friendly Fighters within 6\" gain Stealth tokens if not currently visible to enemies." },
+    { "name": "Assassin's Mark", "type": "stealth-talent", "ability_cost": "[triple]", "cost": "0/20", "effect": "Mark an enemy within 6\" until the end of the round. If they are within 1\" of a Stealthed ally, their Defence is -2." },
+    { "name": "Silent Ambush", "type": "stealth-talent", "ability_cost": "[triple]", "cost": "0/20", "effect": "Make a bonus move if Stealthed and not visible to any enemy." },
+    { "name": "Vanish", "type": "stealth-talent", "ability_cost": "[quad]", "cost": "0/20", "effect": "Remove from this Fighter from the table. Deploy them anywhere >6\" from enemies next round with a Stealth token." }
+  ]
+}

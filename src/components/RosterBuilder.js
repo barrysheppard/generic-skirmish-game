@@ -43,7 +43,15 @@ const getModifiedStat = (fighter, statKey) => {
     .reduce((sum, item) => {
       return sum + (parseInt(item[statKey]) || 0);
     }, 0);
+  
   const finalValue = baseStat + bonus;
+
+  // Ensure stats like M, WS, BS, etc., do not drop below 2
+  // We check if the baseStat was higher than 0 to avoid affecting non-existent stats
+  if (baseStat > 0 && finalValue < 2) {
+    return 2;
+  }
+
   return finalValue < 0 ? 0 : finalValue;
 };
 
@@ -70,137 +78,278 @@ const FighterRow = ({
   getDisplayCost,
   duplicateFighter, 
   removeFighter, 
-  moveToGroup
-}) => (
-  <tr 
-    ref={provided?.innerRef} 
-    {...(provided?.draggableProps || {})} 
-    className={isDeployed ? 'deployed-row' : ''} 
-    style={{ borderBottom: '1px solid var(--ifm-color-emphasis-300)', ...(provided?.draggableProps?.style || {}) }}
-  >
-    <td style={{ textAlign: 'left', padding: '10px' }}>
-      <div style={{ display: 'flex', alignItems: 'center' }}>
-        <input 
-          className="editable-input" 
-          style={{ fontWeight: 'bold', fontSize: '1rem' }} 
-          value={f.customName} 
-          onChange={(e) => updateFighterName(f.instanceId, e.target.value)}
-        />
-        {isDeployed && <span className="deployed-badge">{f.groupId}</span>}
-      </div>
-      <div style={{ fontSize: '0.7rem', opacity: 0.6 }}>{f.name}</div>
-      {activeTab === 'build' && !isDeployed && (
-        <div className="no-print" style={{ marginTop: '8px', display: 'flex', flexDirection: 'column', gap: '4px' }}>
-          <select onChange={(e) => addItem(f.instanceId, e.target.value, 'weapon')} value="" style={{ fontSize: '0.7rem' }}>
-            <option value="" disabled>+ Weapon</option>
-            {allWeapons.filter(w => isAvailableForFighter(w, f)).sort((a,b) => a.name.localeCompare(b.name)).map(w => <option key={w.name} value={w.name}>{w.name} ({w.cost})</option>)}
-          </select>
-          <select onChange={(e) => addItem(f.instanceId, e.target.value, 'extra')} value="" style={{ fontSize: '0.7rem' }}>
-            <option value="" disabled>+ Gear</option>
-            {gearOptions.filter(g => isAvailableForFighter(g, f)).sort((a,b) => a.name.localeCompare(b.name)).map(g => <option key={g.name} value={g.name}>{g.name} ({g.cost})</option>)}
-          </select>
-          <select onChange={(e) => addItem(f.instanceId, e.target.value, 'extra')} value="" style={{ fontSize: '0.7rem' }}>
-            <option value="" disabled>+ Ability</option>
-            {abilityOptions.filter(a => isAvailableForFighter(a, f)).sort((a,b) => a.name.localeCompare(b.name)).map(a => <option key={a.name} value={a.name}>{a.name} ({a.cost})</option>)}
-          </select>
-          <select onChange={(e) => addItem(f.instanceId, e.target.value, 'extra')} value="" style={{ fontSize: '0.7rem' }}>
-            <option value="" disabled>+ Advancement</option>
-            {advancementOptions.filter(adv => isAvailableForFighter(adv, f)).sort((a,b) => a.name.localeCompare(b.name)).map(adv => <option key={adv.name} value={adv.name}>{adv.name} ({adv.cost})</option>)}
-          </select>
-          <select onChange={(e) => addItem(f.instanceId, e.target.value, 'extra')} value="" style={{ fontSize: '0.7rem' }}>
-            <option value="" disabled>+ Injury</option>
-            {injuryOptions.filter(i => isAvailableForFighter(i, f)).sort((a,b) => a.name.localeCompare(b.name)).map(i => <option key={i.name} value={i.name}>{i.name} ({i.cost})</option>)}
-          </select>
+  moveToGroup,
+  namesData // NEW: Access to names from data.json
+}) => {
+
+  const [rollResult, setRollResult] = useState(null); // Track the roll for the subtle UI
+
+    // Automatically clear the message after 3 seconds
+    useEffect(() => {
+      if (rollResult) {
+        const timer = setTimeout(() => setRollResult(null), 3000);
+        return () => clearTimeout(timer);
+      }
+    }, [rollResult]);
+
+  const handleRollInjury = () => {
+    const die1 = Math.floor(Math.random() * 6) + 1;
+    const die2 = Math.floor(Math.random() * 6) + 1;
+    const roll = parseInt(`${die1}${die2}`);
+
+    let injuryName = "";
+
+    // Exact string matches for your data.json
+    if (roll >= 11 && roll <= 13) injuryName = "Death";
+    else if (roll >= 14 && roll <= 16) injuryName = "Miss next mission";
+    else if (roll >= 21 && roll <= 23) injuryName = "▼ Gut Wound";
+    else if (roll >= 24 && roll <= 26) injuryName = "▼ Cracked Rib";
+    else if (roll >= 31 && roll <= 33) injuryName = "▼ Eye Injury";
+    else if (roll >= 34 && roll <= 36) injuryName = "▼ Broken Arm";
+    else if (roll >= 41 && roll <= 43) injuryName = "▼ Leg Fracture";
+    else if (roll >= 44 && roll <= 46) injuryName = "▼ Head Trauma";
+    else if (roll >= 51 && roll <= 65) injuryName = "Flesh Wound";
+    else if (roll === 66) injuryName = "Lucky Escape";
+
+    if (injuryName) {
+      // addItem will now find the match in allTraitsData
+      addItem(f.instanceId, injuryName, 'extra'); 
+      setRollResult({ roll, name: injuryName });
+    }
+  };
+
+ const handleRandomName = () => {
+  // 1. Find the correct faction bucket or fallback to Universal
+  const factionData = namesData?.[f.faction] || namesData?.["Universal"];
+  
+  // 2. If no data exists at all, exit early
+  if (!factionData) return;
+
+  // 3. Pick First Name (check if array exists and has items)
+  const firstList = factionData.first || [];
+  const randomFirst = firstList.length > 0 
+    ? firstList[Math.floor(Math.random() * firstList.length)] 
+    : "";
+  
+  // 4. Pick Last Name (check if array exists and has items)
+  const lastList = factionData.last || [];
+  const randomLast = lastList.length > 0 
+    ? lastList[Math.floor(Math.random() * lastList.length)] 
+    : "";
+  
+  // 5. Combine and trim (prevents weird spacing if one is missing)
+  const fullName = `${randomFirst} ${randomLast}`.trim();
+
+  if (fullName) {
+    updateFighterName(f.instanceId, fullName);
+  }
+};
+
+  return (
+    <tr 
+      ref={provided?.innerRef} 
+      {...(provided?.draggableProps || {})} 
+      className={isDeployed ? 'deployed-row' : ''} 
+      style={{ borderBottom: '1px solid var(--ifm-color-emphasis-300)', ...(provided?.draggableProps?.style || {}) }}
+    >
+      <td style={{ textAlign: 'left', padding: '10px' }}>
+        <div style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
+          <input 
+            className="editable-input" 
+            style={{ fontWeight: 'bold', fontSize: '1rem', flex: 1 }} 
+            value={f.customName} 
+            onChange={(e) => updateFighterName(f.instanceId, e.target.value)}
+          />
+          {/* NEW: Dice button for name generation */}
+          {!isDeployed && (
+            <button 
+              className="no-print action-btn-text name-gen-btn" 
+              onClick={handleRandomName}
+              title="Randomize Name"
+              style={{ background: 'none', border: 'none', cursor: 'pointer', fontSize: '1.1rem', padding: '0 4px' }}
+            >
+              🎲
+            </button>
+          )}
+          {isDeployed && <span className="deployed-badge">{f.groupId}</span>}
         </div>
-      )}
-    </td>
-    <td>{getModifiedStat(f, 'm')}</td><td>{getModifiedStat(f, 'ws') === 0 ? '-' : `${getModifiedStat(f, 'ws')}`}</td>
-    <td>{getModifiedStat(f, 'bs') === 0 ? '-' : `${getModifiedStat(f, 'bs')}`}</td><td>{getModifiedStat(f, 'def')}</td><td>{getModifiedStat(f, 'w')}</td>
+        <div style={{ fontSize: '0.7rem', opacity: 0.6 }}>{f.name}</div>
+        {activeTab === 'build' && !isDeployed && (
+          <div className="no-print" style={{ marginTop: '8px', display: 'flex', flexDirection: 'column', gap: '4px' }}>
+            <select onChange={(e) => addItem(f.instanceId, e.target.value, 'weapon')} value="" style={{ fontSize: '0.7rem' }}>
+              <option value="" disabled>+ Weapon</option>
+              {allWeapons.filter(w => isAvailableForFighter(w, f)).sort((a,b) => a.name.localeCompare(b.name)).map(w => <option key={w.name} value={w.name}>{w.name} ({w.cost})</option>)}
+            </select>
+            <select onChange={(e) => addItem(f.instanceId, e.target.value, 'extra')} value="" style={{ fontSize: '0.7rem' }}>
+              <option value="" disabled>+ Gear</option>
+              {gearOptions.filter(g => isAvailableForFighter(g, f)).sort((a,b) => a.name.localeCompare(b.name)).map(g => <option key={g.name} value={g.name}>{g.name} ({g.cost})</option>)}
+            </select>
+            <select onChange={(e) => addItem(f.instanceId, e.target.value, 'extra')} value="" style={{ fontSize: '0.7rem' }}>
+              <option value="" disabled>+ Ability</option>
+              {abilityOptions.filter(a => isAvailableForFighter(a, f)).sort((a,b) => a.name.localeCompare(b.name)).map(a => <option key={a.name} value={a.name}>{a.name} ({a.cost})</option>)}
+            </select>
+            <select onChange={(e) => addItem(f.instanceId, e.target.value, 'extra')} value="" style={{ fontSize: '0.7rem' }}>
+              <option value="" disabled>+ Advancement</option>
+              {advancementOptions.filter(adv => isAvailableForFighter(adv, f)).sort((a,b) => a.name.localeCompare(b.name)).map(adv => <option key={adv.name} value={adv.name}>{adv.name} ({adv.cost})</option>)}
+            </select>
+            <select onChange={(e) => addItem(f.instanceId, e.target.value, 'extra')} value="" style={{ fontSize: '0.7rem' }}>
+              <option value="" disabled>+ Injury</option>
+              {injuryOptions.filter(i => isAvailableForFighter(i, f)).sort((a,b) => a.name.localeCompare(b.name)).map(i => <option key={i.name} value={i.name}>{i.name} ({i.cost})</option>)}
+            </select>
+          </div>
+        )}
+      </td>
+      <td>{getModifiedStat(f, 'm')}</td><td>{getModifiedStat(f, 'ws') === 0 ? '-' : `${getModifiedStat(f, 'ws')}`}</td>
+      <td>{getModifiedStat(f, 'bs') === 0 ? '-' : `${getModifiedStat(f, 'bs')}`}</td><td>{getModifiedStat(f, 'def')}</td><td>{getModifiedStat(f, 'w')}</td>
     <td style={{ textAlign: 'left', padding: '10px' }}>
-      <div style={{ display: 'flex', flexWrap: 'wrap', gap: '5px' }}>
-        {(Array.isArray(f.traits) ? f.traits : [f.traits]).filter(t => t !== "-").map((t, i) => (
-          <span key={i} className="trait-pill"><SafeTraitLink trait={t} traits={allTraitsData} basePath={basePath} /></span>
-        ))}
-        {groupItems(f.selectedWeapons || []).map((grouped, i) => (
+    <div style={{ display: 'flex', flexWrap: 'wrap', gap: '5px' }}>
+      {(Array.isArray(f.traits) ? f.traits : [f.traits])
+        .filter(t => t !== "-")
+        .sort((a, b) => a.localeCompare(b))
+        .map((t, i) => (
+          <span key={`trait-${i}`} className="trait-pill">
+            <SafeTraitLink trait={t} traits={allTraitsData} basePath={basePath} />
+          </span>
+        ))
+      }
+      {groupItems(f.selectedWeapons || [])
+        .sort((a, b) => a.name.localeCompare(b.name))
+        .map((grouped, i) => (
           <span key={`w-${i}`} className="trait-pill inline-flex">
             {grouped.count > 1 && <span>{grouped.count}x </span>}
             <SafeTraitLink trait={grouped.name} traits={allTraitsData} basePath={basePath} />
             <span style={{ marginLeft: '4px' }}>({grouped.originalItem.cost})</span>
-            <span className="no-print remove-btn" onClick={() => removeItem(f.instanceId, i, 'weapon')}>×</span>
+            <span className="no-print remove-btn" onClick={() => removeItem(f.instanceId, grouped.name, 'weapon')}>×</span>
           </span>
-        ))}
-        {groupItems(f.selectedExtras || []).map((grouped, i) => (
+        ))
+      }
+      {groupItems(f.selectedExtras || [])
+        .sort((a, b) => a.name.localeCompare(b.name))
+        .map((grouped, i) => (
           <span key={`e-${i}`} className="trait-pill inline-flex">
             {grouped.count > 1 && <span>{grouped.count}x </span>}
             <SafeTraitLink trait={grouped.name} traits={allTraitsData} basePath={basePath} />
             <span style={{ marginLeft: '4px' }}>({grouped.originalItem.cost})</span>
-            <span className="no-print remove-btn" onClick={() => removeItem(f.instanceId, i, 'extra')}>×</span>
+            <span className="no-print remove-btn" onClick={() => removeItem(f.instanceId, grouped.name, 'extra')}>×</span>
           </span>
-        ))}
-      </div>
-    </td>
-    <td style={{ fontWeight: 'bold' }}>{getDisplayCost(f)}</td>
-<td className="no-print">
-      <div style={{ display: 'flex', flexDirection: 'column', gap: '6px', alignItems: 'center' }}>
-        {isDraggable && <div {...provided.dragHandleProps} style={{ cursor: 'grab', fontSize: '1.2rem', opacity: 0.5 }}>⠿</div>}
-        <div style={{ display: 'flex', flexDirection: 'column', gap: '4px', width: '100%' }}>
-          {!isDeployed && activeTab === 'build' ? (
-            <>
-              <button className="action-btn-text field-btn" onClick={() => moveToGroup(f.instanceId, 'A')}>Field</button>
-              {/* NEW: ABC Quick Move Buttons */}
-              <div style={{ display: 'flex', gap: '2px', justifyContent: 'center' }}>
-                {['A', 'B', 'C'].map(group => (
-                  <button
-                    key={group}
-                    className={`action-btn-text group-select-btn ${f.groupId === group ? 'active' : ''}`}
-                    onClick={() => moveToGroup(f.instanceId, group)}
-                    disabled={f.groupId === group}
-                    style={{ flex: 1 }}
-                  >
-                    {group}
-                  </button>
-                ))}
-              </div>
-              <button className="action-btn-text copy-btn" onClick={() => duplicateFighter(f)}>Copy</button>
-              <button className="action-btn-text del-btn" onClick={() => removeFighter(f.instanceId)}>Del</button>
-            </>
-          ) : (
-            <>
-              <button className="action-btn-text return-btn" onClick={() => moveToGroup(f.instanceId, 'Roster')}>Return</button>
-              {/* NEW: ABC Quick Move Buttons for the Group view */}
-              <div style={{ display: 'flex', gap: '2px', justifyContent: 'center' }}>
-                {['A', 'B', 'C'].map(group => (
-                  <button
-                    key={group}
-                    className={`action-btn-text group-select-btn ${f.groupId === group ? 'active' : ''}`}
-                    onClick={() => moveToGroup(f.instanceId, group)}
-                    disabled={f.groupId === group}
-                    style={{ flex: 1 }}
-                  >
-                    {group}
-                  </button>
-                ))}
-              </div>
-              <button className="action-btn-text copy-btn" disabled>Copy</button>
-              <button className="action-btn-text del-btn" disabled>Del</button>
-            </>
+        ))
+      }
+    </div>
+  </td>
+      <td style={{ fontWeight: 'bold' }}>{getDisplayCost(f)}</td>
+  <td className="no-print">
+        <div style={{ display: 'flex', flexDirection: 'column', gap: '6px', alignItems: 'center' }}>
+          {isDraggable && <div {...provided.dragHandleProps} style={{ cursor: 'grab', fontSize: '1.2rem', opacity: 0.5 }}>⠿</div>}
+          
+          {/* Subtle Notification Overlay */}
+          {rollResult && (
+            <div style={{
+              position: 'absolute',
+              top: '-10px',
+              background: 'var(--ifm-color-primary)',
+              color: 'black',
+              padding: '2px 8px',
+              borderRadius: '4px',
+              fontSize: '0.7rem',
+              fontWeight: 'bold',
+              boxShadow: '0 2px 4px rgba(0,0,0,0.2)',
+              zIndex: 10,
+              animation: 'fadeInOut 3s forwards'
+            }}>
+              🎲 {rollResult.roll}: {rollResult.name}
+            </div>
           )}
+          
+          
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '4px', width: '100%' }}>
+            {!isDeployed && activeTab === 'build' ? (
+              <>
+                <button className="action-btn-text field-btn" onClick={() => moveToGroup(f.instanceId, 'A')}>Field</button>
+                <div style={{ display: 'flex', gap: '2px', justifyContent: 'center' }}>
+                  {['A', 'B', 'C'].map(group => (
+                    <button
+                      key={group}
+                      className={`action-btn-text group-select-btn ${f.groupId === group ? 'active' : ''}`}
+                      onClick={() => moveToGroup(f.instanceId, group)}
+                      disabled={f.groupId === group}
+                      style={{ flex: 1 }}
+                    >
+                      {group}
+                    </button>
+                  ))}
+                </div>
+                <button className="action-btn-text copy-btn" onClick={() => duplicateFighter(f)}>Copy</button>
+
+                <button className="action-btn-text injury-btn" onClick={handleRollInjury}>Roll Injury</button>
+
+                <button className="action-btn-text del-btn" onClick={() => removeFighter(f.instanceId)}>Del</button>
+              </>
+            ) : (
+              <>
+                <button className="action-btn-text return-btn" onClick={() => moveToGroup(f.instanceId, 'Roster')}>Return</button>
+                <div style={{ display: 'flex', gap: '2px', justifyContent: 'center' }}>
+                  {['A', 'B', 'C'].map(group => (
+                    <button
+                      key={group}
+                      className={`action-btn-text group-select-btn ${f.groupId === group ? 'active' : ''}`}
+                      onClick={() => moveToGroup(f.instanceId, group)}
+                      disabled={f.groupId === group}
+                      style={{ flex: 1 }}
+                    >
+                      {group}
+                    </button>
+                  ))}
+                </div>
+                <button className="action-btn-text copy-btn" disabled>Copy</button>
+                <button className="action-btn-text injury-btn" onClick={handleRollInjury}>Roll Injury</button>
+                <button className="action-btn-text del-btn" disabled>Del</button>
+              </>
+            )}
+          </div>
         </div>
-      </div>
-    </td>
-  </tr>
-);
+      </td>
+    </tr>
+  );
+};
 
 /**
  * MAIN COMPONENT
  */
-export const RosterBuilder = ({ fighters = [], weapons = [], traits = [], basePath }) => {
+export const RosterBuilder = ({ fighters = [], weapons = [], traits = [], names = {}, basePath, storageKey = 'default_roster' }) => {
   const [activeTab, setActiveTab] = useState('build'); 
-  const [roster, setRoster] = useState([]);
-  const [masterRosterName, setMasterRosterName] = useState('My Master Roster');
-  const [warbandName, setWarbandName] = useState('My Active Warband');
-  const [selectedFaction, setSelectedFaction] = useState('');
-  const [houseRulesOverride, setHouseRulesOverride] = useState(false);
+  
+  // 1. Initialize state from LocalStorage or use defaults
+  const [roster, setRoster] = useState(() => {
+    const saved = localStorage.getItem(`${storageKey}_roster_data`);
+    return saved ? JSON.parse(saved) : [];
+  });
+
+  const [masterRosterName, setMasterRosterName] = useState(() => {
+    return localStorage.getItem(`${storageKey}_master_name`) || 'My Master Roster';
+  });
+
+  const [warbandName, setWarbandName] = useState(() => {
+    return localStorage.getItem(`${storageKey}_warband_name`) || 'My Active Warband';
+  });
+
+  const [selectedFaction, setSelectedFaction] = useState(() => {
+    return localStorage.getItem(`${storageKey}_faction`) || '';
+  });
+
+  const [houseRulesOverride, setHouseRulesOverride] = useState(() => {
+    return localStorage.getItem(`${storageKey}_house_rules`) === 'true';
+  });
+
+  // 2. Save to LocalStorage whenever state changes
+  useEffect(() => {
+    localStorage.setItem(`${storageKey}_roster_data`, JSON.stringify(roster));
+    localStorage.setItem(`${storageKey}_master_name`, masterRosterName);
+    localStorage.setItem(`${storageKey}_warband_name`, warbandName);
+    localStorage.setItem(`${storageKey}_faction`, selectedFaction);
+    localStorage.setItem(`${storageKey}_house_rules`, houseRulesOverride);
+  }, [roster, masterRosterName, warbandName, selectedFaction, houseRulesOverride, storageKey]);
+
+  // ... rest of your component logic ...
 
   const allFighters = fighters;
   const allWeapons = weapons;
@@ -222,15 +371,23 @@ export const RosterBuilder = ({ fighters = [], weapons = [], traits = [], basePa
     return f.faction === selectedFaction;
   });
 
-  const isAvailableForFighter = (item, fighter) => {
+    const isAvailableForFighter = (item, fighter) => {
     if (houseRulesOverride) return true;
-    if (item.type?.toLowerCase() === 'advancement' || item.type?.toLowerCase() === 'injury') return true;
-    if (!fighter.allowed_items || !Array.isArray(fighter.allowed_items)) return false;
-    return fighter.allowed_items.includes(item.name);
+    const itemType = item.type?.toLowerCase() || '';
+    if (itemType === 'advancement' || itemType === 'injury') return true;
+    if (itemType === 'universal-gear') return true;
+    const isAllowedItem = fighter.allowed_items?.includes(item.name);
+    const isAllowedTalent = fighter.talents?.includes(itemType);
+    return isAllowedItem || isAllowedTalent;
   };
 
-  const gearOptions = allTraitsData.filter(t => t.type?.toLowerCase() === 'gear');
-  const abilityOptions = allTraitsData.filter(t => t.type?.toLowerCase() === 'fighter-trait');
+  const gearOptions = allTraitsData.filter(t => 
+    t.type?.toLowerCase() === 'gear' || t.type?.toLowerCase() === 'universal-gear'
+  );
+  const abilityOptions = allTraitsData.filter(t => {
+    const type = t.type?.toLowerCase() || '';
+    return type === 'fighter-trait' || type.endsWith('-talent');
+  });
   const advancementOptions = allTraitsData.filter(t => t.type?.toLowerCase() === 'advancement');
   const injuryOptions = allTraitsData.filter(t => t.type?.toLowerCase() === 'injury');
 
@@ -294,14 +451,30 @@ export const RosterBuilder = ({ fighters = [], weapons = [], traits = [], basePa
   };
 
   const addFighter = (template) => {
-    setRoster(prev => [...prev, {
+    const newFighter = {
       ...template,
       customName: template.name, 
       instanceId: Math.random().toString(36).substr(2, 9),
       groupId: 'Roster', 
       selectedWeapons: [], 
       selectedExtras: []   
-    }]);
+    };
+
+    if (template.starting_gear && Array.isArray(template.starting_gear)) {
+      template.starting_gear.forEach(itemName => {
+        const weaponData = allWeapons.find(w => w.name === itemName);
+        if (weaponData) {
+          newFighter.selectedWeapons.push({ ...weaponData });
+        } else {
+          const gearData = allTraitsData.find(g => g.name === itemName);
+          if (gearData) {
+            newFighter.selectedExtras.push({ ...gearData });
+          }
+        }
+      });
+    }
+
+    setRoster(prev => [...prev, newFighter]);
   };
 
   const updateFighterName = (id, newName) => {
@@ -342,17 +515,23 @@ export const RosterBuilder = ({ fighters = [], weapons = [], traits = [], basePa
       return f;
     }));
   };
-
-  const removeItem = (instanceId, index, listType) => {
+  
+  const removeItem = (instanceId, itemName, listType) => {
     setRoster(prev => prev.map(f => {
       if (f.instanceId === instanceId) {
         const key = listType === 'weapon' ? 'selectedWeapons' : 'selectedExtras';
         const newList = [...f[key]];
+        
         if (activeTab === 'build') {
-          newList.splice(index, 1);
+          // Find the index of the first item that matches the name
+          const targetIndex = newList.findIndex(item => item.name === itemName);
+          if (targetIndex !== -1) {
+            newList.splice(targetIndex, 1);
+          }
         } else {
+          // Handle suppression for Warband mode
           const activeItems = newList.filter(i => !i.suppressed);
-          const itemToSuppress = activeItems[index];
+          const itemToSuppress = activeItems.find(i => i.name === itemName);
           const realIndex = newList.findIndex(i => i === itemToSuppress);
           if (realIndex !== -1) {
             newList[realIndex] = { ...newList[realIndex], suppressed: true };
@@ -367,32 +546,24 @@ export const RosterBuilder = ({ fighters = [], weapons = [], traits = [], basePa
   const calculateFighterTotal = (f, useWarband = false) => {
     const baseCost = parseCost(f.cost, useWarband);
     const activeWeapons = (f.selectedWeapons || []).filter(w => !w.suppressed);
-    
     let weaponCost = 0;
     if (activeWeapons.length > 0) {
       if (useWarband) {
-        // Multi-weapon discount: Only most expensive weapon counts
         weaponCost = Math.max(...activeWeapons.map(w => parseCost(w.cost, true)));
       } else {
-        // Roster cost: Sum of ALL weapons
         weaponCost = activeWeapons.reduce((sum, w) => sum + parseCost(w.cost, false), 0);
       }
     }
-
     const eCost = (f.selectedExtras || []).filter(e => !e.suppressed).reduce((sum, e) => sum + parseCost(e.cost, useWarband), 0);
-    
     return baseCost + weaponCost + eCost;
   };
 
   const getDisplayCost = (f) => {
     const rosterCost = calculateFighterTotal(f, false);
     const warbandCost = calculateFighterTotal(f, true);
-
     if (activeTab === 'build') {
-      // Show XX/YY if multi-weapon discount is active or base cost is split
       return (rosterCost !== warbandCost) ? `${warbandCost}/${rosterCost}` : warbandCost;
     }
-    // Only show Warband points on the Warband Groups tab
     return warbandCost;
   };
 
@@ -417,6 +588,7 @@ export const RosterBuilder = ({ fighters = [], weapons = [], traits = [], basePa
     return list.sort((a, b) => a.name.localeCompare(b.name));
   }, [roster, allWeapons, activeTab]);
 
+  
   const uniqueTraitData = useMemo(() => {
     const rosterNames = new Set();
     roster.forEach(f => {
@@ -473,6 +645,7 @@ export const RosterBuilder = ({ fighters = [], weapons = [], traits = [], basePa
         .return-btn { background-color: #ffc107; color: black; }
         .copy-btn { background-color: var(--ifm-color-emphasis-300); color: var(--ifm-color-content); }
         .del-btn { background-color: var(--ifm-color-danger); color: white; }
+        .name-gen-btn:hover { filter: brightness(1.2); }
         .action-btn-text:disabled { opacity: 0.3; cursor: not-allowed; filter: grayscale(1); }
         .action-btn-text:hover:not(:disabled) { filter: brightness(1.1); }
         .deployed-row { opacity: 0.8; background-color: var(--ifm-color-emphasis-100); }
@@ -500,8 +673,8 @@ export const RosterBuilder = ({ fighters = [], weapons = [], traits = [], basePa
       </div>
 
       <div className="no-print" style={{ display: 'flex', gap: '2px' }}>
-        <button className={`tab-button ${activeTab === 'build' ? 'active' : ''}`} onClick={() => setActiveTab('build')}>1. Build Roster</button>
-        <button className={`tab-button ${activeTab === 'warband' ? 'active' : ''}`} onClick={() => setActiveTab('warband')}>2. Warband Groups</button>
+        <button className={`tab-button ${activeTab === 'build' ? 'active' : ''}`} onClick={() => setActiveTab('build')}>Roster</button>
+        <button className={`tab-button ${activeTab === 'warband' ? 'active' : ''}`} onClick={() => setActiveTab('warband')}>Warband Groups</button>
       </div>
 
       {activeTab === 'build' && (
@@ -577,7 +750,8 @@ export const RosterBuilder = ({ fighters = [], weapons = [], traits = [], basePa
                         getDisplayCost,
                         duplicateFighter,
                         removeFighter,
-                        moveToGroup
+                        moveToGroup,
+                        namesData: names // Passing name data to each row
                       };
 
                       if (isDeployedToAnotherGroup) {

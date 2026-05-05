@@ -1,0 +1,850 @@
+{
+"fighters": [
+  { "faction": "Corvus Cabal", "name": "Shadow Piercer", "m": 5, "def": 4, "ws": 4, "bs": 4, "w": 20, "traits": ["Leader", "Plunging Killers", "Raptor Strike", "Raven Dart", "Grisly Trophy", "Death from Above", "Light Armour"], "cost": 95, "allowed_items": ["Axe", "Corvus Heavy War-Pick", "Dagger", "Glaive", "Great Axe", "Greatsword", "Hammer", "Light Hammer", "Morning Star", "Pistol", "Polearm", "Poleaxe", "Short Sword", "Spear", "Sword", "Sword and Axe", "Sword and Short Sword", "Throwing Knife", "Twin Corvus War-Picks", "Twin Daggers", "Twin Swords", "Warhammer"], "talents": ["agility-talent", "stealth-talent", "command-talent"], "starting_gear": ["Corvus Heavy War-Pick"]},
+  { "faction": "Corvus Cabal", "name": "Shrike Talon", "m": 8, "def": 4, "ws": 4, "bs": 4, "w": 20, "traits": ["Plunging Killers", "Raptor Strike", "Raven Dart", "Swooping Attack", "Death from Above", "Light Armour"], "cost": 130, "allowed_items": ["Axe", "Dagger", "Glaive", "Great Axe", "Greatsword", "Hammer", "Light Hammer", "Morning Star", "Pistol", "Polearm", "Poleaxe", "Short Sword", "Shrike Claws", "Spear", "Sword", "Sword and Axe", "Sword and Short Sword", "Throwing Knife", "Twin Daggers", "Twin Swords", "Warhammer"], "starting_gear": ["Shrike Claws"] },
+  { "faction": "Corvus Cabal", "name": "Spire Stalker", "m": 5, "def": 4, "ws": 4, "bs": 4, "w": 15, "traits": ["Champion", "Plunging Killers", "Raptor Strike", "Raven Dart", "Swift Climb", "Death from Above", "Light Armour"], "cost": 75, "allowed_items": ["Axe", "Corvus War-Pick", "Dagger", "Glaive", "Great Axe", "Greatsword", "Hammer", "Leader", "Light Hammer", "Morning Star", "Pistol", "Polearm", "Poleaxe", "Short Sword", "Spear", "Sword", "Sword and Axe", "Sword and Short Sword", "Throwing Knife", "Twin Corvus War-Picks", "Twin Daggers", "Twin Swords", "Warhammer"], "talents": ["agility-talent", "stealth-talent"], "starting_gear": ["Twin Corvus War-Picks"]},
+  { "faction": "Corvus Cabal", "name": "Cabalist", "m": 5, "def": 3, "ws": 3, "bs": 3, "w": 8, "traits": ["Plunging Killers", "Raptor Strike", "Raven Dart", "Death from Above"], "cost": 30, "allowed_items": ["Axe", "Corvus War-Pick", "Dagger", "Glaive", "Great Axe", "Greatsword", "Hammer", "Harrying Raven", "Light Armour", "Light Hammer", "Morning Star", "Pistol", "Polearm", "Poleaxe", "Short Sword", "Spear", "Sword", "Sword and Axe", "Sword and Short Sword", "Throwing Knife", "Twin Daggers", "Twin Swords", "Warhammer"], "starting_gear": ["Twin Daggers"] },
+  { "faction": "Cypher Lords", "name": "Thrallmaster", "m": 5, "def": 4, "ws": 4, "bs": 4, "w": 20, "traits": ["Leader", "Matchless Acrobats", "Unexpected Assault", "Throwing Stars and Chakrams", "Acrobatic Leap", "Spinning Somersault Strike", "Shattered Gloom Globe", "Light Armour"], "cost": 95, "allowed_items": ["Axe", "Dagger", "Glaive", "Great Axe", "Greatsword", "Hammer", "Light Hammer", "Morning Star", "Pistol", "Polearm", "Poleaxe", "Short Sword", "Spear", "Sword", "Sword and Axe", "Sword and Short Sword", "Throwing Knife", "Twin Bladed Fans", "Twin Daggers", "Twin Swords", "Warhammer"], "talents": ["magic-talent", "stealth-talent", "command-talent"], "starting_gear": ["Twin Bladed Fans"] },
+  { "faction": "Cypher Lords", "name": "Luminate", "m": 5, "def": 4, "ws": 4, "bs": 4, "w": 15, "traits": ["Champion", "Matchless Acrobats", "Unexpected Assault", "Throwing Stars and Chakrams", "Acrobatic Leap", "Spinning Somersault Strike", "Shadowy Recall", "Light Armour"], "cost": 75, "allowed_items": ["Axe", "Dagger", "Glaive", "Great Axe", "Greatsword", "Hammer", "Heavy Glaive", "Leader", "Light Hammer", "Morning Star", "Pistol", "Polearm", "Poleaxe", "Short Sword", "Spear", "Sword", "Sword and Axe", "Sword and Short Sword", "Throwing Knife", "Twin Daggers", "Twin Swords", "Warhammer"], "talents": ["melee-talent", "stealth-talent"], "starting_gear": ["Heavy Glaive"] },
+  { "faction": "Cypher Lords", "name": "Mirrorblade", "m": 5, "def": 3, "ws": 4, "bs": 4, "w": 10, "traits": ["Matchless Acrobats", "Unexpected Assault", "Throwing Stars and Chakrams", "Acrobatic Leap", "Spinning Somersault Strike"], "cost": 50, "allowed_items": ["Axe", "Dagger", "Duelling Sword", "Glaive", "Great Axe", "Greatsword", "Hammer", "Light Hammer", "Morning Star", "Pistol", "Polearm", "Poleaxe", "Short Sword", "Spear", "Sword", "Sword and Axe", "Sword and Short Sword", "Throwing Knife", "Twin Daggers", "Twin Duelling Swords", "Twin Swords", "Warhammer"], "starting_gear": ["Glaive"] },
+  { "faction": "Cypher Lords", "name": "Mindbound", "m": 5, "def": 3, "ws": 3, "bs": 3, "w": 10, "traits": ["Matchless Acrobats", "Unexpected Assault", "Throwing Stars and Chakrams", "Acrobatic Leap", "Spinning Somersault Strike"], "cost": 30, "allowed_items": ["Axe", "Dagger", "Double-Bladed Sword", "Glaive", "Great Axe", "Greatsword", "Hammer", "Light Hammer", "Morning Star", "Pistol", "Polearm", "Poleaxe", "Short Sword", "Spear", "Sword", "Sword and Axe", "Sword and Short Sword", "Throwing Knife", "Twin Daggers", "Twin Swords", "Warhammer"], "starting_gear": ["Twin Daggers"] },
+  { "faction": "Iron Golems", "name": "Dominar", "m": 4, "def": 4, "ws": 5, "bs": 3, "w": 22, "traits": ["Leader", "Lead with Strength", "We Make War", "Clashing Iron", "Throw Bolas", "Light Armour"], "cost": 95, "allowed_items": ["Axe", "Dagger", "Glaive", "Great Axe", "Greatsword", "Hammer", "Light Hammer", "Morning Star", "Pistol", "Polearm", "Poleaxe", "Short Sword", "Spear", "Spine-Crushing Maul", "Sword", "Sword and Axe", "Sword and Short Sword", "Throwing Knife", "Twin Daggers", "Twin Swords", "Warhammer"], "talents": ["melee-talent", "strength-talent", "command-talent"], "starting_gear": ["Spine-Crushing Maul"] },
+  { "faction": "Iron Golems", "name": "Ogor Breacher", "m": 4, "def": 5, "ws": 6, "bs": 2, "w": 30, "traits": ["We Make War", "Clashing Iron", "Throw Bolas", "Living Battering Ram", "Heavy Armour"], "cost": 135, "allowed_items": ["Breacher Fists"], "starting_gear": ["Breacher Fists"] },
+  { "faction": "Iron Golems", "name": "Drillmaster", "m": 5, "def": 4, "ws": 4, "bs": 4, "w": 18, "traits": ["We Make War", "Clashing Iron", "Throw Bolas", "Light Armour"], "cost": 85, "allowed_items": ["Axe", "Dagger", "Glaive", "Great Axe", "Greatsword", "Hammer", "Heavy Bolas", "Heavy Flail", "Light Hammer", "Morning Star", "Pistol", "Polearm", "Poleaxe", "Short Sword", "Spear", "Sword", "Sword and Axe", "Sword and Short Sword", "Throwing Knife", "Twin Daggers", "Twin Swords", "Warhammer"], "starting_gear": ["Heavy Bolas", "Heavy Flail"] },
+  { "faction": "Iron Golems", "name": "Prefector", "m": 4, "def": 4, "ws": 4, "bs": 3, "w": 18, "traits": ["Champion", "We Make War", "Clashing Iron", "Throw Bolas", "Light Armour"], "cost": 70, "allowed_items": ["Axe", "Dagger", "Glaive", "Great Axe", "Greatsword", "Hammer", "Iron Banner", "Leader", "Light Hammer", "Morning Star", "Pistol", "Polearm", "Poleaxe", "Short Sword", "Spear", "Spine-Crushing Maul", "Sword", "Sword and Axe", "Sword and Short Sword", "Throwing Knife", "Twin Daggers", "Twin Swords", "Warhammer"], "talents": ["melee-talent", "strength-talent"], "starting_gear": ["Spine-Crushing Maul"] },
+  { "faction": "Iron Golems", "name": "Armator", "m": 3, "def": 4, "ws": 4, "bs": 3, "w": 15, "traits": ["We Make War", "Clashing Iron", "Throw Bolas", "Light Armour"], "cost": 50, "allowed_items": ["Axe", "Dagger", "Glaive", "Great Axe", "Greatsword", "Hammer", "Light Hammer", "Morning Star", "Pistol", "Polearm", "Poleaxe", "Short Sword", "Spear", "Sword", "Sword and Axe", "Sword and Short Sword", "Throwing Knife", "Twin Daggers", "Twin Hammers", "Twin Swords", "Warhammer"], "starting_gear": ["Twin Hammers"] },
+  { "faction": "Iron Golems", "name": "Iron Legionary", "m": 4, "def": 4, "ws": 3, "bs": 3, "w": 12, "traits": ["We Make War", "Clashing Iron", "Throw Bolas", "Light Armour"], "cost": 35, "allowed_items": ["Axe", "Bolas", "Dagger", "Glaive", "Great Axe", "Greatsword", "Hammer", "Light Hammer", "Morning Star", "Pistol", "Polearm", "Poleaxe", "Shield", "Short Sword", "Spear", "Sword", "Sword and Axe", "Sword and Short Sword", "Throwing Knife", "Twin Daggers", "Twin Light Hammers", "Twin Swords", "Warhammer"], "starting_gear": ["Light Hammer", "Shield"] },
+  { "faction": "Splintered Fang", "name": "Trueblood", "m": 4, "def": 4, "ws": 4, "bs": 3, "w": 20, "traits": ["Leader", "Weapons Dripping with Poison", "Vicious Riposte", "Poisoned Attacks", "Paralysing Venom", "Ensnaring Net", "Light Armour"], "cost": 80, "allowed_items": ["Poisoned Trident"], "talents": ["agility-talent", "strength-talent", "command-talent"], "starting_gear": ["Poisoned Trident"] },
+  { "faction": "Splintered Fang", "name": "Serpent Caller", "m": 5, "def": 4, "ws": 4, "bs": 3, "w": 15, "traits": ["Weapons Dripping with Poison", "Vicious Riposte", "Poisoned Attacks", "Paralysing Venom", "Snake Charmer", "Light Armour"], "cost": 35, "allowed_items": ["Axe", "Dagger", "Giant Snake", "Glaive", "Great Axe", "Greatsword", "Hammer", "Light Hammer", "Magic Blast", "Morning Star", "Pistol", "Polearm", "Poleaxe", "Short Sword", "Spear", "Sword", "Sword and Axe", "Sword and Short Sword", "Throwing Knife", "Twin Daggers", "Twin Swords", "Warhammer"], "starting_gear": ["Magic Blast", "Giant Snake"] },
+  { "faction": "Splintered Fang", "name": "Pureblood", "m": 4, "def": 4, "ws": 4, "bs": 3, "w": 12, "traits": ["Champion", "Weapons Dripping with Poison", "Vicious Riposte", "Poisoned Attacks", "Paralysing Venom", "Light Armour"], "cost": 70, "allowed_items": ["Axe", "Barbed Whip", "Dagger", "Glaive", "Great Axe", "Greatsword", "Hammer", "Leader", "Light Hammer", "Morning Star", "Pistol", "Polearm", "Poleaxe", "Short Sword", "Spear", "Sword", "Sword and Axe", "Sword and Short Sword", "Throwing Knife", "Twin Daggers", "Twin Swords", "Warhammer"], "talents": ["agility-talent", "strength-talent"], "starting_gear": ["Twin Swords"] },
+  { "faction": "Splintered Fang", "name": "Venomblood", "m": 4, "def": 4, "ws": 4, "bs": 3, "w": 10, "traits": ["Weapons Dripping with Poison", "Vicious Riposte", "Poisoned Attacks", "Paralysing Venom", "Light Armour"], "cost": 40, "allowed_items": ["Axe", "Barbed Whip", "Bladed Spear", "Dagger", "Fanged Buckler", "Glaive", "Great Axe", "Greatsword", "Hammer", "Light Hammer", "Morning Star", "Pistol", "Polearm", "Poleaxe", "Short Sword", "Spear", "Sword", "Sword and Axe", "Sword and Short Sword", "Throwing Knife", "Twin Daggers", "Twin Swords", "Warhammer"], "starting_gear": ["Bladed Spear", "Fanged Buckler"] },
+  { "faction": "Splintered Fang", "name": "Serpents", "m": 6, "def": 2, "ws": 3, "bs": 3, "w": 6, "traits": ["Beast", "Serpent Fangs", "Weapons Dripping with Poison", "Vicious Riposte", "Poisoned Attacks", "Paralysing Venom"], "cost": 85, "allowed_items": ["Serpent Fangs"], "starting_gear": ["Serpent Fangs"] },
+  { "faction": "Splintered Fang", "name": "Clearblood", "m": 4, "def": 3, "ws": 3, "bs": 3, "w": 10, "traits": ["Weapons Dripping with Poison", "Vicious Riposte", "Poisoned Attacks", "Paralysing Venom"], "cost": 35, "allowed_items": ["Axe", "Dagger", "Fanged Buckler", "Glaive", "Great Axe", "Greatsword", "Hammer", "Light Hammer", "Morning Star", "Pistol", "Polearm", "Poleaxe", "Short Sword", "Spear", "Sword", "Sword and Axe", "Sword and Short Sword", "Throwing Knife", "Twin Daggers", "Twin Swords", "Warhammer"], "starting_gear": ["Dagger", "Fanged Buckler"] },
+  { "faction": "The Unmade", "name": "Blissful One", "m": 8, "def": 4, "ws": 4, "bs": 3, "w": 20, "traits": ["Leader", "Shared Bliss", "Shared Pain", "Nightmarish Visage", "Barbed Strike", "Gift of Agony", "Vessel of Torment", "Light Armour"], "cost": 125, "allowed_items": ["Axe", "Dagger", "Glaive", "Great Axe", "Greatsword", "Hammer", "Light Hammer", "Morning Star", "Pistol", "Polearm", "Poleaxe", "Short Sword", "Spear", "Sword", "Sword and Axe", "Sword and Short Sword", "Throwing Knife", "Twin Daggers", "Twin Sickles", "Twin Swords", "Warhammer"], "talents": ["magic-talent", "melee-talent", "command-talent"], "starting_gear": ["Twin Sickles"] },
+  { "faction": "The Unmade", "name": "Joyous One", "m": 5, "def": 4, "ws": 4, "bs": 3, "w": 15, "traits": ["Champion", "Shared Bliss", "Shared Pain", "Nightmarish Visage", "Barbed Strike", "Gift of Agony", "Flaying Frenzy", "Light Armour"], "cost": 70, "allowed_items": ["Axe", "Dagger", "Glaive", "Great Axe", "Greatsword", "Hammer", "Leader", "Light Hammer", "Morning Star", "Pistol", "Polearm", "Poleaxe", "Short Sword", "Spear", "Sword", "Sword and Axe", "Sword and Short Sword", "Throwing Knife", "Twin Daggers", "Twin Swords", "Warhammer"], "talents": ["magic-talent", "melee-talent"], "starting_gear": ["Twin Swords"] },
+  { "faction": "The Unmade", "name": "Ascended One", "m": 4, "def": 4, "ws": 4, "bs": 3, "w": 10, "traits": ["Shared Bliss", "Shared Pain", "Nightmarish Visage", "Barbed Strike", "Gift of Agony", "Light Armour"], "cost": 40, "allowed_items": ["Axe", "Dagger", "Glaive", "Great Axe", "Greatsword", "Hammer", "Light Hammer", "Morning Star", "Pistol", "Polearm", "Poleaxe", "Scythe-Limb and Chains", "Short Sword", "Spear", "Sword", "Sword and Axe", "Sword and Short Sword", "Throwing Knife", "Twin Daggers", "Twin Swords", "Warhammer"], "starting_gear": ["Scythe-Limb and Chains"] },
+  { "faction": "The Unmade", "name": "Awakened One", "m": 4, "def": 3, "ws": 4, "bs": 3, "w": 10, "traits": ["Shared Bliss", "Shared Pain", "Nightmarish Visage", "Barbed Strike", "Gift of Agony"], "cost": 35, "allowed_items": ["Axe", "Dagger", "Flail", "Glaive", "Great Axe", "Greatsword", "Hammer", "Light Hammer", "Morning Star", "Pistol", "Polearm", "Poleaxe", "Short Sword", "Spear", "Sword", "Sword and Axe", "Sword and Short Sword", "Throwing Knife", "Twin Daggers", "Twin Swords", "Warhammer"], "starting_gear": ["Polearm"] },
+  { "faction": "Untamed Beasts", "name": "Heart-Eater", "m": 5, "def": 4, "ws": 5, "bs": 3, "w": 20, "traits": ["Leader", "All-out attack", "Worthy Prey", "Brute Resilience", "Savage Fury", "Unleash the Beast", "Light Armour"], "cost": 95, "allowed_items": ["Axe", "Dagger", "Glaive", "Great Axe", "Great Bone Axe", "Greatsword", "Hammer", "Light Hammer", "Morning Star", "Pistol", "Polearm", "Poleaxe", "Short Sword", "Spear", "Sword", "Sword and Axe", "Sword and Short Sword", "Throwing Knife", "Twin Daggers", "Twin Swords", "Warhammer"], "talents": ["strength-talent", "agility-talent", "command-talent"], "starting_gear": ["Great Bone Axe"] },
+  { "faction": "Untamed Beasts", "name": "First Fang", "m": 4, "def": 4, "ws": 5, "bs": 5, "w": 15, "traits": ["Champion", "Worthy Prey", "Brute Resilience", "Savage Fury", "Unleash the Beast", "Light Armour"], "cost": 75, "allowed_items": ["Axe", "Bone Axe", "Dagger", "Glaive", "Great Axe", "Greatsword", "Hammer", "Harpoon", "Leader", "Light Hammer", "Morning Star", "Pistol", "Polearm", "Poleaxe", "Short Sword", "Spear", "Sword", "Sword and Axe", "Sword and Short Sword", "Throwing Knife", "Twin Daggers", "Twin Swords", "Warhammer"], "talents": ["strength-talent", "agility-talent"], "starting_gear": ["Bone Axe", "Harpoon"] },
+  { "faction": "Untamed Beasts", "name": "Beastspeaker", "m": 5, "def": 5, "ws": 4, "bs": 4, "w": 15, "traits": ["Worthy Prey", "Brute Resilience", "Savage Fury", "Unleash the Beast", "Beastmaster", "Light Armour"], "cost": 75, "allowed_items": ["Axe", "Bone Blade", "Dagger", "Fanged Whip", "Glaive", "Great Axe", "Greatsword", "Hammer", "Leader", "Light Hammer", "Morning Star", "Pistol", "Polearm", "Poleaxe", "Short Sword", "Spear", "Sword", "Sword and Axe", "Sword and Short Sword", "Throwing Knife", "Twin Daggers", "Twin Swords", "Warhammer"], "starting_gear": ["Bone Blade", "Fanged Whip"] },
+  { "faction": "Untamed Beasts", "name": "Preytaker", "m": 4, "def": 4, "ws": 4, "bs": 3, "w": 10, "traits": ["Worthy Prey", "Brute Resilience", "Savage Fury", "Unleash the Beast", "Light Armour"], "cost": 40, "allowed_items": ["Axe", "Dagger", "Fanged Axe", "Glaive", "Great Axe", "Greatsword", "Hammer", "Light Hammer", "Morning Star", "Pistol", "Polearm", "Poleaxe", "Sawtooth Blade", "Short Sword", "Spear", "Sword", "Sword and Axe", "Sword and Short Sword", "Throwing Knife", "Twin Daggers", "Twin Swords", "Warhammer"], "starting_gear": ["Sawtooth Blade"] },
+  { "faction": "Untamed Beasts", "name": "Plains-Runner", "m": 5, "def": 3, "ws": 3, "bs": 3, "w": 8, "traits": ["Worthy Prey", "Brute Resilience", "Savage Fury", "Unleash the Beast"], "cost": 30, "allowed_items": ["Axe", "Bone Axe", "Dagger", "Glaive", "Great Axe", "Greatsword", "Hammer", "Light Hammer", "Morning Star", "Pistol", "Polearm", "Poleaxe", "Short Sword", "Spear", "Sword", "Sword and Axe", "Sword and Short Sword", "Throwing Knife", "Twin Bone Axes", "Twin Daggers", "Twin Swords", "Warhammer"], "starting_gear": ["Twin Bone Axes"] },
+  { "faction": "Untamed Beasts", "name": "Rocktusk Prowler", "m": 8, "def": 4, "ws": 4, "bs": 3, "w": 20, "traits": ["Worthy Prey", "Brute Resilience", "Savage Fury", "Unleash the Beast", "Pounce", "Beast"], "cost": 125, "allowed_items": ["Rocktusk Fangs"], "starting_gear": ["Rocktusk Fangs"] },
+  { "faction": "Allies", "name": "Fomoroid Crusher", "m": 5, "def": 6, "ws": 6, "bs": 3, "w": 35, "traits": ["Ally", "Hurl Masonry", "Rampaging Charge"], "cost": 180, "allowed_items": ["Crushing Fists"], "starting_gear": ["Crushing Fists"] },
+  { "faction": "Allies", "name": "Ogroid Myrmidon", "m": 5, "def": 5, "ws": 5, "bs": 3, "w": 30, "traits": ["Ally", "Berserk", "Arcane Fury", "Blood Marshal"], "cost": 160, "allowed_items": ["Gladiator Spear", "Shield"], "starting_gear": ["Gladiator Spear", "Shield"] },
+  { "faction": "Allies", "name": "Mindstealer Sphiranx", "m": 8, "def": 5, "ws": 5, "bs": 3, "w": 30, "traits": ["Ally", "Telepathic Threatening", "Dominate Mind", "Charm"], "cost": 175, "allowed_items": ["Shredding Claws"], "starting_gear": ["Shredding Claws"] },
+  { "faction": "Allies", "name": "Fury", "m": 8, "def": 3, "ws": 3, "bs": 3, "w": 8, "traits": ["Ally", "Fly", "Cower"], "cost": 75, "allowed_items": ["Unarmed", "Dagger", "Twin Daggers"], "starting_gear": ["Unarmed"] },
+  { "faction": "Allies", "name": "Chaos Warhound", "m": 8, "def": 3, "ws": 3, "bs": 3, "w": 10, "traits": ["Ally", "Beast", "Outrunner of Chaos"], "cost": 75, "allowed_items": ["Fangs"], "starting_gear": ["Fangs"] },
+  { "faction": "Allies", "name": "Raptoryx", "m": 5, "def": 4, "ws": 3, "bs": 3, "w": 12, "traits": ["Ally", "Beast", "Crazed Flock"], "cost": 50, "allowed_items": ["Razor-sharp Beak"], "starting_gear": ["Razor-sharp Beak"] }
+
+],
+  "weapons": [
+  { "name": "Unarmed", "range": "0-1", "att": 3, "dmg": "1/2", "cost": 20, "traits": ["Silent"] },
+  { "name": "Fangs", "range": "0-1", "att": 3, "dmg": "1/3", "cost": 25, "traits": ["Silent"] },
+  { "name": "Dagger", "range": "0-1", "att": 3, "dmg": "1/3", "cost": 25, "traits": ["Silent"] },
+  { "name": "Twin Bone Axes", "range": "0-1", "att": 3, "dmg": "1/3", "cost": "20/30", "traits": ["Two-Handed"] },
+  { "name": "Bone Axe", "range": "0-1", "att": 2, "dmg": "1/3", "cost": "15", "traits": [] },
+  { "name": "Razor-sharp Beak", "range": "0-1", "att": 3, "dmg": "1/4", "cost": 35, "traits": [] },
+  { "name": "Light Hammer", "range": "0-1", "att": 3, "dmg": "1/4", "cost": 35, "traits": [] },
+  { "name": "Bolas", "range": "0-3", "att": 3, "dmg": "1/3", "cost": 30, "traits": [] },
+  { "name": "Flail", "range": "0-3", "att": 3, "dmg": "1/2", "cost": 15, "traits": [] },
+  { "name": "Hatchet", "range": "0-1", "att": 3, "dmg": "1/3", "cost": 30, "traits": ["Shred"] },
+  { "name": "Pistol", "range": "0-8", "att": 3, "dmg": "1/3", "cost": 40, "traits": ["Quick"] },
+  { "name": "Twin Hatchets", "range": "0-1", "att": 4, "dmg": "1/3", "cost": "40/60", "traits": ["Shred", "Two-Handed"] },
+  { "name": "Twin Daggers", "range": "0-1", "att": 4, "dmg": "1/3", "cost": "35/50", "traits": ["Silent", "Two-Handed"]},
+  { "name": "Twin Light Hammers", "range": "0-1", "att": 4, "dmg": "1/4", "cost": 50, "traits": ["Two-Handed"] },
+  { "name": "Rapier", "range": "0-1", "att": 4, "dmg": "1/3", "cost": 40, "traits": ["Precise"] },
+  { "name": "Twin Pistols", "range": "0-8", "att": 4, "dmg": "1/3", "cost": "60/80", "traits": ["Quick", "Two-Handed"] },
+  { "name": "Throwing Knife", "range": "0-6", "att": 2, "dmg": "1/3", "cost": 30, "traits": ["Thrown"] },
+  { "name": "Axe", "range": "0-1", "att": 3, "dmg": "2/3", "cost": 40, "traits": ["Shred"] },
+  { "name": "Short Sword", "range": "0-1", "att": 3, "dmg": "2/3", "cost": 40, "traits": ["Piercing"] },
+  { "name": "Battle Staff", "range": "0-2", "att": 3, "dmg": "2/3", "cost": 45, "traits": ["Parry", "Two-Handed"] },
+  { "name": "Heavy Bolas", "range": "0-3", "att": 4, "dmg": "2/3", "cost": 60, "traits": ["Whirlwind of Death"] },
+  { "name": "Polearm", "range": "0-2", "att": 2, "dmg": "1/4", "cost": 25, "traits": ["Piercing"] },
+  { "name": "Double-Bladed Sword", "range": "0-1", "att": 3, "dmg": "1/4", "cost": "35", "traits": [] },
+  { "name": "Bone Blade", "range": "0-1", "att": 3, "dmg": "1/4", "cost": "35", "traits": [] },
+  { "name": "Spear", "range": "0-2", "att": 4, "dmg": "1/4", "cost": 50, "traits": ["Piercing"] },
+  { "name": "Barbed Whip", "range": "0-3", "att": 4, "dmg": "1/4", "cost": 40, "traits": ["Barbed"] },
+  { "name": "Fanged Whip", "range": "0-3", "att": 4, "dmg": "1/4", "cost": "40" },
+  { "name": "Serpent Fangs", "range": "0-1", "att": 5, "dmg": "1/4", "cost": 60, "traits": [] },
+  { "name": "Twin Hammers", "range": "0-1", "att": 4, "dmg": "2/4", "cost": 65, "traits": ["Two-Handed"] },
+  { "name": "Hammer", "range": "0-1", "att": 3, "dmg": "2/4", "cost": 50, "traits": ["Two-Handed"] },
+  { "name": "Magic Blast", "range": "0-8", "att": 2, "dmg": "2/4", "cost": 40, "traits": ["Magic"] },
+  { "name": "Sword", "range": "0-1", "att": 3, "dmg": "2/4", "cost": 50, "traits": ["Parry"] },
+  { "name": "Corvus War-Pick", "range": "0-1", "att": 3, "dmg": "2/4", "cost": 50, "traits": ["Piercing"] },
+  { "name": "Bladed Spear", "range": "0-2", "att": 3, "dmg": "2/4", "cost": 50, "traits": ["Piercing"] },
+  { "name": "Bone Axe", "range": "0-1", "att": 3, "dmg": "2/4", "cost": 50, "traits": ["Cleaving"] },
+  { "name": "Scimitar", "range": "0-1", "att": 3, "dmg": "2/4", "cost": 50, "traits": ["Riposte"] },
+  { "name": "Sword and Short Sword", "range": "0-1", "att": 3, "dmg": "2/4", "cost": "50/90", "traits": ["Parry", "Piercing", "Two-Handed"] },
+  { "name": "Sword and Axe", "range": "0-1", "att": 3, "dmg": "2/4", "cost": "50/105", "traits": ["Parry", "Shred", "Two-Handed"] },
+  { "name": "Shortbow", "range": "3-10", "att": 3, "dmg": "2/4", "cost": 70, "traits": ["Precise", "Two-Handed"] },
+  { "name": "Longbow", "range": "3-15", "att": 3, "dmg": "2/4", "cost": 75, "traits": ["Precise", "Two-Handed"] },
+  { "name": "Twin Swords", "range": "0-1", "att": 4, "dmg": "2/4", "cost": "65/100", "traits": ["Parry","Two-Handed"] },
+  { "name": "Twin Corvus War-Picks", "range": "0-1", "att": 4, "dmg": "2/4", "cost": "65/100", "traits": ["Piercing", "Two-Handed"] },
+  { "name": "Poisoned Trident", "range": "0-2", "att": 4, "dmg": "2/5", "cost": 70, "traits": ["Poison"] },
+  { "name": "Giant Snake", "range": "0-2", "att": 4, "dmg": "2/4", "cost": 70, "traits": ["Poison"] },
+  { "name": "Scythe-Limb and Chains", "range": "0-1", "att": 4, "dmg": "2/4", "cost": "65/100", "traits": ["Chain Garrotte", "Two-Handed"] },
+  { "name": "Sawtooth Blade", "range": "0-1", "att": 4, "dmg": "2/4", "cost": "65", "traits": ["Shred", "Two-Handed"] },
+  { "name": "Duelling Sword", "range": "0-1", "att": 4, "dmg": "2/4", "cost": "65", "traits": ["Parry"] },
+  { "name": "Warhammer", "range": "0-1", "att": 4, "dmg": "2/4", "cost": 65, "traits": ["Crushing", "Two-Handed"] },
+  { "name": "Heavy Flail", "range": "0-1", "att": 4, "dmg": "2/4", "cost": 65, "traits": [] },
+  { "name": "Shrike Claws", "range": "0-1", "att": 5, "dmg": "2/4", "cost": "80", "traits": ["Piercing", "Two-Handed"] },
+  { "name": "Twin Duelling Swords", "range": "0-1", "att": 5, "dmg": "2/4", "cost": "80/130", "traits": ["Parry", "Two-Handed"] },
+  { "name": "Brutal Club", "range": "0-1", "att": 2, "dmg": "2/5", "cost": 35, "traits": ["Brutal"] },
+  { "name": "Morning Star", "range": "0-1", "att": 2, "dmg": "2/5", "cost": 35, "traits": ["Barbed"] },
+  { "name": "Poleaxe", "range": "0-2", "att": 2, "dmg": "2/5", "cost": 45, "traits": ["Crushing", "Two-Handed"] },
+  { "name": "Crossbow", "range": "3-10", "att": 2, "dmg": "2/5", "cost": 50, "traits": ["Piercing", "Two-Handed"] },
+  { "name": "Harpoon", "range": "0-8", "att": 2, "dmg": "2/5", "cost": "45", "traits": ["Harpoon Snag"] },
+  { "name": "Mace", "range": "0-1", "att": 3, "dmg": "2/5", "cost": 55, "traits": ["Crushing"] },
+  { "name": "Fanged Axe", "range": "0-1", "att": 3, "dmg": "2/5", "cost": "55", "traits": ["Rending", "Two-Handed"] },
+  { "name": "Corvus Heavy War-Pick", "range": "0-1", "att": 4, "dmg": "2/5", "cost": "55", "traits": ["Piercing", "Two-Handed"] },
+  { "name": "Glaive", "range": "0-2", "att": 4, "dmg": "2/5", "cost": "70", "traits": ["Low Sweeping Blow", "Two-Handed"] },
+  { "name": "Spine-Crushing Maul", "range": "0-1", "att": 4, "dmg": "2/5", "cost": 65, "traits": ["Spine-crushing Blow", "Two-Handed"] },
+  { "name": "Rocktusk Fangs", "range": "0-1", "att": 4, "dmg": "2/5", "cost": "70" },
+  { "name": "Heavy Glaive", "range": "0-2", "att": 5, "dmg": "2/5", "cost": "85", "traits": ["Two-Handed"] },
+  { "name": "Great Bone Axe", "range": "0-1", "att": 5, "dmg": "2/5", "cost": 100, "traits": ["Cleaving", "Two-Handed"] },
+  { "name": "Greatsword", "range": "0-1", "att": 2, "dmg": "3/5", "cost": 50, "traits": ["Overwhelming", "Two-Handed"] },
+  { "name": "Great Axe", "range": "0-1", "att": 2, "dmg": "3/5", "cost": 50, "traits": ["Cleaving", "Two-Handed"] },
+  { "name": "Twin Bladed Fans", "range": "0-1", "att": 5, "dmg": "2/6", "cost": "100", "traits": ["Two-Handed"] },
+  { "name": "Twin Sickles", "range": "0-1", "att": 5, "dmg": "2/6", "cost": "100/160", "traits": ["Two-Handed"] },
+  { "name": "Breacher Fists", "range": "0-1", "att": 3, "dmg": "4/8", "cost": 100, "traits": ["Crushing", "Two-Handed"] },
+  { "name": "Crushing Fists", "range": "0-1", "att": 3, "dmg": "4/8", "cost": 100, "traits": ["Crushing", "Two-Handed"] },
+  { "name": "Gladiator Spear", "range": "0-2", "att": 3, "dmg": "4/8", "cost": 105, "traits": ["Piercing"]},
+  { "name": "Shredding Claws", "range": "0-1", "att": 4, "dmg": "2/5", "cost": 70, "traits": ["Shred", "Two-Handed"] }
+],
+  "gear": [
+  {
+    "name": "Shield",
+    "ability_cost": "[passive]",
+    "effect": "+1 Defence",
+    "cost": 10,
+    "type": "gear",
+    "def": 1
+  },
+  {
+    "name": "Light Armour",
+    "ability_cost": "[passive]",
+    "effect": "Standard protection. +1 Def",
+    "cost": 10,
+    "type": "gear",
+    "def": 1
+  },
+  {
+    "name": "Heavy Armour",
+    "ability_cost": "[passive]",
+    "effect": "+2 Defence, -1 Movement",
+    "cost": 30,
+    "type": "gear",
+    "def": 2,
+    "m": -1
+  },
+  {
+    "name": "Mount",
+    "ability_cost": "[passive]",
+    "effect": "10 Movement, +4 Wounds",
+    "cost": 50,
+    "type": "gear",
+    "m": 4, 
+    "w": 4
+  },
+  {
+    "name": "Iron Banner",
+    "ability_cost": "[triple]",
+    "effect": "Until the end of the battle round, add 1 to the Defence characteristic of visible friendly fighters while they are within 6\" of this fighter.",
+    "cost": 10,
+    "type": "gear"
+  },
+  {
+    "name": "Ensnaring Net",
+    "ability_cost": "[double]",
+    "effect": "Pick a visible enemy fighter within 3\" of this fighter. Until the end of the battle round, that enemy fighter cannot make move actions or disengage actions.",
+    "cost": 20,
+    "type": "gear"
+  },
+  {
+    "name": "Fanged Buckler",
+    "ability_cost": "[double]",
+    "effect": "Pick a visible enemy fighter within 1\" of this fighter and roll a dice. On a roll of 3+, allocate 3 damage points to that fighter.",
+    "cost": 10,
+    "type": "gear", 
+    "def": 1
+  },
+  {
+    "name": "Healing Potion",
+    "ability_cost": "[double]",
+    "effect": "Remove 3 damage points. This item is destroyed after use.",
+    "cost": "0/5",
+    "type": "universal-gear"
+  },
+  {
+    "name": "Swiftwind Dust",
+    "ability_cost": "[passive]",
+    "effect": "Reaction. At any point in a game, a Fighter may destroy this item to add 1 to this Fighter's move characteristic for the remainder of the game.",
+    "cost": "0/5",
+    "type": "universal-gear"
+  },
+  {
+    "name": "Silkstrider Webbing",
+    "ability_cost": "[passive]",
+    "effect": "This fighter does not suffer impact damage from falls.",
+    "cost": "0/5",
+    "type": "universal-gear"
+  },
+  {
+    "name": "Skin of Flame-Ale",
+    "ability_cost": "[passive]",
+    "effect": "Reaction. At any point in a game, a Fighter may destroy this item to add 1 to this Fighter's Weapon Skill characteristic for the remainder of the game.",
+    "cost": "0/5",
+    "type": "universal-gear"
+  },
+  {
+    "name": "Jar of Chamonic Glowflies",
+    "ability_cost": "[passive]",
+    "effect": "Reaction. At any point in a game, a Fighter may destroy this item to add 1 to the value of abilities used by this Fighter for the remainder of the game.",
+    "cost": "0/5",
+    "type": "universal-gear"
+  },
+  {
+    "name": "Carvolax-scale Anklet",
+    "ability_cost": "[passive]",
+    "effect": "Add 1 to the move characteristic of this Fighter.",
+    "cost": "15",
+    "type": "universal-gear",
+    "M": 1
+  },
+  {
+    "name": "Chronomantic Dial",
+    "ability_cost": "[double]",
+    "effect": "Reaction. At any point in a game, a Fighter may destroy this item to add 1 to the Attacks value of Melee weapons carried by this fighter for the remainder of the turn.",
+    "cost": "0/20",
+    "type": "universal-gear"
+  },
+  {
+    "name": "Ironoak Seed",
+    "ability_cost": "[Double]",
+    "effect": "Reaction. At any point in a game, a Fighter may destroy this item to add 1 to this Fighter's Defence characteristic for the remainder of the game.",
+    "cost": "0/10",
+    "type": "universal-gear"
+  },
+  {
+    "name": "Greater Healing Potion",
+    "ability_cost": "[Double]",
+    "effect": "Remove 6 damage points. This item is destroyed after use.",
+    "cost": "0/20",
+    "type": "universal-gear"
+  },
+  {
+    "name": "Godbeast Idol",
+    "ability_cost": "[passive]",
+    "effect": "Add 1 to the value of abilities (to a maximum of 6) used by this Fighter.",
+    "cost": "0/20",
+    "type": "universal-gear"
+  },
+  {
+    "name": "Vial of Jabberslythe Blood",
+    "ability_cost": "[passive]",
+    "effect": "Reaction. At any point in a game, a Fighter may destroy this item to add 1 to critical hits for melee attacks made by this fighter this activaiton.",
+    "cost": "0/10",
+    "type": "universal-gear"
+  },
+  {
+    "name": "Ur-Gold Sigil",
+    "ability_cost": "[passive]",
+    "effect": "Increase this Fighter's Defence by 1.",
+    "cost": "25",
+    "def": 1,
+    "type": "universal-gear"
+  },
+  {
+    "name": "Blight Serpent Venom",
+    "ability_cost": "[passive]",
+    "effect": "Add 1 to the Weapon Skill of this Fighter.",
+    "cost": "15",
+    "type": "universal-gear"
+  },
+  {
+    "name": "Bauble of Shadows",
+    "ability_cost": "[passive]",
+    "effect": "Reaction. At any point in a game, a Fighter may destroy this item to gain the Fly trait for the remainder of the turn.",
+    "cost": "0/10",
+    "type": "universal-gear"
+  },
+  {
+    "name": "Flask of Aqua Ghyranis",
+    "ability_cost": "[passive]",
+    "effect": "Reaction. Destroy this item to re-roll an injury roll, the new result must be retained.",
+    "cost": "0/20",
+    "type": "universal-gear"
+  },
+  {
+    "name": "Pendant of Bloodglass",
+    "ability_cost": "[passive]",
+    "effect": "Reaction. At any point in a game, a Fighter may destroy this item to add 1 to the Attacks value of Ranged weapons carried by this fighter for the remainder of the turn.",
+    "cost": "0/20",
+    "type": "universal-gear"
+  },
+  {
+    "name": "Raven-Feather Necklace",
+    "ability_cost": "[passive]",
+    "effect": "Reaction. At any point in a game, a Fighter may destroy this item to add 1 to critical hits for Ranged attacks made by this fighter this activation.",
+    "cost": "0/10",
+    "type": "universal-gear"
+  },
+  {
+    "name": "Rune-Etched Vambraces",
+    "ability_cost": "[passive]",
+    "effect": "Reaction. After dice have been rolled but before damage applied, a Fighter may destroy this item to reduce the damage of each hit and crit by 1 (to a minimum of 1).",
+    "cost": "0/10",
+    "type": "universal-gear"
+  },
+  {
+    "name": "Harrying Raven",
+    "ability_cost": "[Double]",
+    "effect": "Pick an enemy fighter within 20\" of this fighter. Until the end of the battle round, that fighter cannot make disengage actions.",
+    "cost": "5",
+    "type": "gear"
+  }
+
+  
+
+],
+  "fighter_traits": [
+
+  {
+    "name": "Leader",
+    "type": "fighter-trait",
+    "ability_cost": "[triple]",
+    "cost": "-",
+    "effect": "Choose two friendly fighters within 6\" of this model. Both fighters may immediately perform a free 3\" move (this cannot be used to leave Melee Range)."
+  },
+  {
+    "name": "Ally",
+    "type": "fighter-trait",
+    "ability_cost": "[passive]",
+    "cost": "-",
+    "effect": "This fighter may only join a warband if the roster is exhausted and the warband has not yet hit the points limit. This fighter does not count for Roster points and after the mission, this fighter is removed."
+  },
+  {
+    "name": "Plunging Killers",
+    "type": "fighter-trait",
+    "ability_cost": "[passive]",
+    "cost": "-",
+    "effect": "Add 2 to the Weapon Skill characteristic of melee attack actions made by friendly fighters with this battle trait if they finished a move action 2\" or more vertically lower than their starting position this activation."
+  },
+  {
+    "name": "Raptor Strike",
+    "type": "fighter-trait",
+    "ability_cost": "[action]",
+    "cost": "-",
+    "effect": "Reaction: A fighter can make this reaction after an enemy fighter finishes a move action visible to this fighter, within 5\" horizontally and vertically lower than this fighter. This fighter makes a bonus move action and must finish closer to that enemy fighter than they were at the start of that move action. If this fighter ends that move within 1\" of that enemy fighter, this fighter does not suffer impact damage and that enemy fighter suffers impact damage."
+  },
+  {
+    "name": "Raven Dart",
+    "type": "fighter-trait",
+    "ability_cost": "[double]",
+    "cost": "-",
+    "effect": "Pick a visible enemy fighter within 8\" of this fighter and roll a dice. On a roll of 2-4, allocate 1 damage point to that fighter. On a roll of 5+, allocate a number of damage points to that fighter equal to the value of this ability."
+  },
+  {
+    "name": "Swift Climb",
+    "type": "fighter-trait",
+    "ability_cost": "[double]",
+    "cost": "-",
+    "effect": "Until the end of this fighter's activation, do not count the vertical distance moved when this fighter is climbing."
+  },
+  {
+    "name": "Swooping Attack",
+    "type": "fighter-trait",
+    "ability_cost": "[triple]",
+    "cost": "-",
+    "effect": "This fighter makes a bonus move action. In addition, if the fighter finishes that move action 2\" or more vertically lower than their starting position, they can make a bonus attack action."
+  },
+  {
+    "name": "Grisly Trophy",
+    "type": "fighter-trait",
+    "ability_cost": "[triple]",
+    "cost": "-",
+    "effect": "A fighter can only use this ability if an enemy fighter has been taken down by an attack action made by them this activation. Until the end of the battle round, add 1 to the Attacks characteristic of melee attack actions made by visible friendly fighters while they are within 9\" of this fighter."
+  },
+  {
+    "name": "Death from Above",
+    "type": "fighter-trait",
+    "ability_cost": "[quad]",
+    "cost": "-",
+    "effect": "This fighter makes a bonus move action. Then, they can make a bonus attack action. Add 1 to the Weapon Skill characteristic of that attack action if the fighter finished the move action 2\" or more vertically lower than their starting position."
+  },
+  {
+    "name": "Throwing Stars and Chakrams",
+    "type": "fighter-trait",
+    "ability_cost": "[double]",
+    "cost": "-",
+    "effect": "Pick a visible enemy fighter within 6\" of this fighter and roll 2 dice. For each roll of 4-5, allocate 1 damage point to that fighter. For each roll of 6, allocate a number of damage points to that fighter equal to the value of this ability."
+  },
+  {
+    "name": "Acrobatic Leap",
+    "type": "fighter-trait",
+    "ability_cost": "[double]",
+    "cost": "-",
+    "effect": "Until the end of this fighter's activation, add 1 to their Move characteristic, and they can fly when making move actions; however, when flying, they cannot move vertically upwards more than 3\"."
+  },
+  {
+    "name": "Shattered Gloom Globe",
+    "type": "fighter-trait",
+    "ability_cost": "[triple]",
+    "cost": "-",
+    "effect": "Until the end of the battle round, subtract 1 from the Attacks characteristic (to a minimum of 1) of attack actions made by enemy fighters while they are within 6\" of this fighter."
+  },
+  {
+    "name": "Spinning Somersault Strike",
+    "type": "fighter-trait",
+    "ability_cost": "[quad]",
+    "cost": "-",
+    "effect": "After a friendly fighter with this battle trait uses an ability, roll a dice. On a 5+, add one wild dice to your saved wild dice."
+  },
+  {
+    "name": "Matchless Acrobats",
+    "type": "fighter-trait",
+    "ability_cost": "[passove]",
+    "cost": "-",
+    "effect": "After a friendly fighter with this battle trait uses an ability, roll a dice. On a 5+, add one wild dice to your saved wild dice."
+  },
+  {
+    "name": "Unexpected Assault",
+    "type": "fighter-trait",
+    "ability_cost": "[action]",
+    "cost": "-",
+    "effect": "A fighter can make this reaction after an enemy fighter finishes a move action visible to this fighter and within 3\" of this fighter. Pick another friendly fighter with the Cypher Lords faction runemark and the Mystic runemark. That fighter makes a bonus move action. After that move action that fighter must be within 1\" of the enemy fighter that made the move action."
+  },
+  {
+    "name": "Shadowy Recall",
+    "type": "fighter-trait",
+    "ability_cost": "[triple]",
+    "cost": "-",
+    "effect": "Pick a friendly fighter with the Minion runemark. Remove that fighter from the battlefield, then set that fighter up on a platform or the battlefield floor within 6\" of this fighter."
+  },
+  {
+    "name": "We Make War",
+    "type": "fighter-trait",
+    "ability_cost": "[passive]",
+    "cost": "-",
+    "effect": "After the initiative phase, starting with the attacker, each player whose warband has this battle trait can pick a [double], [triple], or [quad] they have. Change the value of those ability dice to 6."
+  },
+  {
+    "name": "Clashing Iron",
+    "type": "fighter-trait",
+    "ability_cost": "[action]",
+    "cost": "-",
+    "effect": "Reaction. A fighter can make this reaction after they are targeted by a melee attack action but before the hit rolls are made. Count up to two critical hits from that attack action as hits instead."
+  },
+  {
+    "name": "Throw Bolas",
+    "type": "fighter-trait",
+    "ability_cost": "[double]",
+    "cost": "-",
+    "effect": "Pick a visible enemy fighter within 6\" of this fighter and roll 2 dice. For each roll of 4-5, allocate 1 damage point to that fighter. For each roll of 6, allocate a number of damage points to that fighter equal to the value of this ability."
+  },
+  {
+    "name": "Lead with Weapon Skill",
+    "type": "fighter-trait",
+    "ability_cost": "[double]",
+    "cost": "-",
+    "effect": "A fighter can only use this ability if an enemy fighter has been taken down by an attack action made by them this activation. This fighter makes a bonus move action or a bonus attack action."
+  },
+  {
+    "name": "Living Battering Ram",
+    "type": "fighter-trait",
+    "ability_cost": "[triple]",
+    "cost": "-",
+    "effect": "Until the end of this fighter's activation, the next time this fighter finishes a move action within 1\" of an enemy fighter, pick a visible enemy fighter within 1\" of this fighter. Allocate a number of damage points to that fighter equal to the value of this ability."
+  },
+  {
+    "name": "Weapons Dripping with Poison",
+    "type": "fighter-trait",
+    "ability_cost": "[passive]",
+    "cost": "-",
+    "effect": "Once per battle round, a friendly fighter with this battle trait can use the 'Poisoned Attacks' ability without needing or spending any ability dice. Treat the value of that ability as 6."
+  },
+  {
+    "name": "Vicious Riposte",
+    "type": "fighter-trait",
+    "ability_cost": "[action]",
+    "cost": "-",
+    "effect": "Reaction. A fighter can make this reaction after they are targeted by a melee attack action but before the hit rolls are made. For each hit roll of 1 or 2 from that attack action, allocate 2 damage points to the attacking fighter."
+  },
+  {
+    "name": "Poisoned Attacks",
+    "type": "fighter-trait",
+    "ability_cost": "[action]",
+    "cost": "-",
+    "effect": "Until the end of this fighter's activation, the Weapon Skill characteristic of attack actions made by this fighter count as being higher than the target's Defence characteristic."
+  },
+  {
+    "name": "Snake Charmer",
+    "type": "fighter-trait",
+    "ability_cost": "[triple]",
+    "cost": "-",
+    "effect": "Pick a friendly Serpents fighter within 4\" of this fighter. That fighter makes a bonus attack action."
+  },
+  {
+    "name": "Relentless Assault",
+    "type": "fighter-trait",
+    "ability_cost": "[triple]",
+    "cost": "-",
+    "effect": "A fighter can only use this ability if an enemy fighter has been taken down by an attack action made by them this activation. This fighter makes a bonus move action. Then, they can make a bonus attack action."
+  },
+  {
+    "name": "Paralysing Venom",
+    "type": "fighter-trait",
+    "ability_cost": "[quad]",
+    "cost": "-",
+    "effect": "Until the end of this fighter's activation, add the value of this ability to the damage points allocated to enemy fighters by each critical hit from attack actions made by this fighter. In addition, until the end of this fighter's activation, after each attack action made by this fighter, roll a dice. On a roll of 5+, until the end of this battle round, the target fighter cannot make move actions or disengage actions."
+  },
+  {
+    "name": "Shared Bliss",
+    "type": "fighter-trait",
+    "ability_cost": "[passive]",
+    "cost": "-",
+    "effect": "Once per battle, after an enemy fighter is taken down by the damage points allocated by the 'Shared Pain' reaction, roll a dice. On a 3+, you gain a [quad] ability dice with a value of 1."
+  },
+  {
+    "name": "Shared Pain",
+    "type": "fighter-trait",
+    "ability_cost": "[action]",
+    "cost": "-",
+    "effect": "Reaction. A fighter can make this reaction after they are targeted by a melee attack action but before the hit rolls are made. For each hit roll from that attack action that hits, allocate 1 damage point to the attacking fighter. For each critical hit, allocate 2 damage points to the attacking fighter instead."
+  },
+  {
+    "name": "Nightmarish Visage",
+    "type": "fighter-trait",
+    "ability_cost": "[double]",
+    "cost": "-",
+    "effect": "Pick an enemy fighter within a number of inches of this fighter equal to the value of this ability and roll a dice. On a roll of 3+, until the end of the battle round, that fighter cannot make move actions or disengage actions."
+  },
+  {
+    "name": "Barbed Strike",
+    "type": "fighter-trait",
+    "ability_cost": "[double]",
+    "cost": "-",
+    "effect": "Until the end of this fighter's activation, if an attack action made by this fighter scores any hits or critical hits, subtract 1 from the target fighter's Defence characteristic (to a minimum of 1) until the end of the battle round."
+  },
+  {
+    "name": "Paralysing Venom",
+    "type": "fighter-trait",
+    "ability_cost": "[quad]",
+    "cost": "-",
+    "effect": "Until the end of this fighter's activation, add the value of this ability to the damage points allocated to enemy fighters by each critical hit from attack actions made by this fighter. In addition, until the end of this fighter's activation, after each attack action made by this fighter, roll a dice. On a roll of 5+, until the end of this battle round, the target fighter cannot make move actions or disengage actions."
+  },
+  {
+    "name": "Paralysing Venom",
+    "type": "fighter-trait",
+    "ability_cost": "[quad]",
+    "cost": "-",
+    "effect": "Until the end of this fighter's activation, add the value of this ability to the damage points allocated to enemy fighters by each critical hit from attack actions made by this fighter. In addition, until the end of this fighter's activation, after each attack action made by this fighter, roll a dice. On a roll of 5+, until the end of this battle round, the target fighter cannot make move actions or disengage actions."
+  },
+  {
+    "name": "Flaying Frenzy",
+    "type": "fighter-trait",
+    "ability_cost": "[triple]",
+    "cost": "-",
+    "effect": "Roll a dice for each visible enemy fighter within 3\" of this fighter. On a roll of 3-4, allocate 1 damage point to the fighter being rolled for. On a roll of 5+, allocate a number of damage points to the fighter being rolled for equal to the value of this ability."
+  },
+  {
+    "name": "Vessel of Torment",
+    "type": "fighter-trait",
+    "ability_cost": "[triple]",
+    "cost": "-",
+    "effect": "A fighter can only use this ability if an enemy fighter has been taken down by an attack action made by them this activation. This fighter can make a bonus move action. Then, this fighter can make a bonus attack action."
+  },
+  {
+    "name": "Gift of Agony",
+    "type": "fighter-trait",
+    "ability_cost": "[quad]",
+    "cost": "-",
+    "effect": "This fighter makes a bonus attack action. Add 3 to the Weapon Skill and Attacks characteristics of that attack action if this fighter has 1 or more damage points allocated to them."
+  },
+  {
+    "name": "Worthy Prey",
+    "type": "fighter-trait",
+    "ability_cost": "[passive]",
+    "cost": "-",
+    "effect": "At the start of each battle round, if no enemy fighters are your worthy prey, pick an enemy fighter. That fighter is your worthy prey. While that fighter is your worthy prey, abilities that target that fighter are treated as having a value of 6."
+  },
+  {
+    "name": "Brute Resilience",
+    "type": "fighter-trait",
+    "ability_cost": "[action]",
+    "cost": "-",
+    "effect": "A fighter can make this reaction when they are targeted by a melee attack action but before the hit rolls are made. Subtract 1 from the damage points allocated to this fighter by each hit from that attack action (to a minimum of 1)."
+  },
+  {
+    "name": "Savage Fury",
+    "type": "fighter-trait",
+    "ability_cost": "[double]",
+    "cost": "-",
+    "effect": "Add 1 to the Move characteristic of this fighter for the next move action they make in this activation, and add 1 to the Attacks characteristic of the next attack action made by this fighter in this activation."
+  },
+  {
+    "name": "All-out Attack",
+    "type": "fighter-trait",
+    "ability_cost": "[double]",
+    "cost": "-",
+    "effect": "A fighter can only use this ability if an enemy fighter has been taken down by an attack action made by them this activation. This fighter makes a bonus move action or a bonus attack action."
+  },
+  {
+    "name": "Beastmaster",
+    "type": "fighter-trait",
+    "ability_cost": "[double]",
+    "cost": "-",
+    "effect": "Pick a visible friendly fighter with the Beast runemark within 4\" of this fighter. That fighter makes a bonus attack action."
+  },
+  {
+    "name": "Pounce",
+    "type": "fighter-trait",
+    "ability_cost": "[triple]",
+    "cost": "-",
+    "effect": "Until the end of this fighter's activation, the next time this fighter finishes a move action within 1\" of an enemy fighter, pick a visible enemy fighter within 1\" of this fighter. Allocate a number of damage points to that fighter equal to the value of this ability."
+  },
+  {
+    "name": "Unleash the Beast",
+    "type": "fighter-trait",
+    "ability_cost": "[quad]",
+    "cost": "-",
+    "effect": "Until the end of the battle round, add half the value of this ability (rounding up) to the Attacks and Weapon Skill characteristics of melee attack actions made by this fighter."
+  },
+  {
+    "name": "Hurl Masonry",
+    "type": "fighter-trait",
+    "ability_cost": "[double]",
+    "cost": "-",
+    "effect": "A fighter can only use this ability if they are within 1\" of an obstacle. Pick a visible enemy fighter within 8\" of this fighter and roll a dice. On a roll of 2-4, allocate 1 damage point to that fighter. On a roll of 5+, allocate a number of damage points to that fighter equal to the value of this ability."
+  },
+  {
+    "name": "Rampaging Charge",
+    "type": "fighter-trait",
+    "ability_cost": "[triple]",
+    "cost": "-",
+    "effect": "Until the end of this fighter's activation, the next time this fighter finishes a move action within 1\" of an enemy fighter, pick a visible enemy fighter within 1\" of this fighter. Allocate a number of damage points to that fighter equal to the value of this ability."
+  },
+  {
+    "name": "Berserk",
+    "type": "fighter-trait",
+    "ability_cost": "[double]",
+    "cost": "-",
+    "effect": "A fighter can only use this ability if 20 or more damage points have been allocated to them. Add 3 to the Attacks characteristic of the next melee attack action made by this fighter in this activation."
+  },
+  {
+    "name": "Arcane Fury",
+    "type": "fighter-trait",
+    "ability_cost": "[triple]",
+    "cost": "-",
+    "effect": "Until the end of this fighter's activation, add the value of this ability to the damage points allocated to enemy fighters by each critical hit from melee attack actions made by this fighter."
+  },
+  {
+    "name": "Blood Marshal",
+    "type": "fighter-trait",
+    "ability_cost": "[triple]",
+    "cost": "-",
+    "effect": "Pick a visible friendly fighter within 4\" of this fighter. Allocate 1 damage point to that fighter. If that fighter is not taken down, they can make a bonus melee attack action."
+  },
+  {
+    "name": "Telepathic Threatening",
+    "type": "fighter-trait",
+    "ability_cost": "[double]",
+    "cost": "-",
+    "effect": "Pick an enemy fighter within a number of inches of this fighter equal to the value of this ability and roll a dice. On a roll of 3+, until the end of the battle round, that fighter cannot make move actions or disengage actions."
+  },
+  {
+    "name": "Dominate Mind",
+    "type": "fighter-trait",
+    "ability_cost": "[triple]",
+    "cost": "-",
+    "effect": "Pick a visible enemy fighter within 6\" of this fighter and roll a number of dice equal to the value of this ability. For each roll of 2-5, allocate 1 damage point to that fighter. For each roll of 6, allocate 3 damage points to that fighter."
+  },
+  {
+    "name": "Charm",
+    "type": "fighter-trait",
+    "ability_cost": "[quad]",
+    "cost": "-",
+    "effect": "Pick a visible enemy fighter within a number of inches of this fighter equal to the value of this ability. That fighter cannot activate or make reactions in this battle round."
+  },
+  {
+    "name": "Cower",
+    "type": "fighter-trait",
+    "ability_cost": "[triple]",
+    "cost": "-",
+    "effect": "Until the end of the battle round, count each critical hit from attack actions that target this fighter as a hit instead."
+  },
+  {
+    "name": "Crazed Flock",
+    "type": "fighter-trait",
+    "ability_cost": "[triple]",
+    "cost": "-",
+    "effect": "Until the end of this fighter's activation, for each other friendly fighter within 3\" of this fighter that has the same runemarks as this fighter, add 1 to the Attacks and Strength characteristics of melee attack actions made by this fighter."
+  },
+  {
+    "name": "Outrunner of Chaos",
+    "type": "fighter-trait",
+    "ability_cost": "[double]",
+    "cost": "-",
+    "effect": "Add 3 to this fighter's Move characteristic for their next move action in this activation."
+  }
+
+]
+
+,
+  "weapon_traits": [
+  {
+    "name": "Block",
+    "ability_cost": "[double]",
+    "effect": "Reaction: After a ranged attack has been rolled against this fighter but before damage is calculated, change a crit to a hit.",
+    "cost": "-",
+    "type": "weapon-trait"
+  },
+  {
+    "name": "Brutal",
+    "ability_cost": "[double]",
+    "effect": "A fighter can only use this ability if an enemy fighter has been taken down by an attack action or ability made by this fighter during this activation. This fighter makes a bonus attack action.",
+    "cost": "-",
+    "type": "weapon-trait"
+  },
+  {
+    "name": "Cleaving",
+    "ability_cost": "[triple]",
+    "effect": "Allocate a number of damage points equal to half the value of this ability (rounding up) to all visible enemy fighters within 1\" of this fighter.",
+    "cost": "-",
+    "type": "weapon-trait"
+  },
+  {
+    "name": "Crushing",
+    "ability_cost": "[double]",
+    "effect": "Until the end of the Mission round, increase the Weapon Skill of attacks with this weapon by 2.",
+    "cost": "-",
+    "type": "weapon-trait"
+  },
+  {
+    "name": "Overwhelming",
+    "ability_cost": "[double]",
+    "effect": "After an attack with this weapon does damage, push the fighter who took damage back 2 inches.",
+    "cost": "-",
+    "type": "weapon-trait"
+  },
+  {
+    "name": "Parry",
+    "ability_cost": "[double]",
+    "effect": "Reaction: A fighter can make this reaction after they have been hit by a melee attack action but before damage is assigned. Change one hit from that attack action to a miss (this cannot modify a crit).",
+    "cost": "-",
+    "type": "weapon-trait"
+  },
+  {
+    "name": "Piercing",
+    "ability_cost": "[double]",
+    "effect": "Until the end of the Mission round, attacks with this weapon do +1 damage on a critical hit.",
+    "cost": "-",
+    "type": "weapon-trait"
+  },
+  {
+    "name": "Precise",
+    "ability_cost": "[double]",
+    "effect": "Until the end of the Mission round, add 1 to the Attacks characteristic of attack actions made by this weapon.",
+    "cost": "-",
+    "type": "weapon-trait"
+  },
+  {
+    "name": "Quick",
+    "ability_cost": "[double]",
+    "effect": "Before attacking with this weapon, this fighter can take a 2 inch move (but not disengage).",
+    "cost": "-",
+    "type": "weapon-trait"
+  },
+  {
+    "name": "Riposte",
+    "ability_cost": "[double]",
+    "effect": "Reaction: A fighter can make this reaction after a melee attack targeting them was rolled with no hits or crits, the attacker takes one hit's worth of damage from the Riposte weapon.",
+    "cost": "-",
+    "type": "weapon-trait"
+  },
+  {
+    "name": "Barbed",
+    "ability_cost": "[double]",
+    "effect": "Allocate a number of damage points equal to half the value of this ability to a fighter who has taken damage from this weapon this turn.",
+    "cost": "-",
+    "type": "weapon-trait"
+  },
+  {
+    "name": "Sprint",
+    "ability_cost": "[double]",
+    "effect": "Increase the movement value of this fighter by 1 until the end of their activation.",
+    "cost": "-",
+    "type": "weapon-trait"
+  },
+  {
+    "name": "Thrown",
+    "ability_cost": "[double]",
+    "effect": "Pick a visible enemy fighter within 6\" of this fighter and roll 2 dice. For each roll of 4-5, allocate 1 damage point to that fighter. For each roll of 6, allocate a number of damage points to that fighter equal to the value of this ability.",
+    "cost": "-",
+    "type": "weapon-trait"
+  },
+    {
+    "name": "Low Sweeping Blow",
+    "ability_cost": "[double]",
+    "effect": "Roll a dice for each visible enemy fighter within 2\" of this fighter. On a roll of 4-5, allocate 1 damage point to the fighter being rolled for. On a roll of 6, allocate a number of damage points to the fighter being rolled for equal to the value of this ability.",
+    "cost": "-",
+    "type": "weapon-trait"
+  },
+  {
+    "name": "Spine-crushing Blow",
+    "type": "weapon-trait",
+    "ability_cost": "[double]",
+    "cost": "-",
+    "effect": "Until the end of this fighter's activation, add the value of this ability to the Weapon Skill characteristic of this fighter."
+  },
+  {
+    "name": "Whirlwind of Death",
+    "type": "weapon-trait",
+    "ability_cost": "[quad]",
+    "cost": "-",
+    "effect": "Allocate a number of damage points equal to the value of this ability to all visible enemy fighters within 3\" of this fighter."
+  },
+  {
+    "name": "Chain Garrotte",
+    "type": "weapon-trait",
+    "ability_cost": "[double]",
+    "cost": "-",
+    "effect": "Pick a visible enemy fighter within 5\" of this fighter and roll a dice. On a roll of 3-4, allocate 1 damage point to that fighter. On a roll of 5+, allocate a number of damage points to that fighter equal to the value of this ability."
+  },
+  {
+    "name": "Harpoon Snag",
+    "type": "weapon-trait",
+    "ability_cost": "[triple]",
+    "cost": "-",
+    "effect": "This fighter makes a bonus attack action. After that attack action, the target of that attack action makes a bonus move action directly towards this fighter, as if they were jumping, a number of inches equal to the value of this ability. When doing so, they can move away from enemy fighters within 1\" at the start of that move action."
+  }
+],
+"names": {
+    "Corvus Cabal": {
+      "first": ["Karka", "Vane", "Zek", "Sark", "Nix", "Veig", "Siv", "Crin", "Irik", "Rusa", "Dis", "Shen", "Ao", "Kiri", "Tyen", "Krax", "Vryl", "Skrehk", "Nokk", "Quill"],
+      "last": ["Shadowstep", "Crow-Eye", "Night-feather", "Cohl", "Drehst", "Veel", "Nas", "Sarak", "Ranis", "Kris", "Shrak", "Braka", "Crul", "the Carrion-King", "Blackbeak", "Sky-Stalker", "the Silent Wing", "Wind-Thief", "of the Murder", "Feather-shroud"]
+    },
+    "Iron Golems": {
+      "first": ["Sever", "Garn", "Broch", "Malek", "Vos", "Drann", "Borscha", "Varka", "Crola", "Brujde", "Thrum", "Ghorr", "Hulsk", "Vorn", "Kromm"],
+      "last": ["Iron-fist", "the Anvil", "Steel-shaper", "Forge-born", "the Cruel", "Drammer", "Greel", "Varsk", "Bannor", "Sorgev", "Dredj", "Scorl", "Haddun", "Kolsk", "Stalis", "the Iron-Bound", "Hammer-hand", "of the Great Slag", "Legion-Warden", "Furnace-heart"]
+    },
+    "Untamed Beasts": {
+      "first": ["Syugah", "Ekuth", "Ganntul", "Kurgo", "Makat", "Ugula", "Tenyet", "Mayim", "Shroya", "Thuka", "Ghash", "Rhun", "Zat", "Koth", "Uvok"],
+      "last": ["Truthspeaker", "Cleftskull", "the Hungerer", "Heart-eater", "Vorrnslayer", "Bloodtooth", "the Maw", "Plainsrunner", "Bonecrusher", "Spinrender", "the Beast-Tamer", "Gorge-Walker", "of the Jagged Waste", "Apex-Hunter", "Skin-Stitcher"]
+    },
+    "Cypher Lords": {
+      "first": ["Sentilia", "Vigus", "Carastes", "Benalo", "Talmen", "Arelius", "Vorsima", "Palania", "Semili", "Truscala", "Xandros", "Lysithea", "Helion", "Caelum", "Oros"],
+      "last": ["Baneggio", "Tatravellan", "Calcis", "Fabridian", "Morenigo", "Calmarand", "Halpurnis", "Ventamilio", "Pullos", "Daneggia", "the Illusion-Weaver", "of the Radiant Spire", "Shadow-Dancer", "the Glistening Lie", "Silk-Strangler"]
+    },
+    "The Unmade": {
+      "first": ["Shadowhaunter", "Flenser", "Corpseblade", "Gouge", "Throatcutter", "Scythe", "Eyepeeler", "Split-Tongue", "Leer", "Smile-in-Darkness", "Eyebite", "Ragged", "Whisper", "Pale Spider", "Ghoster", "Bloodshot", "Nighteye", "Catcher", "Fingerbones", "Sineater", "Jaw-Ripper", "Skinless", "The Joyous", "Wailing One", "of the Flayed Track", "the Self-Sown", "The Joy-Giver", "Ascended-in-Pain", "The Faceless", "The Red Harvest", "The Saint of Agony"],
+      "last": []
+    },
+    "Splintered Fang": {
+      "first": ["Sitha", "Ve'thoss", "C'lissa", "Ma'suth", "Ilthis", "Lash'ya", "Ossyuth", "Sorenis", "Ethiss", "Silren", "K'shara", "Vissh", "Nala'sha", "Zeth", "Issis"],
+      "last": ["Ullinash", "Agareth", "Sorigath", "Varashma", "Kushma", "Odoleth", "Sinneth", "Ashmos", "Annasis", "Katilash", "the Venom-Kissed", "Scale-Breaker", "of the Coiled Pit", "Coil-Master", "the Cold-Blooded"]
+    }
+}
+
+}

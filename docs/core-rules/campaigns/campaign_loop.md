@@ -33,4 +33,14 @@ Alter the 6.2 Battlefield Setup step to add three **Campaign Treasure** tokens t
 
 At the start of a Campaign Warbands will consist of 1000 points worth of Fighters and Equipment. This can be played for several games while Rosters grow, but eventually players will wish to up the points limit to allow them bring more elite forces.
 
-After each game, a player will gain points, 100 for winning 50 for losing and some treasure from missions. There's a decent chance players will lose a Fighter each Mission so they will lose some points from their Roster. As a guideline, increase the Warband size by 200 for each 5 games in a campaign. If a player is unable to field a Warband at the current phase size due to a lack of points in their roster, they should work out the differnce and recruit Fighters and Gear for the Warband up to the cost of that difference. At the end of that Mission, those Fighters and Gear are removed and do not get added to the Player's Roster.
+After each game, a player will gain points, 100 for winning 50 for losing and some treasure from missions. There's a decent chance players will lose a Fighter each Mission so they will lose some points from their Roster. As a guideline, increase the Warband size by 200 for each 5 games in a campaign.
+
+A typical approach is to split the campaign into three phases with different thematic rules for each phase. A phase should be a period of time that players agree to, such as a month or even 3 months per phase.
+
+- **Phase 1 - Build**: 1000 point warbands, no extra Gear is available, +50 points at the end of each battle.
+- **Phase 2 - Battle**: 1250 point warbands, Allies are available.
+- **Phase 3 - End Game**: 1500 point warbands, injury rolls are rolled twice with the lowest roll taken.
+
+In this format there is no need for each player to play the same number of games each phase. At best, a player with more games is going to have more options in the Roster when building their Warband and more Abilities to choose from when playing the game. They will not have more points in the game and they were not have more Ability Dice, so it still should be roughly balanced.
+
+If a player is unable to field a Warband at the current phase size due to a lack of points in their roster, they should work out the difference and recruit temprorary Fighters and Gear for the Warband up to the cost of that difference. At the end of that Mission, those Fighters and Gear are removed and do not get added to the Player's Roster.

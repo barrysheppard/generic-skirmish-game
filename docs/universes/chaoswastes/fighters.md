@@ -1,6 +1,6 @@
 ---
 sidebar_label: 'Fighters'
-sidebar_position: 4
+sidebar_position: 1
 ---
 
 import { 
@@ -9,8 +9,8 @@ import {
 
 # Fighter Basic Profiles
 
-When creating a Warband, fighters are selected using the profiles below. You can only ever have one leader (Rank 1\)  and up to two champions (Rank 2).
+When creating a warband you must have one, and only one, Fighter with the Leader trait. You can however recruit multiple Leaders for your Roster. If you do not have any Leaders in your Roster you can promote one of your Champions to give them the Leader trait for the duration of the battle.
 
-Note that some fighters may have Traits, right now they do not have abilities associated with them.
+You can only select Fighters from the same Faction (Allies are not considered a faction). If for some reason you do not have enough Fighters in your Roster to reach the point limit with your Warband, you can recruit Fighters with the **Ally** trait for free and they are removed at the end of the mission.
 
 <FactionAutoRegistry />

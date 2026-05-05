@@ -2,45 +2,46 @@ import React from 'react';
 import * as Engine from '@site/src/components/Engine';
 import { RosterBuilder as RosterBuilderLib } from '@site/src/components/RosterBuilder';
 
-// 1. Load Data
-import uTraits from '@site/src/components/data/universal_traits.json';
-import uWeapons from '@site/src/components/data/universal_weapons.json';
+// 1. Load the Data files
+import masterData from '../data/data.json';
+import uMasterData from '@site/src/components/data/data.json';
 
-// Local Setting Data
-import sFighters from '../data/fighters.json';
-import sWeapons from '../data/weapons.json';
-import gearData from '../data/gear.json';
-import fTraitsData from '../data/fighter_traits.json';
-import wTraitsData from '../data/weapon_traits.json';
+// 2. Map and Merge the data
+export const fighters = masterData.fighters;
 
+// MERGE NAMES: Combine faction names with Universal fallback names
+export const names = { 
+  ...uMasterData.names, 
+  ...masterData.names    
+};
 
-// 2. Merge Logic
-export const fighters = sFighters;
-export const weapons = Engine.mergeDataById(uWeapons, sWeapons);
+// WEAPONS: Merge universal weapon list with master list
+export const weapons = Engine.mergeDataById(uMasterData.weapons, masterData.weapons);
 
+// TRAITS: Combine abilities, gear, and traits into one library
 const allBaseTraits = [
-  ...uTraits, 
-  ...gearData, 
-  ...fTraitsData, 
-  ...wTraitsData
+  ...(uMasterData.abilities || []), 
+  ...(uMasterData.gear || []),      
+  ...(masterData.gear || []), 
+  ...(masterData.fighter_traits || []), 
+  ...(masterData.weapon_traits || [])
 ];
-
-// Merge all base traits. 
-// Note: If you have a local traits.json override file, replace the second 'allBaseTraits' with 'sTraits'
 export const traits = Engine.mergeDataById(allBaseTraits, allBaseTraits);
 
-// We use 'traitPath' consistently now
+// Use 'traitPath' consistently
 const traitPath = "/docs/universes/grimdark/traits";
-const weaponPath = "/docs/universes/grimdark/weapons";
 
-// 3. PARAMETERIZED EXPORTS
+// Define a unique key for this specific page/version
+const rosterStorageKey = "grim_dark"; 
 
 export const RosterBuilder = (props) => (
   <RosterBuilderLib 
     {...props}
+    storageKey={rosterStorageKey} // Pass the key here
     fighters={fighters}
     traits={traits}
     weapons={weapons}
+    names={names} 
     basePath={traitPath}
   />
 );
@@ -66,14 +67,8 @@ export const TraitGallery = (props) => (
 );
 
 export const TraitLink = (props) => (
-  <Engine.TraitLink 
-    {...props} 
-    traits={traits} 
-    basePath={traitPath} 
-    weaponPath={weaponPath} 
-  />
+  <Engine.TraitLink {...props} traits={traits} basePath={traitPath} />
 );
-
 
 export const Total = (p) => (
   <Engine.Total 
@@ -83,14 +78,8 @@ export const Total = (p) => (
   />
 );
 
-export const FighterStat = (props) => (
-  <Engine.FighterStat 
-    {...props} 
-    fighters={fighters} 
-    traits={traits} 
-    basePath={traitPath} 
-    weaponPath={weaponPath} // The crucial link
-  />
+export const FighterStat = (p) => (
+  <Engine.FighterStat {...p} fighters={fighters} traits={traits} basePath={traitPath} />
 );
 
 export const FactionWeaponTable = (p) => (
@@ -108,18 +97,17 @@ export const FactionEquipmentSummary = (p) => (
     {...p} 
     fighters={fighters} 
     weapons={weapons} 
-    traits={traits} // Add this line!
+    traits={traits}
   />
 );
 
 export const TraitStat = (p) => (
   <Engine.TraitStat 
     {...p} 
-    traits={traits} // This passes the merged traits list to the function
+    traits={traits}
   />
 );
 
-// Add this to your Parameterized Exports in settings.js
 export const FactionAutoRegistry = (props) => (
   <Engine.FactionAutoRegistry 
     {...props} 
@@ -127,6 +115,5 @@ export const FactionAutoRegistry = (props) => (
     traits={traits} 
     weapons={weapons} 
     basePath={traitPath} 
-    weaponPath={weaponPath} 
   />
 );

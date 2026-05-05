@@ -1,26 +1,21 @@
 ---
-sidebar_label: 'Traits'
+sidebar_label: 'Wargear'
 sidebar_position: 9
 ---
 
 import { TraitGallery } from './js/settings';
 
-# Traits & Special Rules
+# Wargear
 
 This page automatically aggregates all special rules found across the various warbands and armories.
 
-## Weapon Traits
-Special properties applied to equipment and biological weaponry.
-<TraitGallery type="weapon-trait" />
 
----
-
-## Fighter Traits
-Innate abilities, racial keywords, or leadership bonuses.
-<TraitGallery type="fighter-trait" />
-
----
-
-## Wargear
-Equipment and gear.
+## General Gear
+Equipment and gear available to some (not all) Fighters.
 <TraitGallery type="gear" />
+
+---
+
+## Leser Artefacts
+Minor magical items found around the eight points.
+<TraitGallery type="universal-gear" />

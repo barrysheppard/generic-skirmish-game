@@ -113,3 +113,17 @@ html {
 .group-select-btn:hover:not(:disabled) {
   background-color: var(--ifm-color-emphasis-400);
 }
+
+.injury-btn { background-color: #e67e22; color: white; }
+
+@keyframes fadeInOut {
+  0% { opacity: 0; transform: translateY(5px); }
+  10% { opacity: 1; transform: translateY(0); }
+  80% { opacity: 1; }
+  100% { opacity: 0; }
+}
+
+.injury-btn { 
+  background-color: #e67e22; 
+  color: white; 
+}

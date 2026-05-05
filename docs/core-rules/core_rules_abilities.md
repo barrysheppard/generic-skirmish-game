@@ -18,9 +18,9 @@ In the default Warcry rules, only one Ability can be triggered per activation. I
 
 Activating an ability requires a cost which is represented in between the square brackets at the start of the description. The main resource to power abilities are the Ability Dice which are generated during the Initiative step at the start of each turn. During that step 8 dice are rolled and dice with the same number are grouped together into Double, Triple, and Quad groups.
 
-- **[Double]**: Two matching dice.
-- **[Triple]**: Three matching dice.
-- **[Quad]**: Four or more matching dice.
+- **[double]**: Two matching dice.
+- **[triple]**: Three matching dice.
+- **[quad]**: Four or more matching dice.
 
 <TraitGallery include={["Leader"]} showCost={false} />
 
@@ -40,8 +40,8 @@ We've increased the total number of ability dice rolled to 8. So we're more like
 
 There are also two types of ability that do not require ability dice.
 
-- **[Action]**: Requires spending an action to activate.
-- **[Passive]**: Is always active.
+- **[action]**: Requires spending an action to activate.
+- **[passive]**: Is always active.
 
 :::warning Change from Warcry
 While most abilities can be covered under the Ability Dice system, there can be other situations we want to cover. The Fly trait for example in this format can be represented as a [Passive] ability. Similarly reactions from the normal Warcry rules become [Action] abilities as that is the cost. We also can introduce mission actions using the exact same format.

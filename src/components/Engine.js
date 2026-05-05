@@ -20,6 +20,15 @@ export const mergeDataById = (universal, specific) => {
 };
 
 /**
+ * UTILITY: Ensures stats don't drop below a minimum threshold for display.
+ */
+const formatStatValue = (val) => {
+  const num = parseInt(val);
+  if (isNaN(num)) return val; // Handle '-' or non-numeric
+  return num > 0 && num < 2 ? 2 : val;
+};
+
+/**
  * COMPONENT: TraitLink
  * Renders a link with a tooltip. Requires the master 'traits' list and 'basePath' as props.
  */
@@ -32,6 +41,7 @@ export const TraitLink = ({ trait, traits, basePath }) => {
 
   const slug = trait
     .toLowerCase()
+    .replace('▼', '') // Strip the symbol for the URL anchor
     .replace(/\(.*\)/, '')
     .trim()
     .replace(/\s+/g, '-');
@@ -140,11 +150,11 @@ export function FactionTable({ faction, fighters, traits, basePath }) {
         {factionFighters.map((f) => (
           <tr key={f.id}>
             <td id={f.id}><strong>{f.name}</strong></td>
-            <td style={{ textAlign: 'center' }}>{f.m}</td>
-            <td style={{ textAlign: 'center' }}>{f.ws}</td>
-            <td style={{ textAlign: 'center' }}>{f.bs}</td>
-            <td style={{ textAlign: 'center' }}>{f.def}</td>
-            <td style={{ textAlign: 'center' }}>{f.w}</td>
+            <td style={{ textAlign: 'center' }}>{formatStatValue(f.m)}</td>
+            <td style={{ textAlign: 'center' }}>{formatStatValue(f.ws)}</td>
+            <td style={{ textAlign: 'center' }}>{formatStatValue(f.bs)}</td>
+            <td style={{ textAlign: 'center' }}>{formatStatValue(f.def)}</td>
+            <td style={{ textAlign: 'center' }}>{formatStatValue(f.w)}</td>
             <td>
               {f.traits?.map((t, i) => (
                 <React.Fragment key={i}>
@@ -354,8 +364,9 @@ export const TraitGallery = ({ type, include = [], traits = [], showCost = true 
                 <td>{trait.effect}</td>
                 {/* Only render the cell if showCost is true */}
                 {showCost && (
-                  <td>{trait.cost && trait.cost !== "-" ? trait.cost : '-'}</td>
-                )}
+                  <td style={{ textAlign: 'center' }}>
+                    {trait.cost && trait.cost !== "-" ? trait.cost : '-'}
+                  </td>                )}
               </tr>
             );
         })}
